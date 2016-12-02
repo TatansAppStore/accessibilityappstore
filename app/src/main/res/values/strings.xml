@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Blind Application Market</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_note_edit">NoteEditActivity</string>
+    <string name="title_activity_add_interiew">AddInteriewActivity</string>
+    <string name="title_activity_item">ItemActivity</string>
+    <string name="title_activity_web">WebActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_collectionctivity">Collectionctivity</string>
+    <string name="title_activity_contact">ContactActivity</string>
+
+
+
+    <string name="tutorial_name">Tutorial name</string>
+    <string name="tutorial_content">Tutorial content</string>
+    <string name="tutorial_previous">Tutorial previous</string>
+    <string name="tutorial_next">Tutorial next</string>
+    <string name="tutorial_item_number">Tutorial item number</string>
+
+    <string name="pref_ele_default_setting">me.ele</string>
+    <!--<string name="pref_360_default_setting">com.qihoo.appstore</string>-->
+    <!-- <string name="pref_map_default_setting">com.autonavi.minimap</string>-->
+    <!--   <string name="pref_taobao_default_setting">com.taobao.taobao</string>-->
+    <string name="pref_kugou_default_setting">com.kugou.fm </string>
+    <string name="pref_iflytek_default_setting">com.iflytek.vflynote </string>
+    <string name="pref_meituan_default_setting">com.sankuai.meituan.takeoutnew </string>
+    <!--<string name="pref_didi_default_setting">com.sdu.didi.psnger </string>-->
+
+
+    <!--  Strings for possible PreferenceActivity Back/Next buttons -->
+    <string name="back_button_label">Back</string>
+    <string name="next_button_label">Next</string>
+
+    <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
+    <string name="skip_button_label">Skip</string>
+
+    <string name="title_intent_preference">Intent preference</string>
+    <string name="summary_intent_preference">Launches an Activity from an Intent</string>
+
+    <string name="title_intent_login_logout">Login/Logout</string>
+    <string name="summary_intent_login_logout">describe</string>
+    <string name="title_intent_apps_upgrade">Apps Upgrade</string>
+    <string name="summary_intent_apps_upgrade">describe</string>
+    <string name="title_intent_download">Download</string>
+    <string name="summary_intent_download">describe</string>
+    <string name="title_intent_apps_uninstall">Apps Uninstall</string>
+    <string name="summary_intent_apps_uninstall">describe</string>
+    <string name="title_intent_setting">Setting</string>
+    <string name="summary_intent_setting">describe</string>
+    <string name="title_intent_personal_data">Personal Data</string>
+    <string name="summary_intent_personal_data">describe</string>
+    <string name="title_intent_scoreboard">Scoreboard</string>
+    <string name="summary_intent_scoreboard">describe</string>
+    <string name="title_intent_share">Share</string>
+    <string name="summary_intent_share">describe</string>
+
+    <string name="title_switch_preference_auto_upgrade">Auto upgrade</string>
+    <string name="summary_switch__preference_auto_upgrade_tips">in the WLAN, the lock screen auto upgrade</string>
+
+    <string name="downloadState_installed">installed</string>
+    <string name="downloadState_uninstalled">Not installed</string>
+
+
+    <string name="share_to_sina_weibo">到新浪微博</string>
+    <string name="share_to_wechat">到微信</string>
+    <string name="share_to_wechat_friends">到微信朋友圈</string>
+    <string name="share_to_qq">到QQ</string>
+    <string name="share_to_qqzone">到QQ空间</string>
+
+    <string name="share_to_sina_weibo_succeed">新浪微博分享成功</string>
+    <string name="share_to_wechat_succeed">微信分享成功</string>
+    <string name="share_to_wechat_friends_succeed">朋友圈分享成功</string>
+    <string name="share_to_qq_succeed">QQ分享成功</string>
+    <string name="share_to_qqzone_succeed">QQ空间分享成功</string>
+    <string name="share_cancel">取消分享</string>
+    <string name="share_fail">分享失败</string>
+    <string name="share_fail_maybe_not_install_the_latest_qq">分享失败，可能未安装最新版本的QQ</string>
+    <string name="share_not_repeat">相同内容短时间内不可重复分享</string>
+
+    <string name="desc">智能安装app功能演示</string>
+
+</resources>

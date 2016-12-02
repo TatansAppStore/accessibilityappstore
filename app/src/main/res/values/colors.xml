@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- activity-->
+    <color name="activity_bar_text_color">#ffffff</color>
+    <color name="activity_background_color">#3f3939</color>
+
+    <color name="item_background_color">#000000</color>
+    <color name="background_black">#000000</color>
+    <!--list-->
+    <color name="list_background_color">#000000</color>
+    <color name="list_text_color_deep">#ffffff</color>
+    <color name="list_text_color_shallow">#ffffff</color>
+    <color name="list_progressbar_color">#6FB24B</color>
+
+    <color name="text_color">#ffffff</color>
+</resources>

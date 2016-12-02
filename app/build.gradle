@@ -1,0 +1,102 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+
+android {
+    def AppName = "嗨市场"
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
+    SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmm")
+    def version_code = df.format(new Date())
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 19
+        applicationId "net.accessiblility.app.store"
+        versionCode version_code.toInteger()
+        versionName "1.0." + version_code
+    }
+
+    signingConfigs {
+        hyperion {
+            //HYPERION or TCL2C or H508
+            keyPassword HYPERION_KEY_PASSWORD
+            keyAlias HYPERION_KEY_ALIAS
+            storePassword HYPERION_STORE_PASSWORD
+            storeFile file(HYPERION_STORE_FILE)
+        }
+
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            manifestPlaceholders = [app_label: AppName]
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.hyperion
+            applicationVariants.all { variant ->
+                def file = variant.outputs[0].outputFile
+                def f_parent = file.parent
+                def f_name = file.name
+                def app_release = "release.apk"
+                def app_debug = "debug.apk"
+                if ((file.name).endsWith(app_release)) {
+                    variant.outputs[0].outputFile = new File(f_parent, f_name.replace(app_release, AppName + "-" + version_code+".apk"))
+                }
+                if ((file.name).endsWith(app_debug)) {
+                    variant.outputs[0].outputFile = new File(f_parent, f_name.replace(app_debug, AppName + "-debug"+".apk"))
+                }
+            }
+        }
+        debug {
+            manifestPlaceholders = [app_label: AppName+"-debub"]
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.hyperion
+        }
+    }
+    productFlavors {
+        yingyonbao {
+
+        }
+        wangdoujia {
+
+        }
+        baidu {
+
+        }
+        app360 {
+
+        }
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+    }
+}
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 59, 'minutes'
+}
+
+repositories{
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    /*    compile 'net.tatans.coeus:coeus-network:5.4.0-SNAPSHOT'*/
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    /*    compile 'com.umeng.analytics:analytics:latest.integration'
+        compile 'com.google.code.gson:gson:2.3.1'*/
+    compile project(':OneKeyShare')
+    compile project(':ShareSDK')
+    compile name: 'SMSSDK-2.1.2', ext: 'aar'
+    compile name: 'SMSSDKGUI-2.1.2', ext: 'aar'
+    compile name: 'coeus-network-5.4.0-20160718.071437-26', ext: 'aar'
+    compile files('libs/gson-2.3.1.jar')
+    compile files('libs/analytics-6.0.4.jar')
+}

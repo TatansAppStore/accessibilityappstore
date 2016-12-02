@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="pref_ele_default_value">false</bool>
+    <bool name="pref_360_default_value">true</bool>
+    <bool name="pref_map_default_value">false</bool>
+    <bool name="pref_taobao_default_value">false</bool>
+    <bool name="pref_kugou_default_value">false</bool>
+    <bool name="pref_didi_default_value">false</bool>
+    <bool name="pref_meituan_default_value">false</bool>
+    <bool name="pref_iflytek_default_value">true</bool>
+</resources>

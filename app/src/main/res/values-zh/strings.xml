@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">盲人应用市场</string>
+
+    <string name="description">通话时可以自动切换扬声器，贴近关闭，离开打开，还可自动打开通话界面的拨号键盘。。。。。</string>
+    <string name="answer_description">启用“接听辅助”服务后，您的手机可以为盲人和视力不好的用户提供电话接听快捷操作。例如，来电时手机会弹出一个列表操作界面，包括接听、挂断等按钮</string>
+    <string name="answer">接听辅助</string>
+    <string name="easy_setting">极简模式的无障碍化体验很差，建议您不要开启此模式！点击可退出</string>
+    <string name="wechat_pay_descrition">请输入支付密码，已验证身份</string>
+    <string name="wechat_pay_del">删除</string>
+    <string name="wechat_pay_down_description">隐藏</string>
+
+    <string name="summary_pref_clean_data">双击清除应用数据</string>
+    <string name="summary_pref_clean_data_empty">该应用数据已清理完成</string>
+    <string name="summary_pref_clean_data_tatans_setting">请先开启该应用天坦优化</string>
+
+    <string name="title_ele">饿了么</string>
+    <string name="title_ele_default_setting">饿了么，天坦优化</string>
+    <string name="summaryOn_pref_ele_default_setting">开启之后对于饿了么的一些数据进行无障碍优化</string>
+    <string name="summaryOff_ele_default_setting">关闭之后饿了么的一些功能不再进行无障碍优化</string>
+    <string name="title_ele_clean_data">饿了么数据</string>
+
+    <string name="title_360">360手机助手</string>
+    <string name="title_360_default_setting">360手机助手，天坦优化</string>
+    <string name="summaryOn_pref_360_default_setting">开启之后对于360手机助手的一些数据进行无障碍优化</string>
+    <string name="summaryOff_360_default_setting">关闭之后360手机助手的一些功能不再进行无障碍优化</string>
+    <string name="title_360_clean_data">360手机助手数据</string>
+
+    <string name="title_map">高德地图</string>
+    <string name="title_map_default_setting">高德地图，天坦优化</string>
+    <string name="summaryOn_pref_map_default_setting">开启之后对于高德地图的一些数据进行无障碍优化</string>
+    <string name="summaryOff_map_default_setting">关闭之后高德地图的一些功能不再进行无障碍优化</string>
+    <string name="title_map_clean_data">高德地图数据</string>
+
+    <string name="title_taobao">手机淘宝</string>
+    <string name="title_taobao_default_setting">手机淘宝，天坦优化</string>
+    <string name="summaryOn_pref_taobao_default_setting">开启之后对于手机淘宝的一些数据进行无障碍优化</string>
+    <string name="summaryOff_taobao_default_setting">关闭之后手机淘宝的一些功能不再进行无障碍优化</string>
+    <string name="title_taobao_clean_data">手机淘宝数据</string>
+
+    <string name="title_kugou">酷FM</string>
+    <string name="title_kugou_default_setting">酷FM，天坦优化</string>
+    <string name="summaryOn_pref_kugou_default_setting">开启之后对于酷FM的一些数据进行无障碍优化</string>
+    <string name="summaryOff_kugou_default_setting">关闭之后酷FM的一些功能不再进行无障碍优化</string>
+    <string name="title_kugou_clean_data">酷FM数据</string>
+
+    <string name="title_didi">滴滴出行</string>
+    <string name="title_didi_default_setting">滴滴出行，天坦优化</string>
+    <string name="summaryOn_pref_didi_default_setting">开启之后对于滴滴出行的一些数据进行无障碍优化</string>
+    <string name="summaryOff_didi_default_setting">关闭之后滴滴出行的一些功能不再进行无障碍优化</string>
+    <string name="title_didi_clean_data">滴滴出行数据</string>
+
+    <string name="title_meituan">美团外卖</string>
+    <string name="title_meituan_default_setting">美团外卖，天坦优化</string>
+    <string name="summaryOn_pref_meituan_default_setting">开启之后对于美团外卖的一些数据进行无障碍优化</string>
+    <string name="summaryOff_meituan_default_setting">关闭之后美团外卖的一些功能不再进行无障碍优化</string>
+    <string name="title_meituan_clean_data">美团外卖数据</string>
+
+    <string name="title_iflytek">讯飞语记</string>
+    <string name="title_iflytek_default_setting">讯飞语记，天坦优化</string>
+    <string name="summaryOn_pref_iflytek_default_setting">开启之后对于讯飞语记的一些数据进行无障碍优化</string>
+    <string name="summaryOff_iflytek_default_setting">关闭之后讯飞语记的一些功能不再进行无障碍优化</string>
+    <string name="title_iflytek_clean_data">讯飞语记数据</string>
+
+    <string name="title_tatans">内容为空</string>
+    <string name="title_tatans_clean_data">空</string>
+
+    <string name="title_intent_login_logout">登录/注销</string>
+    <string name="summary_intent_login_logout">登录/注销--描述</string>
+    <string name="title_intent_apps_upgrade">应用升级</string>
+    <string name="summary_intent_apps_upgrade">应用升级--描述</string>
+    <string name="title_intent_download">下载</string>
+    <string name="summary_intent_download">下载--描述</string>
+    <string name="title_intent_apps_uninstall">应用卸载</string>
+    <string name="summary_intent_apps_uninstall">应用卸载--描述</string>
+    <string name="title_intent_setting">设置</string>
+    <string name="summary_intent_setting">设置--描述</string>
+    <string name="title_intent_personal_data">个人资料</string>
+    <string name="summary_intent_personal_data">个人资料--描述</string>
+    <string name="title_intent_scoreboard">积分榜</string>
+    <string name="summary_intent_scoreboard">积分榜--描述</string>
+    <string name="title_intent_share">分享应用</string>
+    <string name="summary_intent_share">分享应用--描述</string>
+
+    <string name="title_switch_preference_auto_upgrade">自动更新</string>
+    <string name="summary_switch__preference_auto_upgrade_tips">WLAN网络下,锁屏自动更新</string>
+
+    <string name="downloadState_installed">已安装</string>
+    <string name="downloadState_uninstalled">未安装</string>
+
+</resources>

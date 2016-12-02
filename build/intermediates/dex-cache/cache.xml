@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\workspace\workspacezhou\accessibilityappstore\app\libs\analytics-6.0.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="27238b0acdc4e764623a653d5776488783e9ae3f">
+        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\analytics-6.0.4-ca56100ffbf012eb91cb36dafbb197a7129d12e3.jar" />
+    </item>
+    <item
+        jar="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="51e46c58e79e0a45e6373e29207253e2c95ff63b">
+        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\classes-1ba64bf88af6287d6808c77f43ea66bc9651d7bd.jar" />
+    </item>
+    <item
+        jar="E:\workspace\workspacezhou\accessibilityappstore\app\libs\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\gson-2.3.1-ab79620b2c3360dc24a3a8d268fa0c5df2e9c978.jar" />
+    </item>
+    <item
+        jar="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\libs\Msc.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="85a46b29703ef8930a92d2fdea8ff336275c7ab2">
+        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\Msc-64f3aedd36977835b77a551a005739b120625447.jar" />
+    </item>
+
+</items>

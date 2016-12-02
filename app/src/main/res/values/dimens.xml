@@ -1,0 +1,31 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Preference fragment padding, bottom -->
+    <dimen name="preference_fragment_padding_bottom">0dp</dimen>
+    <!-- Preference fragment padding, sides -->
+    <dimen name="preference_fragment_padding_side">16dp</dimen>
+
+    <integer name="preference_fragment_scrollbarStyle">0x02000000</integer> <!-- outsideOverlay -->
+
+    <!-- activity_bar -->
+    <dimen name="activity_bar_height">18dp</dimen>
+    <dimen name="activity_bar_icon_size">18dp</dimen>
+    <dimen name="activity_bar_normal_margin">17dp</dimen>
+    <dimen name="activity_bar_text_size">25sp</dimen>
+
+    <!-- list-->
+    <dimen name="list_text_margin_top">1dp</dimen>
+    <dimen name="list_image_size">38dp</dimen>
+    <dimen name="list_item_height">60dp</dimen>
+
+    <!-- -->
+    <dimen name="main_item_height">40dp</dimen>
+    <dimen name="item_mar_top">17dp</dimen>
+    <dimen name="item_mar_top_add_item">57dp</dimen>
+    <!--单个item高度-->
+    <dimen name="item_height">60dp</dimen>
+</resources>

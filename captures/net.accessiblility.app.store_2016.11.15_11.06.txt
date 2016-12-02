@@ -1,0 +1,248 @@
+TASK net.accessiblility.app.store id=1558
+  ACTIVITY net.accessiblility.app.store/.activity.MainActivity 236329ee pid=4711
+    Local FragmentActivity 2c9aea8a State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    Active Fragments in 222818fb:
+      #0: FragmentCommend{fd14d18 #0 id=0x7f0d003e android:switcher:2131558462:0}
+        mFragmentId=#7f0d003e mContainerId=#7f0d003e mTag=android:switcher:2131558462:0
+        mState=5 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
+        mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{222818fb in MainActivity{2c9aea8a}}
+        mActivity=net.accessiblility.app.store.activity.MainActivity@2c9aea8a
+        mContainer=net.accessiblility.app.store.viewpage.ParentViewPager{57201ba VFED.... .......D 0,0-1080,1352 #7f0d003e app:id/vp_main}
+        mView=android.support.v4.app.NoSaveStateFrameLayout{1ded986b V.E..... ........ 0,0-1080,1352}
+        mInnerView=android.support.v4.app.NoSaveStateFrameLayout{1ded986b V.E..... ........ 0,0-1080,1352}
+      #1: FragmentClassify{3a2b5371 #1 id=0x7f0d003e android:switcher:2131558462:1}
+        mFragmentId=#7f0d003e mContainerId=#7f0d003e mTag=android:switcher:2131558462:1
+        mState=5 mIndex=1 mWho=android:fragment:1 mBackStackNesting=0
+        mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=false mHasMenu=false
+        mRetainInstance=false mRetaining=false mUserVisibleHint=false
+        mFragmentManager=FragmentManager{222818fb in MainActivity{2c9aea8a}}
+        mActivity=net.accessiblility.app.store.activity.MainActivity@2c9aea8a
+        mContainer=net.accessiblility.app.store.viewpage.ParentViewPager{57201ba VFED.... .......D 0,0-1080,1352 #7f0d003e app:id/vp_main}
+        mView=android.support.v4.app.NoSaveStateFrameLayout{3e4b5047 V.E..... .......D 1080,0-2160,1352}
+        mInnerView=android.support.v4.app.NoSaveStateFrameLayout{3e4b5047 V.E..... .......D 1080,0-2160,1352}
+    Added Fragments:
+      #0: FragmentCommend{fd14d18 #0 id=0x7f0d003e android:switcher:2131558462:0}
+      #1: FragmentClassify{3a2b5371 #1 id=0x7f0d003e android:switcher:2131558462:1}
+    FragmentManager misc state:
+      mActivity=net.accessiblility.app.store.activity.MainActivity@2c9aea8a
+      mContainer=android.support.v4.app.FragmentActivity$2@32452556
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{39283ab0 V.E..... ... 0,0-1080,1776}
+        android.widget.LinearLayout{665df3 V.E..... ... 0,0-1080,1776}
+          android.view.ViewStub{2f5549d7 G.E..... ... 0,0-0,0 #1020373}
+          android.widget.FrameLayout{2c22cd29 V.E..... ... 0,75-1080,255 #1020035 android:id/title_container}
+            android.widget.RelativeLayout{3c0a08ae V.E..... ... 0,0-1080,180}
+              android.widget.TextView{37ee64f V.ED.... ... 0,0-1080,180 #7f0d0062 app:id/header_text}
+          android.widget.FrameLayout{174e51dc V.E..... ... 0,255-1080,1776 #1020002 android:id/content}
+            android.widget.LinearLayout{357212e5 V.E..... ... 0,0-1080,1521 #7f0d003c app:id/ll_activity_main}
+              android.widget.RelativeLayout{171a22c4 GFE..... ... 0,0-0,0}
+                android.widget.TextView{3450b5ad V.ED.... ... 0,0-0,0 #7f0d003d app:id/tv_title}
+              net.accessiblility.app.store.viewpage.ParentViewPager{57201ba VFED.... ... 0,0-1080,1352 #7f0d003e app:id/vp_main}
+                android.support.v4.app.NoSaveStateFrameLayout{1ded986b V.E..... ... 0,0-1080,1352}
+                  android.widget.LinearLayout{305cafc8 V.E..... ... 0,0-1080,1352 #7f0d004b app:id/LinearLayout1}
+                    android.widget.TextView{11b5f861 G.ED.... ... 15,15-1065,1337 #7f0d005a app:id/tv_loading_tips}
+                    android.widget.ListView{382e7f86 VFED.VC. F.. 15,15-1065,1337 #7f0d005b app:id/lv_test}
+                      android.widget.LinearLayout{2da38e76 V.E..... ... 0,0-1050,182}
+                        android.widget.LinearLayout{294fcc77 V.E..... ... 0,0-1050,180}
+                          android.view.View{25080e4 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{17e4894d V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{cb21c02 V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{e8640e2 G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{17eab913 V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{2b06c750 V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{1a7d6d49 V.ED.... ... 0,3-240,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{e29f64e V.ED.... ... 279,0-466,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{1f3dd36f V.ED.... ... 505,0-590,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{1a99087c V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{3fa69505 V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{2233295a V.ED.... ... 180,0-739,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{27baac73 G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{1ef8a730 G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{3bfe378b V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{ac3068 V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{18807c81 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{3f6d89b2 V.E..... ... 0,184-1050,366}
+                        android.widget.LinearLayout{13440d03 V.E..... ... 0,0-1050,180}
+                          android.view.View{342a480 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{2c7f3ab9 V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{1a268efe V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{31efffa9 G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{3870765f V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{386d88ac V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{74fc975 V.ED.... ... 0,3-300,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{31d89d0a V.ED.... ... 339,0-501,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{38d0197b V.ED.... ... 540,0-625,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{8808398 V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{266087f1 V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{15eb7fd6 V.ED.... ... 180,0-739,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{8cb892e G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{a099ccf G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{bbcd257 V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{dc64144 V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{3e4b22d V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{2a92b3ae V.E..... ... 0,368-1050,550}
+                        android.widget.LinearLayout{39c9b54f V.E..... ... 0,0-1050,180}
+                          android.view.View{1a3a74dc V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{38a6f9e5 V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{2b5a5cba V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{af9065c G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{2f96576b V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{196802c8 V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{30d24f61 V.ED.... ... 0,3-205,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{23c18a86 V.ED.... ... 244,0-431,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{1b40ff47 V.ED.... ... 470,0-555,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{205e8374 V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{3403809d V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{d1bc912 V.ED.... ... 180,0-739,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{131fed65 G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{200b0a3a G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{220448e3 V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{c9a62e0 V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{11c8999 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{1463686a V.E..... ... 0,552-1050,734}
+                        android.widget.LinearLayout{241ff15b V.E..... ... 0,0-1050,180}
+                          android.view.View{2485adf8 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{dbcd2d1 V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{47a136 V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{24ad36eb G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{17624837 V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{3863b1a4 V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{2b6acb0d V.ED.... ... 0,3-120,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{1f649ac2 V.ED.... ... 159,0-338,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{390930d3 V.ED.... ... 377,0-462,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{2bfc4410 V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{b860b09 V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{1165a10e V.ED.... ... 180,0-739,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{93e2c48 G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{28a6fae1 G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{3e2c072f V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{2049913c V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{39fb4ec5 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{2d98c3e6 V.E..... ... 0,736-1050,918}
+                        android.widget.LinearLayout{1f9fad27 V.E..... ... 0,0-1050,180}
+                          android.view.View{30e8cbd4 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{3b31917d V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{121d3872 V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{1a8f9006 G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{37cff4c3 V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{31f0d140 V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{3acac879 V.ED.... ... 0,3-360,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{180269be V.ED.... ... 399,0-586,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{3c331a1f V.ED.... ... 625,0-710,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{6b1c16c V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{8267335 V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{3f7763ca V.ED.... ... 180,0-644,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{37a656c7 G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{52dc4f4 G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{1e79393b V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{27af8858 V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{2d580db1 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{36d0a222 V.E..... ... 0,920-1050,1102}
+                        android.widget.LinearLayout{308794b3 V.E..... ... 0,0-1050,180}
+                          android.view.View{2e7b0a70 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{a31c1e9 V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{237abe6e V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{2f37641d G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{385cc90f V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{155e5d9c V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{1c5b93a5 V.ED.... ... 0,3-262,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{1098537a V.ED.... ... 301,0-488,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{4a6e72b V.ED.... ... 527,0-629,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{bc1b788 V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{296c521 V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{22c82d46 V.ED.... ... 180,0-739,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{684a692 G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{18279863 G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{172acb07 V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{357ec434 V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{1af9925d V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{17c99f1e V.E..... ... 0,1104-1050,1286}
+                        android.widget.LinearLayout{3e8813ff V.E..... ... 0,0-1050,180}
+                          android.view.View{c4265cc V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{3b11b015 V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{f6c8f2a V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{18dc3c60 G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{953f11b V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{221612b8 V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{2f6a3891 V.ED.... ... 0,3-82,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{1e9c73f6 V.ED.... ... 121,0-308,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{1a3683f7 V.ED.... ... 347,0-449,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{d75a264 V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{fe8cccd V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{2813d982 V.ED.... ... 180,0-628,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{26b2519 G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{374299de G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{19456893 V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{1d1c80d0 V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{54268c9 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{255f16da V.E..... ... 0,1288-1050,1470}
+                        android.widget.LinearLayout{290f570b V.E..... ... 0,0-1050,180}
+                          android.view.View{58f99e8 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{10796801 V.E..... ... 0,2-1050,182 #7f0d004e app:id/ll_app_details}
+                            android.widget.LinearLayout{3327c6a6 V.E..... ... 51,0-850,180}
+                              android.widget.ImageView{31f157bf G.ED.... ... 0,0-0,0 #7f0d004f app:id/iv_app_icon}
+                              android.widget.LinearLayout{30da58e7 V.E..... ... 30,19-769,160}
+                                android.widget.RelativeLayout{3db86c94 V.E..... ... 0,0-739,84}
+                                  android.widget.TextView{713833d V.ED.... ... 0,3-120,84 #7f0d0050 app:id/tv_app_name}
+                                  android.widget.TextView{3379a732 V.ED.... ... 159,0-363,71 #7f0d0051 app:id/tv_app_version}
+                                  android.widget.TextView{3e699c83 V.ED.... ... 402,0-504,71 #7f0d0052 app:id/tv_app_size}
+                                android.widget.RelativeLayout{10f9be00 V.E..... ... 0,84-739,141}
+                                  android.widget.TextView{63a1639 V.ED.... ... 0,0-180,53 #7f0d0053 app:id/tv_app_state}
+                                  android.widget.TextView{297047e V.ED.... ... 180,0-739,46 #7f0d0054 app:id/tv_app_info}
+                                  android.widget.TextView{2938be8c G.ED.... ... 0,0-0,0 #7f0d0055 app:id/tv_progress}
+                                  android.widget.ImageView{37ff9d5 G.ED.... ... 0,0-0,0 #7f0d0056 app:id/iv_delete}
+                                  android.widget.TextView{151f7ddf V.ED.... ... 709,0-709,57 #7f0d0057 app:id/tv_appUpdateState}
+                            android.widget.TextView{103cba2c V.ED..C. ... 850,0-1050,180 #7f0d005c app:id/tv_app_download}
+                        android.view.View{149cdcf5 V.ED.... ... 51,180-1050,182}
+                android.support.v4.app.NoSaveStateFrameLayout{3e4b5047 V.E..... ... 1080,0-2160,1352}
+                  android.widget.LinearLayout{16710074 V.E..... ... 0,0-1080,1352 #7f0d004b app:id/LinearLayout1}
+                    android.widget.TextView{b5a75ea G.ED.... ... 0,0-0,0 #7f0d005a app:id/tv_loading_tips}
+                    android.widget.ListView{9f8b99d VFED.VC. ... 15,15-1065,933 #7f0d005b app:id/lv_test}
+                      android.widget.LinearLayout{33e30e12 V.E..... ... 0,0-1050,182}
+                        android.widget.LinearLayout{39e2a9e3 V.E..... ... 0,0-1050,180}
+                          android.view.View{3dd7afe0 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{33ac5299 V.E..... ... 51,2-1050,180}
+                            android.widget.TextView{3cdff95e V.ED.... ... 30,48-150,129 #7f0d004d app:id/tv_classify}
+                        android.view.View{260c013f V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{1137ea0c V.E..... ... 0,184-1050,366}
+                        android.widget.LinearLayout{2f667f55 V.E..... ... 0,0-1050,180}
+                          android.view.View{3a2e4d6a V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{2b49725b V.E..... ... 51,2-1050,180}
+                            android.widget.TextView{1c7f9af8 V.ED.... ... 30,48-150,129 #7f0d004d app:id/tv_classify}
+                        android.view.View{175cbbd1 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{85bd636 V.E..... ... 0,368-1050,550}
+                        android.widget.LinearLayout{2e22d937 V.E..... ... 0,0-1050,180}
+                          android.view.View{3a8f6ea4 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{19a0440d V.E..... ... 51,2-1050,180}
+                            android.widget.TextView{2d071fc2 V.ED.... ... 30,48-150,129 #7f0d004d app:id/tv_classify}
+                        android.view.View{29c1d1d3 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{31a6d110 V.E..... ... 0,552-1050,734}
+                        android.widget.LinearLayout{3a1a1409 V.E..... ... 0,0-1050,180}
+                          android.view.View{372b760e V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{184db82f V.E..... ... 51,2-1050,180}
+                            android.widget.TextView{2a8fee3c V.ED.... ... 30,48-150,129 #7f0d004d app:id/tv_classify}
+                        android.view.View{3846e7c5 V.ED.... ... 51,180-1050,182}
+                      android.widget.LinearLayout{182ce51a V.E..... ... 0,736-1050,918}
+                        android.widget.LinearLayout{507a84b V.E..... ... 0,0-1050,180}
+                          android.view.View{2e8bb228 V.ED.... ... 51,0-1050,2 #7f0d004c app:id/v_line}
+                          android.widget.LinearLayout{14b33b41 V.E..... ... 51,2-1050,180}
+                            android.widget.TextView{1a438e6 V.ED.... ... 30,48-150,129 #7f0d004d app:id/tv_classify}
+                        android.view.View{24267e27 V.ED.... ... 51,180-1050,182}
+              android.widget.LinearLayout{17fdc8d4 V.E..... ... 0,1352-1080,1521}
+                android.widget.LinearLayout{32374a7d VFE...C. ... 0,0-216,169 #7f0d003f app:id/ll_recommend}
+                  android.widget.TextView{13eafd72 V.ED.... ... 33,34-183,135 #7f0d0040 app:id/tv_recommend}
+                android.widget.LinearLayout{c72d5c3 VFE...C. ... 216,0-432,169 #7f0d0041 app:id/ll_category}
+                  android.widget.TextView{21d89e40 V.ED.... ... 33,34-183,135 #7f0d0042 app:id/tv_category}
+                android.widget.LinearLayout{ef31179 VFE...C. ... 432,0-648,169 #7f0d0043 app:id/ll_rank}
+                  android.widget.TextView{29677ebe V.ED.... ... 33,34-183,135 #7f0d0044 app:id/tv_rank}
+                android.widget.LinearLayout{2ea30b1f VFE...C. ... 648,0-864,169 #7f0d0045 app:id/ll_share}
+                  android.widget.TextView{1c95e6c V.ED.... ... 33,34-183,135 #7f0d0046 app:id/tv_share}
+                android.widget.LinearLayout{110a4c35 VFE...C. ... 864,0-1080,169 #7f0d0047 app:id/ll_mine}
+                  android.widget.TextView{a98c8ca V.ED.... ... 70,34-145,135 #7f0d0048 app:id/tv_mine}
