@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 import net.accessiblility.app.store.R;
-import net.accessiblility.app.store.adapter.CommendAppAdapter;
+import net.accessiblility.app.store.adapter.AppAdapter;
 import net.accessiblility.app.store.broadcast.AppInstallReceive;
 import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.controller.DownloadController;
@@ -41,7 +40,7 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
     private ListView listView;
     private TextView tv_loading_tips;
     private ArrayList<AppItemInfo.AppInfo> list_app_item = new ArrayList<AppItemInfo.AppInfo>();//存放后台请求获取的数据
-    private CommendAppAdapter commendAppAdapter;
+    private AppAdapter appAdapter;
     private ArrayList<LocalAppInfo> localAppList;
     private boolean isPrepared;
     /**
@@ -49,8 +48,9 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
      */
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
-            commendAppAdapter = new CommendAppAdapter(getActivity(), list_app_item, localAppList);
-            listView.setAdapter(commendAppAdapter);
+            appAdapter = new AppAdapter(getActivity(), list_app_item, localAppList);
+            listView.setAdapter(appAdapter);
+            tv_loading_tips.setVisibility(View.GONE);
             super.handleMessage(msg);
         }
     };
@@ -65,7 +65,6 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
         DownloadController.setDownloadCallback(this);
         AppInstallReceive.setAppInstallCallback(this);
         isPrepared = true;
-//        Log.d("EEEEEEEEEE", "-----------------FragmentCommend");
         lazyLoad();
         return view;
     }
@@ -75,7 +74,6 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
         if (isPrepared && isVisible) {
             isPrepared = false;
             new AskforDateTesk().execute();
-            Log.d("EEEEEEEEEE", "FragmentCommend");
         }
     }
 
@@ -83,7 +81,13 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
 
         @Override
         protected String doInBackground(Void... params) {
-            askForDate();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    askForDate();
+                }
+            }, 300);
+
             return null;
         }
 
@@ -104,23 +108,21 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
             @Override
             public void onFailure(Throwable t, String strMsg) {
                 super.onFailure(t, strMsg);
-                Log.d("SSSSSS",strMsg.toString());
             }
 
             @Override
             public void onSuccess(Object o) {
                 super.onSuccess(o);
-                tv_loading_tips.setVisibility(View.GONE);
+
                 try {
                     JSONObject jsonObject = new JSONObject(o + "");
                     String code = jsonObject.get("code") + "";
                     if (code.equals("true")) {
                         Gson gson = new Gson();
-                        Log.d("SSSSSS",o.toString());
-                        AppItemInfo info = gson.fromJson(o + "", AppItemInfo.class);
+                        final AppItemInfo info = gson.fromJson(o + "", AppItemInfo.class);
                         list_app_item = (ArrayList<AppItemInfo.AppInfo>) info.getResult();
                         localAppList = AppUtils.getLocalAppInfo(getActivity());
-                        Message message = new Message();
+                        Message message = Message.obtain();
                         handler.sendMessage(message);
 
                     } else {
@@ -138,14 +140,14 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
         if (TextUtils.equals(intent.getAction(), Intent.ACTION_PACKAGE_ADDED)) {
             String packageName = intent.getData().getSchemeSpecificPart();
             String name = AppUtils.getAppNameByPackageName(getActivity(), packageName);
-            commendAppAdapter.updataView(listView, -1, name);
+            appAdapter.updataView(listView, -1, name);
         }
     }
 
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
-        commendAppAdapter.updataView(listView, progress, appName);
+        appAdapter.updataView(listView, progress, appName);
     }
 
     @Override
@@ -162,6 +164,5 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
     public void onSuccess(File file) {
 
     }
-
 
 }

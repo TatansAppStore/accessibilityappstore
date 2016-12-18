@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/list_background_color"
-              android:orientation="vertical">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_background_color"
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
         android:background="@color/list_background_color"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <View
             android:id="@+id/v_line"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginLeft="@dimen/activity_bar_normal_margin"
-            android:background="@mipmap/line_dividing"/>
+            android:background="@mipmap/line_dividing"
+            />
 
         <LinearLayout
             android:id="@+id/ll_app_details"
@@ -24,32 +28,37 @@
             android:layout_height="@dimen/list_item_height"
 
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="4"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/activity_bar_normal_margin"
+                android:layout_weight="4"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
+
                 <ImageView
                     android:id="@+id/iv_app_icon"
-                    android:visibility="visible"
                     android:layout_width="@dimen/list_image_size"
                     android:layout_height="@dimen/list_image_size"
-                    android:src="@color/list_background_color"/>
-
-
+                    android:src="@color/list_background_color"
+                    android:visibility="gone"
+                    />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        >
 
                         <TextView
                             android:id="@+id/tv_app_name"
@@ -57,11 +66,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/list_text_margin_top"
                             android:ellipsize="end"
+                            android:maxEms="4"
                             android:singleLine="true"
                             android:text="天坦电话"
-                            android:maxEms="4"
                             android:textColor="@color/list_text_color_deep"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp"
+                            />
 
                         <TextView
                             android:id="@+id/tv_app_version"
@@ -69,13 +79,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="13dp"
                             android:layout_toRightOf="@id/tv_app_name"
-                            android:paddingTop="10dp"
-                            android:maxEms="6"
-                            android:singleLine="true"
                             android:ellipsize="end"
+                            android:maxEms="6"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
                             android:text="10086"
                             android:textColor="@color/list_text_color_shallow"
-                            android:textSize="10sp"/>
+                            android:textSize="10sp"
+                            />
 
                         <TextView
                             android:id="@+id/tv_app_size"
@@ -88,7 +99,8 @@
                             android:singleLine="true"
                             android:text="14.7M"
                             android:textColor="@color/list_text_color_shallow"
-                            android:textSize="10sp"/>
+                            android:textSize="10sp"
+                            />
                         <!--<TextView-->
                         <!--android:id="@+id/tv_app_state"-->
                         <!--android:layout_toRightOf="@+id/tv_app_name"-->
@@ -113,7 +125,8 @@
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        >
 
                         <TextView
                             android:id="@+id/tv_app_state"
@@ -122,7 +135,8 @@
                             android:text="未下载"
                             android:textColor="@color/list_text_color_deep"
                             android:textSize="13sp"
-                           />
+                            android:visibility="visible"
+                            />
 
                         <TextView
                             android:id="@+id/tv_app_info"
@@ -135,7 +149,8 @@
                             android:singleLine="true"
                             android:text="更新介绍：1"
                             android:textColor="@color/list_text_color_shallow"
-                            android:textSize="10sp"/>
+                            android:textSize="10sp"
+                            />
 
                         <TextView
                             android:id="@+id/tv_progress"
@@ -144,7 +159,8 @@
                             android:layout_toRightOf="@id/tv_app_state"
                             android:textColor="@color/list_text_color_shallow"
                             android:textSize="14sp"
-                            android:visibility="gone"/>
+                            android:visibility="gone"
+                            />
 
                         <ImageView
                             android:id="@+id/iv_delete"
@@ -153,7 +169,8 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="10dp"
                             android:background="@mipmap/btn_delete"
-                            android:visibility="gone"/>
+                            android:visibility="gone"
+                            />
 
                         <TextView
                             android:id="@+id/tv_appUpdateState"
@@ -161,37 +178,41 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="10dp"
-                            android:textColor="@color/list_text_color_deep"/>
+                            android:textColor="@color/list_text_color_deep"
+                            />
 
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
+
             <TextView
                 android:id="@+id/tv_app_delete"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:contentDescription="删除"
+                android:gravity="center"
                 android:text="删除"
                 android:visibility="visible"
-                android:gravity="center"
-                android:contentDescription="删除"
-                android:layout_height="match_parent"
                 />
 
             <TextView
                 android:id="@+id/tv_app_install"
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="等待中"
-                android:gravity="center"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="等待中"
                 />
         </LinearLayout>
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginLeft="@dimen/activity_bar_normal_margin"
-        android:background="@mipmap/line_dividing"/>
+        android:background="@mipmap/line_dividing"
+        />
 
 
 </LinearLayout>

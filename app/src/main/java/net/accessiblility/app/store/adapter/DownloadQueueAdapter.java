@@ -129,7 +129,7 @@ public class DownloadQueueAdapter extends BaseAdapter {
             holder.appInstall.setText("暂停");
         }
 
-        final HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(downloadInfo.getApp_name());
+//        final HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(downloadInfo.getApp_name());
         final ViewHolder finalHolder = holder;
         holder.appInstall.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,10 +140,12 @@ public class DownloadQueueAdapter extends BaseAdapter {
                     AppUtils.httpHashmap.put(downloadInfo.getApp_name(), DownloadController.startDownload(context, downloadInfo));
                 } else if (stateStr.equals("暂停")) {
                     finalHolder.appInstall.setText("下载");
+                    HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(downloadInfo.getApp_name());
                     if (httpHandler != null) {
-                        if (!httpHandler.isStop()) {
-                            httpHandler.stop();
-                        }
+                        Log.e("RRRRRRRRRRRRR", "httpHandler不为空");
+                        httpHandler.stop();
+                    } else {
+                        Log.e("RRRRRRRRRRRRR", "httpHandler为空");
                     }
                 } else {
                     File mFile = new File(DirPath.getMyCacheDir("stores/download/", appName + ".apk"));
@@ -168,6 +170,7 @@ public class DownloadQueueAdapter extends BaseAdapter {
             public void onClick(View view) {
                 final File mFile = new File(DirPath.getMyCacheDir("stores/download/", appName + ".apk"));
                 if (mFile.getName().endsWith(".apk")) {
+                    HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(downloadInfo.getApp_name());
                     if (httpHandler != null) {
                         if (!httpHandler.isStop()) {
                             httpHandler.stop();

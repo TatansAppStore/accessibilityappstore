@@ -6,7 +6,9 @@ package net.accessiblility.app.store.controller;
  */
 public class Controller {
 //    public static String uri = "http://192.168.1.9:8080/android/rest/v1.0/"; //本地
-    public static String uri = "http://115.29.11.17:8093/android/rest/v1.0/";  //服务器
+//    public static String uri = "http://115.29.11.17:8094/android/rest/v1.0/";  //服务器
+
+    public static String uri = "http://192.168.2.156:8094/android/rest/v1.0/";  //服务器
 //    public static String uri01 = "http://192.168.1.9:8080/android/rest/v1.0/"; //本地
 
 //    public static String GetUpdateInfo = uri+"android/validaVersion.do";
@@ -18,13 +20,16 @@ public class Controller {
 //    //搜索跳转到指定应用
 //    public static String FindSpecifyApp = uri+"findapp/findspecifyapp.do";
 
-
     public static String GetUpdateInfo = uri+"findappsec/validaVersion.do";
     public static String ClassifyItem = uri+"findappsec/appclassifyitem.do";
     //专用于热门APP
     public static String FindTagApp = uri+"findappsec/appclassifytag.do";
     public static String SearchApp = uri+"findappsec/searchapp.do";
     public static String GetAllNewApp = uri+"findappsec/validaVersion.do";
+    //排行榜
+    public static String TopChartsApp = uri+"findappsec/topChartsApp.do";
+    //下载
+    public static String DownLoadApp = uri+"findappsec/downLoadApp.do";
     //搜索跳转到指定应用
     public static String FindSpecifyApp = uri+"findappsec/findspecifyapp.do";
 

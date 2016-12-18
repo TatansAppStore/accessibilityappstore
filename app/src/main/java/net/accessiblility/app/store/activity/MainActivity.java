@@ -64,10 +64,19 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
         initFragment();
         initView();
+        header_text = (TextView) findViewById(R.id.header_text);
+        header_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this,SearchActivity.class);
+                    startActivity(intent);
+            }
+        });
 //        createShortCut();
         boolean isAutoUpdate = PreferenceManager.getDefaultSharedPreferences(TatansApplication.getContext()).getBoolean("checkbox_preference_wifi", true);
 
     }
+
 
     public void createShortCut() {
         Intent addShortCut;

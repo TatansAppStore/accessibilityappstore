@@ -1,22 +1,30 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_gravity="fill_horizontal"
+    android:layout_height="fill_parent"
     android:orientation="horizontal"
-    android:layout_height="fill_parent" >
+    >
 
-
-    <TextView android:id="@+id/header_text"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:text="My Title Bar"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:singleLine="true" />
+        />
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/imb_search"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:contentDescription="搜索"-->
+        <!--android:background="@android:drawable/ic_menu_search"-->
+        <!--/>-->
 
 
 
-</RelativeLayout>
+</LinearLayout>

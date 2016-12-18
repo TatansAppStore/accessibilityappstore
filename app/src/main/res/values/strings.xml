@@ -14,7 +14,6 @@
     <string name="title_activity_contact">ContactActivity</string>
 
 
-
     <string name="tutorial_name">Tutorial name</string>
     <string name="tutorial_content">Tutorial content</string>
     <string name="tutorial_previous">Tutorial previous</string>
@@ -82,5 +81,8 @@
     <string name="share_not_repeat">相同内容短时间内不可重复分享</string>
 
     <string name="desc">智能安装app功能演示</string>
+
+    <string name="title_switch_preference_intelligence_click">智能安装</string>
+    <string name="summary_switch__preference_intelligence_click">打开嗨市场自动装，省去安装时频繁点击下一步与完成</string>
 
 </resources>

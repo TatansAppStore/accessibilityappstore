@@ -10,6 +10,7 @@ import net.accessiblility.app.store.model.AppItemInfo;
 import net.accessiblility.app.store.model.DownloadInfo;
 import net.tatans.coeus.network.callback.HttpHandler;
 import net.tatans.coeus.network.callback.HttpRequestCallBack;
+import net.tatans.coeus.network.callback.HttpRequestParams;
 import net.tatans.coeus.network.tools.TatansDb;
 import net.tatans.coeus.network.tools.TatansHttp;
 import net.tatans.coeus.network.utils.DirPath;
@@ -52,17 +53,20 @@ public class DownloadController {
     public static HttpHandler<File> startDownload(final Context context, final DownloadInfo mDownloadInfo) {
         final TatansDb db = TatansDb.create(downloadInfoTable);
         DownloadInfo downloadDbInfo = db.findById(mDownloadInfo.getId(), DownloadInfo.class);
-
+        mDownloadInfo.setDownload_state("等待下载");
+        mDownloadInfo.setDownload_progress(0);
         if (downloadDbInfo == null) {
             mDownloadInfo.setDate(new Date());
             db.save(mDownloadInfo);
         } else {
             db.update(mDownloadInfo);
         }
-        mDownloadInfo.setDownload_state("等待下载");
-        mDownloadInfo.setDownload_progress(0);
+
         TatansHttp fh = new TatansHttp();
-        final String uri = mDownloadInfo.getUri();
+        HttpRequestParams params = new HttpRequestParams();
+        final String  uri = Controller.DownLoadApp;
+        params.put("packageName", mDownloadInfo.getApp_packageName());
+        params.put("versionName", mDownloadInfo.getVersionName());
         final String name = mDownloadInfo.getApp_name();
         //创建下载目录
         File myFile = new File(Environment.getExternalStorageDirectory().getPath(), "/tatans/stores/download");
@@ -75,7 +79,7 @@ public class DownloadController {
             }
         }
 
-        HttpHandler httpHandler = fh.download(uri, DirPath.getMyCacheDir("stores/download/", name + ".apk"), true, new HttpRequestCallBack<File>() {
+        HttpHandler httpHandler = fh.download(uri,params, DirPath.getMyCacheDir("stores/download/", name + ".apk"), true, new HttpRequestCallBack<File>() {
             @Override
             public void onLoading(long count, long current) {
                 int progress = (int) (current * 100 / count);

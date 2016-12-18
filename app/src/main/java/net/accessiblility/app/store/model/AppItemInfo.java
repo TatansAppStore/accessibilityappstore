@@ -1,16 +1,17 @@
 package net.accessiblility.app.store.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *  应用信息
  * Created by tatans on 2015/8/26.
  */
-public class AppItemInfo {
-    public boolean code; //返回值判断请求数据正确与否
-    public int pageNo; //当前页数
-    public int pageCount; //总页数
-    public List<AppInfo> result; //请求结果
+public class AppItemInfo  implements Serializable {
+    private boolean code; //返回值判断请求数据正确与否
+    private int pageNo; //当前页数
+    private int pageCount; //总页数
+    private List<AppInfo> result; //请求结果
 
     public boolean getCode() {
         return code;
@@ -42,17 +43,18 @@ public class AppItemInfo {
         this.result = result;
     }
 
-    public static class AppInfo{
+    public static class AppInfo implements Serializable{
 
-        public String id;
-        public String appName;
-        public String decription; //介绍
-        public String packageName;
-        public int versionCode; //版本号
-        public String versionName; //版本名
-        public String iconUrl; //图标地址
-        public String url; //下载地址
-        public String size; //安装包大小
+        private String id;
+        private String appName;
+        private String decription; //介绍
+        private String packageName;
+        private int versionCode; //版本号
+        private String versionName; //版本名
+        private String iconUrl; //图标地址
+        private String url; //下载地址
+        private String size; //安装包大小
+        private String down; //安装包大小
 
         public String getSize() {
             return size;
@@ -130,6 +132,14 @@ public class AppItemInfo {
         public void setUrl(String url)
         {
             this.url = url;
+        }
+
+        public String getDown() {
+            return down;
+        }
+
+        public void setDown(String down) {
+            this.down = down;
         }
     }
 }

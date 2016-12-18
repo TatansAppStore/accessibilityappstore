@@ -39,11 +39,18 @@
     <!--</PreferenceCategory>-->
 
 
-
     <CheckBoxPreference
-        android:key="checkbox_preference_wifi"
         android:defaultValue="true"
+        android:key="checkbox_preference_wifi"
+        android:summary="@string/summary_switch__preference_auto_upgrade_tips"
         android:title="@string/title_switch_preference_auto_upgrade"
-        android:summary="@string/summary_switch__preference_auto_upgrade_tips" />
+        />
+
+    <PreferenceScreen
+        android:key="preference_screen_intelligence_click"
+        android:summary="@string/summary_switch__preference_intelligence_click"
+        android:title="@string/title_switch_preference_intelligence_click"
+
+        />
 
 </PreferenceScreen>

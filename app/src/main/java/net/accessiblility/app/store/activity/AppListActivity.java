@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 import net.accessiblility.app.store.R;
-import net.accessiblility.app.store.adapter.CommendAppAdapter;
+import net.accessiblility.app.store.adapter.AppAdapter;
 import net.accessiblility.app.store.broadcast.AppInstallReceive;
 import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.controller.DownloadController;
@@ -41,16 +41,17 @@ public class AppListActivity extends BaseActivity implements DownloadController.
     private TextView tv_loading_tips;
     private ArrayList<AppItemInfo.AppInfo> list_app_item = new ArrayList<AppItemInfo.AppInfo>();//存放后台请求获取的数据
     private String classify;
-    private CommendAppAdapter commendAppAdapter;
-
+    private AppAdapter appAdapter;
+    private ArrayList<LocalAppInfo> localAppList;
     /**
      * 通过调用handler实现列表的刷新
      */
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
-            ArrayList<LocalAppInfo> localAppList = AppUtils.getLocalAppInfo(getApplicationContext());
-            commendAppAdapter = new CommendAppAdapter(getApplicationContext(), list_app_item, localAppList);
-            listView.setAdapter(commendAppAdapter);
+
+            appAdapter = new AppAdapter(getApplicationContext(), list_app_item, localAppList);
+            listView.setAdapter(appAdapter);
+            tv_loading_tips.setVisibility(View.GONE);
             super.handleMessage(msg);
         }
     };
@@ -75,14 +76,14 @@ public class AppListActivity extends BaseActivity implements DownloadController.
         if (TextUtils.equals(intent.getAction(), Intent.ACTION_PACKAGE_ADDED)) {
             String packageName = intent.getData().getSchemeSpecificPart();
             String name = AppUtils.getAppNameByPackageName(this, packageName);
-            commendAppAdapter.updataView(listView, -1, name);
+            appAdapter.updataView(listView, -1, name);
         }
     }
 
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
-        commendAppAdapter.updataView(listView, progress, appName);
+        appAdapter.updataView(listView, progress, appName);
     }
 
     @Override
@@ -105,7 +106,13 @@ public class AppListActivity extends BaseActivity implements DownloadController.
 
         @Override
         protected String doInBackground(Void... params) {
-            askForDate(classify);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    askForDate(classify);
+                }
+            }, 300);
+
             return null;
         }
 
@@ -132,7 +139,6 @@ public class AppListActivity extends BaseActivity implements DownloadController.
             @Override
             public void onSuccess(Object o) {
                 super.onSuccess(o);
-                tv_loading_tips.setVisibility(View.GONE);
                 try {
                     JSONObject jsonObject = new JSONObject(o + "");
                     String code = jsonObject.get("code") + "";
@@ -140,7 +146,8 @@ public class AppListActivity extends BaseActivity implements DownloadController.
                         Gson gson = new Gson();
                         AppItemInfo info = gson.fromJson(o + "", AppItemInfo.class);
                         list_app_item = (ArrayList<AppItemInfo.AppInfo>) info.getResult();
-                        Message message = new Message();
+                        localAppList = AppUtils.getLocalAppInfo(getApplicationContext());
+                        Message message = Message.obtain();
                         handler.sendMessage(message);
 
                     } else {

@@ -7,27 +7,34 @@ import android.os.Handler;
 import android.os.Message;
 import android.preference.Preference;
 import android.support.v4.preference.PreferenceFragment;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 
 import net.accessiblility.app.store.R;
-import net.accessiblility.app.store.utils.ShareDialog;
 import net.tatans.coeus.network.tools.TatansToast;
 
 import java.util.HashMap;
 
-import cn.sharesdk.framework.Platform;
-import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
-import cn.sharesdk.sina.weibo.SinaWeibo;
-import cn.sharesdk.tencent.qq.QQ;
-import cn.sharesdk.tencent.qzone.QZone;
-import cn.sharesdk.wechat.friends.Wechat;
-import cn.sharesdk.wechat.moments.WechatMoments;
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.gui.RegisterPage;
 
-public class FragmentMine extends PreferenceFragment implements PlatformActionListener {
+//import cn.sharesdk.framework.Platform;
+//import cn.sharesdk.framework.PlatformActionListener;
+//import cn.sharesdk.framework.ShareSDK;
+//import cn.sharesdk.onekeyshare.OnekeyShare;
+//import cn.sharesdk.sina.weibo.SinaWeibo;
+//import cn.sharesdk.tencent.qq.QQ;
+//import cn.sharesdk.tencent.qzone.QZone;
+//import cn.sharesdk.wechat.friends.Wechat;
+//import cn.sharesdk.wechat.moments.WechatMoments;
+//import cn.smssdk.EventHandler;
+//import cn.smssdk.SMSSDK;
+//import cn.smssdk.gui.RegisterPage;
+
+
+
+public class FragmentMine extends PreferenceFragment {
 
 
     Handler shareHandler = new Handler() {
@@ -73,6 +80,7 @@ public class FragmentMine extends PreferenceFragment implements PlatformActionLi
     public void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
         ShareSDK.initSDK(getActivity());
+        SMSSDK.initSDK(getActivity(), "1a00cc4c683f8", "64e27b5bd4f9e7c3e087b842eca5354a");
         addPreferencesFromResource(R.xml.preference);
 
 
@@ -80,8 +88,38 @@ public class FragmentMine extends PreferenceFragment implements PlatformActionLi
 
             @Override
             public boolean onPreferenceClick(Preference preference) {
-//                showShareDialog(getActivity(), "你好");
                 showShare(getActivity());
+                return true;
+            }
+        });
+
+        findPreference("login_logout").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                //打开注册页面
+                RegisterPage registerPage = new RegisterPage();
+                registerPage.setRegisterCallback(new EventHandler() {
+                    public void afterEvent(int event, int result, Object data) {
+                        // 解析注册结果
+                        if (result == SMSSDK.RESULT_COMPLETE) {
+                            @SuppressWarnings("unchecked")
+                            HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
+                            String country = (String) phoneMap.get("country");
+                            String phone = (String) phoneMap.get("phone");
+                            TatansToast.showAndCancel(country+phone);
+                            findPreference("login_logout").setTitle(phone);
+                        // 提交用户信息（此方法可以不调用）
+//                            registerUser(country, phone);
+                        }
+                    }
+                });
+                registerPage.show(getActivity());
+
+//                //打开通信录好友列表页面
+//                ContactsPage contactsPage = new ContactsPage();
+//                contactsPage.show(getActivity());
                 return true;
             }
         });
@@ -123,153 +161,153 @@ public class FragmentMine extends PreferenceFragment implements PlatformActionLi
         super.onDestroy();
         ShareSDK.stopSDK(getActivity());
     }
-
-    //    public static FragmentMine newInstance(Bundle bundle) {
-//        FragmentMine frag = new FragmentMine();
-//        frag.setArguments(bundle);
-//        return frag;
-//    }
-    //    private View view;
 //
+//    //    public static FragmentMine newInstance(Bundle bundle) {
+////        FragmentMine frag = new FragmentMine();
+////        frag.setArguments(bundle);
+////        return frag;
+////    }
+//    //    private View view;
+////
+////    @Override
+////    public void onActivityCreated(Bundle savedInstanceState) {
+////        super.onActivityCreated(savedInstanceState);
+////    }
+////
+////    @Override
+////    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+////                             Bundle savedInstanceState) {
+////        view = inflater.inflate(R.layout.fragment_mine, null);
+////        getFragmentManager().beginTransaction().replace(android.R.id.content,
+////                new PrefsFragment()).commit();
+////        return view;
+////    }
+////
+////
+////    public static class PrefsFragmentt extends PreferenceFragment {
+////        @Override
+////        public void onCreate(Bundle savedInstanceState) {
+////            super.onCreate(savedInstanceState);
+////            addPreferencesFromResource(R.xml.preference);
+////        }
+////    }
+//    /**
+//     * 显示分享
+//     */
+//    ShareDialog shareDialog;
+//
+//    private void showShareDialog(final Context context, final String shareTxt) {
+//        shareDialog = new ShareDialog(context);
+//        shareDialog.setCancelButtonOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                shareDialog.dismiss();
+//            }
+//        });
+//        shareDialog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//
+//            @SuppressWarnings("unchecked")
+//            @Override
+//            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+//                //noinspection unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked
+//                @SuppressWarnings("unchecked") HashMap<String, Object> item = (HashMap<String, Object>) arg0.getItemAtPosition(arg2);
+//                if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_sina_weibo))) {
+//                    //设置分享内容
+//                    Platform.ShareParams sp = new Platform.ShareParams();
+//                    sp.setText(shareTxt); //分享文本
+//                    //非常重要：获取平台对象
+//                    Platform sinaWeibo = ShareSDK.getPlatform(SinaWeibo.NAME);
+//                    sinaWeibo.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
+//                    //执行分享
+//                    sinaWeibo.share(sp);
+//                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_wechat))) {
+//                    //设置分享内容
+//                    Platform.ShareParams sp = new Platform.ShareParams();
+//                    sp.setShareType(Platform.SHARE_TEXT);//非常重要：一定要设置分享属性
+////                    sp.setTitle("分享标题");  //分享标题
+//                    sp.setText(shareTxt);   //分享文本
+//                    //非常重要：获取平台对象
+//                    Platform wechat = ShareSDK.getPlatform(Wechat.NAME);
+//                    wechat.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
+//                    // 执行分享
+//                    wechat.share(sp);
+//                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_wechat_friends))) {
+//                    //设置分享内容
+//                    Platform.ShareParams sp = new Platform.ShareParams();
+//                    sp.setShareType(Platform.SHARE_TEXT); //非常重要：一定要设置分享属性
+////                    sp.setTitle("分享标题");   //分享文本
+//                    sp.setText(shareTxt);   //分享文本
+//                    //非常重要：获取平台对象
+//                    Platform wechatMoments = ShareSDK.getPlatform(WechatMoments.NAME);
+//                    wechatMoments.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
+//                    // 执行分享
+//                    wechatMoments.share(sp);
+//                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_qq))) {
+//                    //设置分享内容
+//                    Platform.ShareParams sp = new Platform.ShareParams();
+////                    sp.setTitle("分享标题");
+//                    sp.setText(shareTxt);   //分享文本
+//                    sp.setUrl("www.baidu.com");
+//                    //非常重要：获取平台对象
+//                    Platform qq = ShareSDK.getPlatform(QQ.NAME);
+//                    qq.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
+//                    // 执行分享
+//                    qq.share(sp);
+//                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_qqzone))) {
+//                    //设置分享内容
+//                    Platform.ShareParams sp = new Platform.ShareParams();
+////                    sp.setTitle("分享标题");
+//                    sp.setText(shareTxt);
+//                    Platform qzone = ShareSDK.getPlatform(QZone.NAME);
+//                    qzone.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
+//                    // 执行分享
+//                    qzone.share(sp);
+//                }
+//                shareDialog.dismiss();
+//            }
+//        });
+//    }
+//
+//
+//    /**
+//     * 回调的地方是子线程，进行UI操作要用handle处理
+//     */
 //    @Override
-//    public void onActivityCreated(Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
+//    public void onCancel(Platform arg0, int arg1) {
+//        shareHandler.sendEmptyMessage(6);
 //    }
 //
+//    /**
+//     * 回调的地方是子线程，进行UI操作要用handle处理
+//     */
 //    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        view = inflater.inflate(R.layout.fragment_mine, null);
-//        getFragmentManager().beginTransaction().replace(android.R.id.content,
-//                new PrefsFragment()).commit();
-//        return view;
-//    }
-//
-//
-//    public static class PrefsFragmentt extends PreferenceFragment {
-//        @Override
-//        public void onCreate(Bundle savedInstanceState) {
-//            super.onCreate(savedInstanceState);
-//            addPreferencesFromResource(R.xml.preference);
+//    public void onComplete(Platform arg0, int arg1, HashMap<String, Object> arg2) {
+//        /**判断成功的平台是不是新浪微博*/
+//        if (arg0.getName().equals(SinaWeibo.NAME)) {
+//            shareHandler.sendEmptyMessage(1);
+//        } else if (arg0.getName().equals(Wechat.NAME)) {
+//            shareHandler.sendEmptyMessage(2);
+//        } else if (arg0.getName().equals(WechatMoments.NAME)) {
+//            shareHandler.sendEmptyMessage(3);
+//        } else if (arg0.getName().equals(QQ.NAME)) {
+//            shareHandler.sendEmptyMessage(4);
+//        } else if (arg0.getName().equals(QZone.NAME)) {
+//            shareHandler.sendEmptyMessage(5);
 //        }
 //    }
-    /**
-     * 显示分享
-     */
-    ShareDialog shareDialog;
-
-    private void showShareDialog(final Context context, final String shareTxt) {
-        shareDialog = new ShareDialog(context);
-        shareDialog.setCancelButtonOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                shareDialog.dismiss();
-            }
-        });
-        shareDialog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @SuppressWarnings("unchecked")
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                //noinspection unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked,unchecked
-                @SuppressWarnings("unchecked") HashMap<String, Object> item = (HashMap<String, Object>) arg0.getItemAtPosition(arg2);
-                if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_sina_weibo))) {
-                    //设置分享内容
-                    Platform.ShareParams sp = new Platform.ShareParams();
-                    sp.setText(shareTxt); //分享文本
-                    //非常重要：获取平台对象
-                    Platform sinaWeibo = ShareSDK.getPlatform(SinaWeibo.NAME);
-                    sinaWeibo.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
-                    //执行分享
-                    sinaWeibo.share(sp);
-                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_wechat))) {
-                    //设置分享内容
-                    Platform.ShareParams sp = new Platform.ShareParams();
-                    sp.setShareType(Platform.SHARE_TEXT);//非常重要：一定要设置分享属性
-//                    sp.setTitle("分享标题");  //分享标题
-                    sp.setText(shareTxt);   //分享文本
-                    //非常重要：获取平台对象
-                    Platform wechat = ShareSDK.getPlatform(Wechat.NAME);
-                    wechat.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
-                    // 执行分享
-                    wechat.share(sp);
-                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_wechat_friends))) {
-                    //设置分享内容
-                    Platform.ShareParams sp = new Platform.ShareParams();
-                    sp.setShareType(Platform.SHARE_TEXT); //非常重要：一定要设置分享属性
-//                    sp.setTitle("分享标题");   //分享文本
-                    sp.setText(shareTxt);   //分享文本
-                    //非常重要：获取平台对象
-                    Platform wechatMoments = ShareSDK.getPlatform(WechatMoments.NAME);
-                    wechatMoments.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
-                    // 执行分享
-                    wechatMoments.share(sp);
-                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_qq))) {
-                    //设置分享内容
-                    Platform.ShareParams sp = new Platform.ShareParams();
-//                    sp.setTitle("分享标题");
-                    sp.setText(shareTxt);   //分享文本
-                    sp.setUrl("www.baidu.com");
-                    //非常重要：获取平台对象
-                    Platform qq = ShareSDK.getPlatform(QQ.NAME);
-                    qq.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
-                    // 执行分享
-                    qq.share(sp);
-                } else if (item.get("ItemText").equals(context.getResources().getString(R.string.share_to_qqzone))) {
-                    //设置分享内容
-                    Platform.ShareParams sp = new Platform.ShareParams();
-//                    sp.setTitle("分享标题");
-                    sp.setText(shareTxt);
-                    Platform qzone = ShareSDK.getPlatform(QZone.NAME);
-                    qzone.setPlatformActionListener(FragmentMine.this); // 设置分享事件回调
-                    // 执行分享
-                    qzone.share(sp);
-                }
-                shareDialog.dismiss();
-            }
-        });
-    }
-
-
-    /**
-     * 回调的地方是子线程，进行UI操作要用handle处理
-     */
-    @Override
-    public void onCancel(Platform arg0, int arg1) {
-        shareHandler.sendEmptyMessage(6);
-    }
-
-    /**
-     * 回调的地方是子线程，进行UI操作要用handle处理
-     */
-    @Override
-    public void onComplete(Platform arg0, int arg1, HashMap<String, Object> arg2) {
-        /**判断成功的平台是不是新浪微博*/
-        if (arg0.getName().equals(SinaWeibo.NAME)) {
-            shareHandler.sendEmptyMessage(1);
-        } else if (arg0.getName().equals(Wechat.NAME)) {
-            shareHandler.sendEmptyMessage(2);
-        } else if (arg0.getName().equals(WechatMoments.NAME)) {
-            shareHandler.sendEmptyMessage(3);
-        } else if (arg0.getName().equals(QQ.NAME)) {
-            shareHandler.sendEmptyMessage(4);
-        } else if (arg0.getName().equals(QZone.NAME)) {
-            shareHandler.sendEmptyMessage(5);
-        }
-    }
-
-    /**
-     * 回调的地方是子线程，进行UI操作要用handle处理
-     */
-    @Override
-    public void onError(Platform arg0, int arg1, Throwable arg2) {
-        arg2.printStackTrace();
-        Message msg = new Message();
-        msg.what = 7;
-        msg.obj = arg2.getMessage();
-        Log.d("wwwwwwwww", arg2.getMessage());
-        shareHandler.sendMessage(msg);
-    }
+//
+//    /**
+//     * 回调的地方是子线程，进行UI操作要用handle处理
+//     */
+//    @Override
+//    public void onError(Platform arg0, int arg1, Throwable arg2) {
+//        arg2.printStackTrace();
+//        Message msg = new Message();
+//        msg.what = 7;
+//        msg.obj = arg2.getMessage();
+//        Log.d("wwwwwwwww", arg2.getMessage());
+//        shareHandler.sendMessage(msg);
+//    }
 
 }

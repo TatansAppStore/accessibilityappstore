@@ -47,7 +47,6 @@ public class AppUtils {
             tmpInfo.versionName = packageInfo.versionName;
             tmpInfo.versionCode = packageInfo.versionCode;
             tmpInfo.appIcon = packageInfo.applicationInfo.loadIcon(context.getPackageManager());
-
             allAppList.add(tmpInfo);
         }
         return allAppList;

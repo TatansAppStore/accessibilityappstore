@@ -43,12 +43,11 @@ public class DownloadQueueActivity extends BaseActivity implements DownloadContr
         listView = (ListView) findViewById(R.id.lv_test);
         TextView tv_loading_tips = (TextView) findViewById(R.id.tv_loading_tips);
         tv_loading_tips.setVisibility(View.GONE);
-        setMyTitle("全部暂停");
+        setMyTitle("下载队列");
         setTitle(classify);
-
         final TatansDb db = TatansDb.create(DownloadController.downloadInfoTable);
         List<DownloadInfo> mlist = db.findAll(DownloadInfo.class, "Date");
-        final List<DownloadInfo> list = new ArrayList<DownloadInfo>();
+        final List<DownloadInfo> list = new ArrayList<>();
         for (int i = 0; i < mlist.size(); i++) {
             DownloadInfo downloadInfo = mlist.get(i);
             if (downloadInfo.getType() != -1) {
