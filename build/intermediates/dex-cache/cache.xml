@@ -2,32 +2,490 @@
 <items version="2" >
 
     <item
-        jar="E:\workspace\workspacezhou\accessibilityappstore\app\libs\analytics-6.0.4.jar"
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Flickr-2.7.10.jar"
         jumboMode="false"
+        optimize="true"
         revision="22.0.1"
-        sha1="27238b0acdc4e764623a653d5776488783e9ae3f">
-        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\analytics-6.0.4-ca56100ffbf012eb91cb36dafbb197a7129d12e3.jar" />
+        sha1="a77e4669d7fe78fcde115136ad0e3b7da79e93c3">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Flickr-2.7.10_d69bac9879dfed24e7d5745d42900c984a258f92.jar" />
     </item>
     <item
-        jar="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\classes.jar"
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\MobTools-2016.1107.1809.jar"
         jumboMode="false"
+        optimize="true"
         revision="22.0.1"
-        sha1="51e46c58e79e0a45e6373e29207253e2c95ff63b">
-        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\classes-1ba64bf88af6287d6808c77f43ea66bc9651d7bd.jar" />
+        sha1="51ab3d9199c3df198ba8fedb2916027f283676d6">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\MobTools-2016.1107.1809_06b7124b319f9ba5413a60daf3f15dbe836e18be.jar" />
     </item>
     <item
-        jar="E:\workspace\workspacezhou\accessibilityappstore\app\libs\gson-2.3.1.jar"
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Core-2.7.10.jar"
         jumboMode="false"
+        optimize="true"
         revision="22.0.1"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\gson-2.3.1-ab79620b2c3360dc24a3a8d268fa0c5df2e9c978.jar" />
+        sha1="a7e5f9da3635eb8d89b8a9a22cd68cd64cca9104">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Core-2.7.10_aee2c10fc50d96976abbcf8a87c2e83783377d8b.jar" />
     </item>
     <item
-        jar="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\libs\Msc.jar"
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\MobCommons-2016.1107.1809.jar"
         jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="978446ee83b82106e7d859832e4e3440101bda5a">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\MobCommons-2016.1107.1809_1f891ad3d339eaf9853a2ac8565be4a2aa756cdb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\exploded-aar\SMSSDK-2.1.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="e771b37b443378199ab670e072a4469f363533ac">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-SMSSDK-2.1.2_df7bc74b10eca5cfa3cb29e4d4f6268355d0d47d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Mingdao-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="6a0f6e47eff80c88dd4f33d485e30fae969a129c">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Mingdao-2.7.10_38c22293c99e6a61d57b4aeb33b0916e6d9123d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Wechat-Favorite-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="f30192f55e1113b13b6ac5204bbcc19e203b4160">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Favorite-2.7.10_8d534926ad5397c7c017526ff17f8dcd8e05b458.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\com.android.support-appcompat-v7-22.2.1_ce22b80c93173fe780d2aed71cefeb8cef97db21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-WhatsApp-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="c4cd2f25fd980e932908480e8a7f1032dbc00000">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-WhatsApp-2.7.10_107ef72751a0598ea1c005752f72223d283ec485.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\libs\Msc.jar"
+        jumboMode="false"
+        optimize="true"
         revision="22.0.1"
         sha1="85a46b29703ef8930a92d2fdea8ff336275c7ab2">
-        <dex dex="E:\workspace\workspacezhou\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\Msc-64f3aedd36977835b77a551a005739b120625447.jar" />
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\Msc_2e640c1de6c1b5a0a09c23f10c1e67b8b6b919e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Alipay-Moments-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="21f42a3bf9d6f5fc089bc2df13dfdc9a17cc33f3">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-Moments-2.7.10_f8b8ec81b5d7461158040873d8f2b53601891fdb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\internal_impl-22.2.1_4df959af1e3bd01edfd8423c25dc78f0cc4df272.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Pocket-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="1b9e60870b34c799c530c96a6b6007d810bae8d0">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Pocket-2.7.10_3570e6486f921aeca040e5f66de68ac0721c2b5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Instapaper-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="64ee87e868c952a0867db83cb8aed2fd8e968249">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Instapaper-2.7.10_59d7e58139ec77a128e25c4c41549b7eb4fcf429.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-TencentWeibo-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="f391083f803101456937234584e5523d2ccfb909">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-TencentWeibo-2.7.10_af87f66963dd33a9e947a515c4efc2840859d9cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Douban-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="e73a9cf9102bf439fa345b06e5fbdde3e1246132">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Douban-2.7.10_e854481108074afe2cc3c071b7f4fae4dcff0110.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\com.android.support-support-v4-22.2.1_1ff31a367a93e62653788983ebd61950b5ded598.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Kakao-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="3550660fca2600047b942d502b82c44a9a9def89">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Kakao-Core-2.7.10_f4789155135b8181f329993f4cdc985888cc864a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\exploded-aar\SMSSDKGUI-2.1.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="3a63d84564449cb36b6d4ff28bff3acf581d2e13">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-SMSSDKGUI-2.1.2_cd64946dab653360d075dbbe061fc7b08032bc39.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Foursquare-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="9a8230303fae9007c0ae5ccbaad336c0112652b8">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Foursquare-2.7.10_9cd3d0adb76d22f63c8082b11090d3dfd0cf69de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Wechat-Moments-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="a8357a3810c2e5bbb6274042a1508bac87759c5f">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Moments-2.7.10_65b06828c5970fadf145d10edefc5c7d7bb94e94.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Wechat-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="b9e12f2d8a6f01dce27c65ce3b93bccd46e7ffd4">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-2.7.10_95e440011b0aa4bc08bb57299fbed3b6c211d947.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Tumblr-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="85f3f9711abd516c8d21ea4c6bf2cd59147c4020">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Tumblr-2.7.10_2e69708f61b5854a1f876dbf09e2b04f3f2424ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-KakaoTalk-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="5c70e8cfa2a44ba8ff1d021b50025bbacb31875a">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KakaoTalk-2.7.10_673704503dcc910481e2f19a208f93ee50f58915.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Linkedin-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="994f7cbf6ea4ef3c0fbbded655b412c15933fb88">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Linkedin-2.7.10_61b0159c25efb8fe38dd4303301590c918f2a186.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Facebook-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="59d0088bf089e5b659e25d328ab6f4dbf01576d4">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Facebook-2.7.10_47d54eb40a72a3145f473dec4d46ca2311aed12d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Evernote-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="0621ad493330a36fdc39bead7311c1edac34a257">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Evernote-2.7.10_b8f61049bcb1ba602d05cd38cf8f611dd163fc8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk2\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\support-annotations-22.2.1_af75dbecc54d323f16b411d5d83f25e654400243.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Line-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="d33547644fd680ec96607e29d7f45ba25464ba38">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Line-2.7.10_0d1b8c27813fed743b03725270a75cb71a8ebf5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\analytics-6.0.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="27238b0acdc4e764623a653d5776488783e9ae3f">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\analytics-6.0.4_9a787c8ec5b994c1be5ffe383057e69cfc19b781.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Dropbox-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="9f220150a075004b370ad015f954b2e36327777b">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Dropbox-2.7.10_acce4a88b9d9c9af8b22f4150c8b20c4f6f2935b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Yixin-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="48913f532b7be264e9d48b11f22dfaeb391a7040">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-Core-2.7.10_00c2c9ea13b38b1b24dbac2c5edf2343fc93a928.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Yixin-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="689e51fd8e12f60c9d912ba183b85769481e7c19">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-2.7.10_538d94a3a029c0026c8773613940f1b776f5283f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Instagram-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="503b081180daace77f1d89f46b54aea8f050fc8f">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Instagram-2.7.10_d3a3efb193420f648d9cd6f2b922f96185f9fa42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Alipay-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="564ed74723bf716338b2b43c1dabe2a99702c271">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-2.7.10_a734b44e2dd470fdfcc08e681725d01951a8de18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-KaiXin-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="cd2d2f1b9fad9416a7989375db9aa9901120bdf1">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KaiXin-2.7.10_5bf6fcf515e2e88dd7efe8d060eec576276abf68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Renren-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="ff7d4322fa34f4a125935ab0f9291c5a5b862f60">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Renren-2.7.10_1564564e914305832dbeb0d4732ff17b4821980b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-KakaoStory-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="a48b6fb53b9aae4dda22e867815e9cb556df6163">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KakaoStory-2.7.10_a78f4b72cb64c54bcbb3f22731bb4311d0ea5e56.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Yixin-Moments-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="93a947698ebb1c2da63007d6d3418abb3de7329a">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-Moments-2.7.10_487982cca1204922d50fb45d81efba5f47936583.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Alipay-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="5d77ccf68f8d171aca386ba7b47f75f03b20a279">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-Core-2.7.10_14873f9b892c900bd9e06b857868714180119d3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Twitter-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="6984fa7bcd1a42ea927cb88845340cf629cee7ca">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Twitter-2.7.10_8535cc02c88112400e6d605923973d18b5dc5562.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Wechat-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="a720ef31ac89904b603fb2a27c01bb21a951fcad">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Core-2.7.10_5a3308400a9588f554f82676c552eb9fcd2baf91.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Email-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="150a66e246682e5b95e468d56ffdc0eb6c8d9c01">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Email-2.7.10_6f7a8f796f2780070ac2b39b9bd397bcde320527.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-QQ-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="5d3ffc9c4c2743fcc83b3333f77fc252fb146889">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-QQ-2.7.10_aa29be4f00ee600672efb0f4450b8b1635286bf8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-SinaWeibo-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="52574245a489f42699687ba9038c8c803a8e8bcf">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-SinaWeibo-2.7.10_fbb8a0d064322dfd2ffc59ea809e8cad0ec29276.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-QZone-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="158eb0f8525584008bfc92c2c6a4841174133a0a">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-QZone-2.7.10_3f4eaaa4133e251944a86020607c8c784bac1d34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-VKontakte-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="3b7344f083ed06f3fb6bbf4709c20a62aba9cf15">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-VKontakte-2.7.10_b4bd072e60e37f53cd92f084f8a4056a6b544d33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-Pinterest-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="814f3a2fd1669f837f5c6aed833cae78578728aa">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Pinterest-2.7.10_b10c8b0a147fb2f20ce67d7b84426e6add82ae7e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="51e46c58e79e0a45e6373e29207253e2c95ff63b">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-coeus-network-5.4.0-20160718.071437-26_49c2cfb1ce4078cf6d4e5dc5235a89009892f5af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-YouDao-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="9b77839ec80ebc1a92a3c8fd76bb6e465c9ebc15">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-YouDao-2.7.10_75105fcafd7bb75a08b10970149bc9a8ea454c9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-GooglePlus-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="98172e38756598b7abad150f134c0528bd7537b6">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-GooglePlus-2.7.10_e98d55f9ad6105c98ea112bc963e492ef258d9c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\gson-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\gson-2.3.1_f1d187eee776843f6052428284fdb01445a3dd7e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-ShortMessage-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="3763b7bcafdd71a9d48b92be6f2bec532be8a88f">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-ShortMessage-2.7.10_b68acefe9002a797773ccc0f2c7b09b233ed23a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\libs\ShareSDK-FacebookMessenger-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="2bc5cfa7a4d44dccc4bfab1b58e51e0dee567806">
+        <dex dex="C:\Users\Yuliang\Documents\Tencent Files\750749212\FileRecv\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-FacebookMessenger-2.7.10_b93bff962644fdd61b51414bf8aaa4fc20542b33.jar" />
     </item>
 
 </items>

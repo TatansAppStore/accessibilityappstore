@@ -8,7 +8,7 @@ public class Controller {
 //    public static String uri = "http://192.168.1.9:8080/android/rest/v1.0/"; //本地
 //    public static String uri = "http://115.29.11.17:8094/android/rest/v1.0/";  //服务器
 
-    public static String uri = "http://192.168.2.156:8094/android/rest/v1.0/";  //服务器
+    public static String uri = "http://192.168.31.17:8094/android/rest/v1.0/";  //服务器
 //    public static String uri01 = "http://192.168.1.9:8080/android/rest/v1.0/"; //本地
 
 //    public static String GetUpdateInfo = uri+"android/validaVersion.do";
