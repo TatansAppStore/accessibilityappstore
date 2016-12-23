@@ -9,7 +9,7 @@ public class User extends BaseUser {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public User() {
+	public User(int usrId, String userName, String phoneNumber, String enabled) {
 		// TODO Auto-generated constructor stub
 		super();
 	}

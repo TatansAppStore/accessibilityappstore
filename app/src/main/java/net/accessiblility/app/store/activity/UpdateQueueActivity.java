@@ -3,6 +3,8 @@ package net.accessiblility.app.store.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +28,7 @@ import net.tatans.coeus.network.callback.HttpRequestParams;
 import net.tatans.coeus.network.tools.TatansHttp;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,14 +40,27 @@ public class UpdateQueueActivity extends BaseActivity implements DownloadControl
     private String title = "应用更新";
     private static String TAG = "UpdateQueueActivity";
     private DownloadQueueAdapter downloadQueueAdapter;
+    private TextView tv_loading_tips;
+    private ArrayList<LocalAppInfo> localAppList;
+    private List<DownloadInfo> updateList;
+    /**
+     * 通过调用handler实现列表的刷新
+     */
+    Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            downloadQueueAdapter = new DownloadQueueAdapter(UpdateQueueActivity.this, updateList, localAppList);
+            listView.setAdapter(downloadQueueAdapter);
+            tv_loading_tips.setVisibility(View.GONE);
+            super.handleMessage(msg);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_interface);
         listView = (ListView) findViewById(R.id.lv_test);
-        TextView tv_loading_tips = (TextView)findViewById(R.id.tv_loading_tips);
-        tv_loading_tips.setVisibility(View.GONE);
+        tv_loading_tips = (TextView) findViewById(R.id.tv_loading_tips);
         setMyTitle(title);
         setTitle(title);
         DownloadController.setDownloadCallback(this);
@@ -78,10 +94,10 @@ public class UpdateQueueActivity extends BaseActivity implements DownloadControl
                 Gson gson = new Gson();
                 AppInfo appinfo = gson.fromJson(StrJson, AppInfo.class);
                 List<AppInfo.AI> serverList = appinfo.getResults();
-                List<LocalAppInfo> localAppList = AppUtils.getLocalAppInfo(UpdateQueueActivity.this);
-                List<DownloadInfo> updateList = AppUtils.CompareAppUpdate(serverList, localAppList);
-                downloadQueueAdapter = new DownloadQueueAdapter(UpdateQueueActivity.this, updateList, localAppList);
-                listView.setAdapter(downloadQueueAdapter);
+                localAppList = AppUtils.getLocalAppInfo(UpdateQueueActivity.this);
+                updateList = AppUtils.CompareAppUpdate(serverList, localAppList);
+                Message message = Message.obtain();
+                handler.sendMessage(message);
             }
 
             @Override

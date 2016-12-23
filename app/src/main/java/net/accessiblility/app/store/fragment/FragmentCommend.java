@@ -115,6 +115,7 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
                 super.onSuccess(o);
 
                 try {
+                    String oa = o.toString();
                     JSONObject jsonObject = new JSONObject(o + "");
                     String code = jsonObject.get("code") + "";
                     if (code.equals("true")) {

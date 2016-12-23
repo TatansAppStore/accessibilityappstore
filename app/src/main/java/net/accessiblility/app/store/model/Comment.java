@@ -2,8 +2,6 @@ package net.accessiblility.app.store.model;
 
 import net.accessiblility.app.store.model.base.BaseComment;
 
-import java.sql.Timestamp;
-
 
 public class Comment extends BaseComment {
 
@@ -12,8 +10,8 @@ public class Comment extends BaseComment {
 		super();
 	}
 
-	public Comment(int id, String content, Timestamp contentTime, User user, int thumbsUp, int score, Version version) {
-		super(id, content, contentTime, user, thumbsUp, score, version);
+	public Comment(int id, String content, String contentTime, User user, int thumbsUp, int score) {
+		super(id, content, contentTime, user, thumbsUp, score);
 		// TODO Auto-generated constructor stub
 	}
 }

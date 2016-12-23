@@ -32,6 +32,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="热门APP"
+                android:singleLine="true"
+                android:ellipsize="end"
                 android:textColor="@color/activity_bar_text_color"
                 android:textSize="20sp"/>
         </LinearLayout>
