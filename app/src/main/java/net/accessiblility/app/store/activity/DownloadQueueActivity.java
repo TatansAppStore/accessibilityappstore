@@ -120,7 +120,10 @@ public class DownloadQueueActivity extends BaseActivity implements DownloadContr
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
-        downloadQueueAdapter.updataView(listView, progress, appName);
+        if(downloadQueueAdapter!=null){
+            downloadQueueAdapter.updataView(listView, progress, appName);
+        }
+
     }
 
     @Override
@@ -130,9 +133,11 @@ public class DownloadQueueActivity extends BaseActivity implements DownloadContr
     }
 
     @Override
-    public void onFailure(Throwable t, String strMsg) {
+    public void onFailure(Throwable t, String strMsg,String appName) {
         Log.e(TAG, "下载失败");
-
+        if(downloadQueueAdapter!=null){
+                downloadQueueAdapter.updataView(listView, -101, appName);
+        }
     }
 
     @Override

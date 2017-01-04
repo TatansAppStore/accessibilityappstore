@@ -140,6 +140,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
         mFt = getSupportFragmentManager();
         mAdapter = new MainViewPagerAdapter(mFt, mList);
+        pvp.setOffscreenPageLimit(1);
         pvp.setAdapter(mAdapter);
         setViewPagerListener();
         currentPager = 0;

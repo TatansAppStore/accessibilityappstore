@@ -92,9 +92,13 @@ public class AppListActivity extends BaseActivity implements DownloadController.
     }
 
     @Override
-    public void onFailure(Throwable t, String strMsg) {
-
+    public void onFailure(Throwable t, String strMsg, String appName) {
+        if(appAdapter!=null){
+            appAdapter.updataView(listView, -101, appName);
+        }
     }
+
+
 
     @Override
     public void onSuccess(File file) {

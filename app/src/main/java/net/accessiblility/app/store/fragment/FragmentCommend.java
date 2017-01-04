@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,7 +149,11 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
-        appAdapter.updataView(listView, progress, appName);
+        Log.d("aaaaaa",progress+"");
+        if(appAdapter!=null) {
+            appAdapter.updataView(listView, progress, appName);
+        }
+
     }
 
     @Override
@@ -157,9 +162,11 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
     }
 
     @Override
-    public void onFailure(Throwable t, String strMsg) {
+    public void onFailure(Throwable t, String strMsg, String appName) {
+        appAdapter.updataView(listView, -101, appName);
 
     }
+
 
     @Override
     public void onSuccess(File file) {

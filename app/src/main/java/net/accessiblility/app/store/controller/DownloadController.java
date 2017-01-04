@@ -33,7 +33,7 @@ public class DownloadController {
 
         void onStartCallback();
 
-        void onFailure(Throwable t, String strMsg);
+        void onFailure(Throwable t, String strMsg, String appName);
 
         void onSuccess(final File file);
 
@@ -64,7 +64,7 @@ public class DownloadController {
 
         TatansHttp fh = new TatansHttp();
         HttpRequestParams params = new HttpRequestParams();
-        final String  uri = Controller.DownLoadApp;
+        final String uri = Controller.DownLoadApp;
         params.put("packageName", mDownloadInfo.getApp_packageName());
         params.put("versionName", mDownloadInfo.getVersionName());
         final String name = mDownloadInfo.getApp_name();
@@ -79,7 +79,7 @@ public class DownloadController {
             }
         }
 
-        HttpHandler httpHandler = fh.download(uri,params, DirPath.getMyCacheDir("stores/download/", name + ".apk"), true, new HttpRequestCallBack<File>() {
+        HttpHandler httpHandler = fh.download(uri, params, DirPath.getMyCacheDir("stores/download/", name + ".apk"), true, new HttpRequestCallBack<File>() {
             @Override
             public void onLoading(long count, long current) {
                 int progress = (int) (current * 100 / count);
@@ -106,10 +106,10 @@ public class DownloadController {
 
             @Override
             public void onFailure(Throwable t, String strMsg) {
-                Log.e(TAG, "onFailure" + strMsg);
+                Log.e(TAG, "onFailure" + t.toString()+"\n"+strMsg);
                 super.onFailure(t, strMsg);
                 if (mDownloadCallback != null) {
-                    mDownloadCallback.onFailure(t, strMsg);
+                    mDownloadCallback.onFailure(t, strMsg, name);
                 }
                 if (strMsg.equals("user stop download thread")) {
                     Log.e(TAG, "onFailure" + "暂停下载");
@@ -145,7 +145,6 @@ public class DownloadController {
 
         return httpHandler;
     }
-
 
 
     public static DownloadInfo getDownloadInfo(AppItemInfo.AppInfo appInfo) {

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +36,7 @@ public class DownloadQueueAdapter extends BaseAdapter {
     private List<DownloadInfo> itemList;
     private Context context;
     private List<LocalAppInfo> localAppList;
+    private int progress = 0;
 
     public DownloadQueueAdapter(Context context, List<DownloadInfo> list, List<LocalAppInfo> localAppList) {
         this.itemList = list;
@@ -117,16 +117,21 @@ public class DownloadQueueAdapter extends BaseAdapter {
             }
 
         } else if (appStateStr.equals("暂停下载")) {
-            holder.appState.setText(downloadInfo.getDownload_progress() + "%");
-            holder.appInstall.setText("下载");
+            holder.appInstall.setText(downloadInfo.getDownload_progress() + "%");
         } else if (appStateStr.equals("下载失败")) {
-            holder.appState.setText(downloadInfo.getDownload_progress() + "%");
             holder.appInstall.setText("重新下载");
         } else if (appStateStr.equals("下载中")) {
-            holder.appState.setText(downloadInfo.getDownload_progress() + "%");
-            holder.appInstall.setText("暂停");
+            holder.appInstall.setText(downloadInfo.getDownload_progress() + "%");
         } else if (appStateStr.equals("等待下载")) {
-            holder.appInstall.setText("暂停");
+            holder.appInstall.setText("等待中");
+        }
+
+        if (downloadInfo != null) {
+            String state = downloadInfo.getDownload_state();
+            progress = downloadInfo.getDownload_progress();
+            if (state.contains("%")) {
+                holder.appInstall.setText(downloadInfo.getDownload_progress() + "%");
+            }
         }
 
 //        final HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(downloadInfo.getApp_name());
@@ -135,17 +140,14 @@ public class DownloadQueueAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 String stateStr = finalHolder.appInstall.getText().toString();
-                if (stateStr.equals("下载") || stateStr.equals("重新下载") || (stateStr.equals("更新"))) {
-                    finalHolder.appInstall.setText("暂停");
+                if (stateStr.equals("下载") || stateStr.equals("重新下载") || (stateStr.equals("更新") || stateStr.equals("继续"))) {
+
                     AppUtils.httpHashmap.put(downloadInfo.getApp_name(), DownloadController.startDownload(context, downloadInfo));
-                } else if (stateStr.equals("暂停")) {
-                    finalHolder.appInstall.setText("下载");
+                } else if (stateStr.contains("%")) {
+                    finalHolder.appInstall.setText("继续");
                     HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(downloadInfo.getApp_name());
                     if (httpHandler != null) {
-                        Log.e("RRRRRRRRRRRRR", "httpHandler不为空");
                         httpHandler.stop();
-                    } else {
-                        Log.e("RRRRRRRRRRRRR", "httpHandler为空");
                     }
                 } else {
                     File mFile = new File(DirPath.getMyCacheDir("stores/download/", appName + ".apk"));
@@ -245,14 +247,13 @@ public class DownloadQueueAdapter extends BaseAdapter {
                         holder.appState.setText("下载成功");
 
                     } else if (download_progress == -1) {
-                        Log.d("SSSSSSSSSSS", "--------安装成功");
                         holder.appInstall.setText("打开");
                         holder.appState.setText("下载成功");
+                    } else if (download_progress == -101) {
+                        holder.appInstall.setText("继续");
                     } else {
-
-                        holder.appState.setText(download_progress + "%");
+                        holder.appInstall.setText(download_progress + "%");
                     }
-
                 }
             }
         });

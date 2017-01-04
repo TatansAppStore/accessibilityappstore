@@ -135,14 +135,13 @@
                             android:text="未下载"
                             android:textColor="@color/list_text_color_deep"
                             android:textSize="13sp"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             />
 
                         <TextView
                             android:id="@+id/tv_app_info"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
                             android:layout_toRightOf="@id/tv_app_state"
                             android:ellipsize="end"
                             android:paddingTop="1.8dp"

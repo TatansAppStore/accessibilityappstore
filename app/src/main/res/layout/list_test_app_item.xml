@@ -138,7 +138,7 @@
                             android:text="未安装"
                             android:textColor="@color/list_text_color_deep"
                             android:textSize="13sp"
-                            android:visibility="visible"
+                            android:visibility="gone"
 
                             />
 

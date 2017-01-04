@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="coeus-network-5.4.0-20160718.071437-26-">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/coeus-network-5.4.0-20160718.071437-26/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/coeus-network-5.4.0-20160718.071437-26/jars/libs/Msc.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/coeus-network-5.4.0-20160718.071437-26/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/coeus-network-5.4.0-20160718.071437-26/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />

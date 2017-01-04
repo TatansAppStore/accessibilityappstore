@@ -20,7 +20,6 @@ import net.accessiblility.app.store.model.AppItemInfo;
 import net.accessiblility.app.store.model.DownloadInfo;
 import net.accessiblility.app.store.model.LocalAppInfo;
 import net.accessiblility.app.store.utils.AppUtils;
-import net.accessiblility.app.store.utils.CommonUtils;
 import net.tatans.coeus.network.callback.HttpHandler;
 import net.tatans.coeus.network.tools.TatansDb;
 import net.tatans.coeus.network.utils.DirPath;
@@ -39,6 +38,7 @@ public class AppAdapter extends BaseAdapter {
     private Context context;
     private TatansDb db;
     private static String TAG = "AppAdapter";
+    private int progress = 0;
 
     public AppAdapter(Context context, List<AppItemInfo.AppInfo> list, ArrayList<LocalAppInfo> localAppList) {
         this.itemList = list;
@@ -69,8 +69,8 @@ public class AppAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         final AppItemInfo.AppInfo appInfo = itemList.get(position);
-        DownloadInfo downloadDbInfo = db.findById(appInfo.getId(), DownloadInfo.class);
-        ViewHolder holder = null;
+        final DownloadInfo downloadDbInfo = db.findById(appInfo.getId(), DownloadInfo.class);
+        final ViewHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.list_test_app_item, null);
             holder = new ViewHolder();
@@ -96,9 +96,8 @@ public class AppAdapter extends BaseAdapter {
             holder.appDownloadCount.setVisibility(View.VISIBLE);
             holder.appDownloadCount.setText(downloadStr);
         }
-
         holder.appName.setText(itemList.get(position).getAppName());
-        holder.appVersion.setText("版本名：" + itemList.get(position).getVersionName());
+        holder.appVersion.setText("版本：" + itemList.get(position).getVersionName());
         holder.appSize.setText(itemList.get(position).getSize() + "M");
         holder.appInfo.setText((itemList.get(position).getDecription()));
 
@@ -132,10 +131,10 @@ public class AppAdapter extends BaseAdapter {
 
         if (downloadDbInfo != null) {
             String state = downloadDbInfo.getDownload_state();
+            progress = downloadDbInfo.getDownload_progress();
             Log.d(TAG, state);
-            if (state.equals("暂停下载") || state.equals("下载中")) {
-                holder.appState.setText(downloadDbInfo.getDownload_progress() + "%");
-                holder.appDownload.setText("下载");
+            if (state.contains("%")) {
+                holder.appDownload.setText(downloadDbInfo.getDownload_progress() + "%");
             }
         }
 
@@ -144,9 +143,6 @@ public class AppAdapter extends BaseAdapter {
         holder.appDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (CommonUtils.isFastDoubleClick()) {
-                    return;
-                }
                 HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(appInfo.getAppName());
                 String stateStr = finalHolder.appDownload.getText().toString();
                 if (stateStr.equals("打开")) {
@@ -160,13 +156,13 @@ public class AppAdapter extends BaseAdapter {
                         install.setDataAndType(Uri.fromFile(mFile), "application/vnd.android.package-archive");
                         context.startActivity(install);
                     }
-                } else if (stateStr.equals("下载") || stateStr.equals("更新")) {
-                    finalHolder1.appDownload.setText("暂停");
+                } else if (stateStr.equals("下载") || stateStr.equals("更新") || stateStr.equals("继续")) {
+
                     AppUtils.httpHashmap.put(appInfo.getAppName(), DownloadController.startDownload(context, DownloadController.getDownloadInfo(appInfo)));
-                } else if (stateStr.equals("暂停")) {
+                } else if (stateStr.contains("%")) {
                     if (httpHandler != null) {
                         if (!httpHandler.isStop()) {
-                            finalHolder1.appDownload.setText("下载");
+                            finalHolder1.appDownload.setText("继续");
                             httpHandler.stop();
                         }
                     }
@@ -233,8 +229,11 @@ public class AppAdapter extends BaseAdapter {
             } else if (download_progress == -2) {
                 holder.appDownload.setText("暂停");
                 holder.appState.setText("暂停");
+            } else if (download_progress == -101) {
+                holder.appDownload.setText("继续");
             } else {
-                holder.appState.setText(download_progress + "%");
+                progress = download_progress;
+                holder.appDownload.setText(download_progress + "%");
             }
 
         }

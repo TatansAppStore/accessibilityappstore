@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class MainViewPagerAdapter extends FragmentPagerAdapter {
 	private List<Fragment> mList;
-	
+
 	public MainViewPagerAdapter(FragmentManager fm,List<Fragment> list) {
 		super(fm);
 		this.mList = list;

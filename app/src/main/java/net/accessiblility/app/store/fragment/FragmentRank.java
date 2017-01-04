@@ -145,7 +145,10 @@ public class FragmentRank extends BaseFragment implements DownloadController.Dow
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
-        appAdapter.updataView(listView, progress, appName);
+        if(appAdapter!=null) {
+            appAdapter.updataView(listView, progress, appName);
+        }
+
     }
 
     @Override
@@ -154,9 +157,13 @@ public class FragmentRank extends BaseFragment implements DownloadController.Dow
     }
 
     @Override
-    public void onFailure(Throwable t, String strMsg) {
-
+    public void onFailure(Throwable t, String strMsg, String appName) {
+        if(appAdapter!=null){
+            appAdapter.updataView(listView, -101, appName);
+        }
     }
+
+
 
     @Override
     public void onSuccess(File file) {
