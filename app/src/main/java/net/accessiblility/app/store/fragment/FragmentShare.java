@@ -159,6 +159,7 @@ public class FragmentShare extends BaseFragment implements View.OnClickListener 
             @Override
             public void onSuccess(String s) {
                 super.onSuccess(s);
+                Log.d(TAG, "onSuccess: " + s);
             }
 
             @Override
