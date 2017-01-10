@@ -46,14 +46,64 @@
         android:paddingLeft="23dp"
         >
 
-        <TextView
-            android:id="@+id/app_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="59dp"
-            android:gravity="center_vertical"
-            android:text="APP名字"
-            android:focusable="true"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:background="@color/background_black"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="应用名："
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/app_name"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@color/background_black"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="APP名字"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/text_color"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llt_share"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:paddingLeft="23dp"
+        >
+
+        <EditText
+            android:id="@+id/app_introduce"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:background="@color/background_black"
+            android:hint="请输入简单介绍"
             android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
             android:textSize="20sp"
             />
 
@@ -62,7 +112,6 @@
             android:layout_height="1dp"
             android:background="@color/text_color"
             />
-
     </LinearLayout>
 
 
@@ -77,9 +126,9 @@
             android:id="@+id/app_size"
             android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:text="APP大小"
-            android:focusable="true"
             android:textColor="@color/text_color"
             android:textSize="20sp"
             />
@@ -103,9 +152,9 @@
             android:id="@+id/app_package"
             android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:text="APP包名"
-            android:focusable="true"
             android:textColor="@color/text_color"
             android:textSize="20sp"
             />
@@ -129,9 +178,9 @@
             android:id="@+id/app_version"
             android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:text="APP版本"
-            android:focusable="true"
             android:textColor="@color/text_color"
             android:textSize="20sp"
             />
@@ -170,33 +219,6 @@
 
 
     <LinearLayout
-        android:id="@+id/llt_share"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="vertical"
-        android:paddingLeft="23dp"
-        >
-
-        <EditText
-            android:id="@+id/app_introduce"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:hint="请输入简单介绍"
-            android:textColorHint="@color/text_color"
-            android:background="@color/background_black"
-            android:textColor="@color/text_color"
-            android:textSize="20sp"
-            />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/text_color"
-            />
-    </LinearLayout>
-
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="vertical"
@@ -207,9 +229,9 @@
             android:id="@+id/app_upload"
             android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:focusable="true"
             android:gravity="center"
             android:text="上传"
-            android:focusable="true"
             android:textColor="@color/text_color"
             android:textSize="30sp"
             />

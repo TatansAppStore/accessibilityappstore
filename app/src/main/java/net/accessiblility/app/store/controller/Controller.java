@@ -35,6 +35,8 @@ public class Controller {
     //搜索跳转到指定应用
     public static String FindSpecifyApp = uri + "findappsec/findspecifyapp.do";
 
+    public static String UpLoad = uri + "findappsec/upload.do";
+
     //请求所有可更新标签
     public static String GetAppLabelUpdate = uri + "appMark/queryMarkForUpdate.do";
     //下载更新标签

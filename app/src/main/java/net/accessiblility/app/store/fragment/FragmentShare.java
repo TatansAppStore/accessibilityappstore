@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.model.ShareInfo;
 import net.tatans.coeus.network.tools.HttpUtils;
 import net.tatans.coeus.network.tools.TatansToast;
@@ -39,8 +40,8 @@ public class FragmentShare extends BaseFragment {
     private int[] cidArray = {4, 6, 7, 8, 15};
     private String[] sortArr = new String[]{"社交", "工具", "生活", "娱乐", "新闻"};
     private int cid;
-    private TextView app_name, app_size, app_package, app_version, app_sort, app_upload;
-    private EditText app_introduce;
+    private TextView app_size, app_package, app_version, app_sort, app_upload;
+    private EditText app_name, app_introduce;
     private ShareInfo shareInfo;
     private View view;
 
@@ -65,10 +66,9 @@ public class FragmentShare extends BaseFragment {
         if (isPrepared && isVisible) {
             isPrepared = false;
             cid = 0;
-
             ll_main = (LinearLayout) view.findViewById(R.id.ll_main);
             TextView appChoose = (TextView) view.findViewById(R.id.app_choose);
-            app_name = (TextView) view.findViewById(R.id.app_name);
+            app_name = (EditText) view.findViewById(R.id.app_name);
             app_size = (TextView) view.findViewById(R.id.app_size);
             app_package = (TextView) view.findViewById(R.id.app_package);
             app_version = (TextView) view.findViewById(R.id.app_version);
@@ -117,7 +117,7 @@ public class FragmentShare extends BaseFragment {
                 int versionCode = info.versionCode;
                 Signature[] signatures = info.signatures;
                 shareInfo = new ShareInfo("admin", apkSize + "M", appName, packageName, versionName, versionCode, signatures[0].toCharsString(), cid, file);
-                app_name.setText("应用名：" + appName.toString());
+                app_name.setText(appName.toString());
                 app_size.setText("文件大小:" + apkSize + "M");
                 app_package.setText("应用包名：" + packageName);
                 app_version.setText("版本：" + versionName);
@@ -148,14 +148,21 @@ public class FragmentShare extends BaseFragment {
                 app_upload.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (cid == 0) {
-                            TatansToast.showAndCancel("请选择分类");
+                        String mAppName = app_name.getText().toString();
+                        if (mAppName.equals("")) {
+                            TatansToast.showAndCancel("请输入应用名");
                         } else {
-                            if (app_upload.getText().toString().equals("上传")) {
-                                upload(shareInfo);
-                                app_upload.setText("正在上传");
+                            shareInfo.setAppName(mAppName);
+                            if (cid == 0) {
+                                TatansToast.showAndCancel("请选择分类");
+                            } else {
+                                if (app_upload.getText().toString().equals("上传")) {
+                                    upload(shareInfo);
+                                    app_upload.setText("正在上传");
+                                }
                             }
                         }
+
                     }
                 });
             }
@@ -174,7 +181,7 @@ public class FragmentShare extends BaseFragment {
         requestParams.addBodyParameter("sign", shareInfo.getSign());
         requestParams.addBodyParameter("cid", shareInfo.getCid() + "");
         requestParams.addBodyParameter("file", shareInfo.getFile());
-        httpUtils.post("http://115.29.11.17:8094/android/rest/v1.0/findappsec/upload.do", requestParams, new RequestCallBack<String>() {
+        httpUtils.post(Controller.UpLoad, requestParams, new RequestCallBack<String>() {
 
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -199,6 +206,14 @@ public class FragmentShare extends BaseFragment {
             public void onFailure(net.tatans.coeus.exception.HttpException e, String s) {
                 app_upload.setText("上传");
                 TatansToast.showAndCancel(e + s);
+            }
+
+            @Override
+            public void onLoading(long total, long current, boolean isUploading) {
+                super.onLoading(total, current, isUploading);
+                int progress = (int) (current * 100 / total);
+                app_upload.setText(progress + "%");
+
             }
         });
     }
