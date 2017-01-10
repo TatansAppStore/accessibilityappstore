@@ -24,15 +24,7 @@
         android:orientation="horizontal"
         >
 
-        <!--<net.accessiblility.app.store.view.RatingBarView-->
-        <!--android:id="@+id/rb_score"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:starCount="5"-->
-        <!--app:starEmpty="@drawable/staroff"-->
-        <!--app:starFill="@drawable/staron"-->
-        <!--app:starImageSize="20dp"-->
-        <!--/>-->
+
         <TextView
             android:id="@+id/tv_score"
             android:layout_width="wrap_content"

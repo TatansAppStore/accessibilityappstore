@@ -127,11 +127,11 @@ public class DownloadQueueAdapter extends BaseAdapter {
         }
 
         if (downloadInfo != null) {
-            String state = downloadInfo.getDownload_state();
             progress = downloadInfo.getDownload_progress();
-            if (state.contains("%")) {
-                holder.appInstall.setText(downloadInfo.getDownload_progress() + "%");
+            if(progress<100&&progress>=0){
+                holder.appInstall.setText( "继续");
             }
+
         }
 
 //        final HttpHandler<File> httpHandler = AppUtils.httpHashmap.get(downloadInfo.getApp_name());
@@ -141,7 +141,7 @@ public class DownloadQueueAdapter extends BaseAdapter {
             public void onClick(View view) {
                 String stateStr = finalHolder.appInstall.getText().toString();
                 if (stateStr.equals("下载") || stateStr.equals("重新下载") || (stateStr.equals("更新") || stateStr.equals("继续"))) {
-
+                    finalHolder.appInstall.setText("0%");
                     AppUtils.httpHashmap.put(downloadInfo.getApp_name(), DownloadController.startDownload(context, downloadInfo));
                 } else if (stateStr.contains("%")) {
                     finalHolder.appInstall.setText("继续");

@@ -2,6 +2,7 @@ package net.accessiblility.app.store.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,15 +10,11 @@ import android.preference.Preference;
 import android.support.v4.preference.PreferenceFragment;
 
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.activity.login.LoginActivity;
 import net.tatans.coeus.network.tools.TatansToast;
-
-import java.util.HashMap;
 
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
-import cn.smssdk.gui.RegisterPage;
 
 //import cn.sharesdk.framework.Platform;
 //import cn.sharesdk.framework.PlatformActionListener;
@@ -31,7 +28,6 @@ import cn.smssdk.gui.RegisterPage;
 //import cn.smssdk.EventHandler;
 //import cn.smssdk.SMSSDK;
 //import cn.smssdk.gui.RegisterPage;
-
 
 
 public class FragmentMine extends PreferenceFragment {
@@ -80,7 +76,6 @@ public class FragmentMine extends PreferenceFragment {
     public void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
         ShareSDK.initSDK(getActivity());
-        SMSSDK.initSDK(getActivity(), "1a00cc4c683f8", "64e27b5bd4f9e7c3e087b842eca5354a");
         addPreferencesFromResource(R.xml.preference);
 
 
@@ -98,28 +93,31 @@ public class FragmentMine extends PreferenceFragment {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                //打开注册页面
-                RegisterPage registerPage = new RegisterPage();
-                registerPage.setRegisterCallback(new EventHandler() {
-                    public void afterEvent(int event, int result, Object data) {
-                        // 解析注册结果
-                        if (result == SMSSDK.RESULT_COMPLETE) {
-                            @SuppressWarnings("unchecked")
-                            HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
-                            String country = (String) phoneMap.get("country");
-                            String phone = (String) phoneMap.get("phone");
-                            TatansToast.showAndCancel(country+phone);
-                            findPreference("login_logout").setTitle(phone);
-                        // 提交用户信息（此方法可以不调用）
-//                            registerUser(country, phone);
-                        }
-                    }
-                });
-                registerPage.show(getActivity());
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
 
-//                //打开通信录好友列表页面
-//                ContactsPage contactsPage = new ContactsPage();
-//                contactsPage.show(getActivity());
+//                //打开注册页面
+//                RegisterPage registerPage = new RegisterPage();
+//                registerPage.setRegisterCallback(new EventHandler() {
+//                    public void afterEvent(int event, int result, Object data) {
+//                        // 解析注册结果
+//                        if (result == SMSSDK.RESULT_COMPLETE) {
+//                            @SuppressWarnings("unchecked")
+//                            HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
+//                            String country = (String) phoneMap.get("country");
+//                            String phone = (String) phoneMap.get("phone");
+//                            TatansToast.showAndCancel(country+phone);
+//                            findPreference("login_logout").setTitle(phone);
+//                        // 提交用户信息（此方法可以不调用）
+////                            registerUser(country, phone);
+//                        }
+//                    }
+//                });
+//                registerPage.show(getActivity());
+//
+////                //打开通信录好友列表页面
+////                ContactsPage contactsPage = new ContactsPage();
+////                contactsPage.show(getActivity());
                 return true;
             }
         });
@@ -152,7 +150,7 @@ public class FragmentMine extends PreferenceFragment {
         // siteUrl是分享此内容的网站地址，仅在QQ空间使用
         oks.setSiteUrl("http://sharesdk.cn");
 
-       // 启动分享GUI
+        // 启动分享GUI
         oks.show(context);
     }
 

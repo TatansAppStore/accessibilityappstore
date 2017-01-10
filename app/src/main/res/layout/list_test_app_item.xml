@@ -34,7 +34,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/activity_bar_normal_margin"
-                android:layout_weight="4"
+                android:layout_weight="3"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 >
@@ -74,7 +74,7 @@
                             android:singleLine="true"
                             android:text="天坦电话"
                             android:textColor="@color/list_text_color_deep"
-                            android:textSize="20sp"
+                            android:textSize="15sp"
                             />
 
                         <TextView
@@ -207,6 +207,7 @@
                 android:gravity="center"
                 android:onClick="download"
                 android:text="下载"
+                android:textColor="@color/text_color"
                 android:textSize="20sp"
                 />
         </LinearLayout>

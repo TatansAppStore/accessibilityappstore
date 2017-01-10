@@ -37,7 +37,7 @@ import java.util.List;
 public class UpdateQueueActivity extends BaseActivity implements DownloadController.DownloadCallback, AppInstallReceive.AppInstallCallback {
 
     private ListView listView;
-    private String title = "应用更新";
+    private String title = "应用升级";
     private static String TAG = "UpdateQueueActivity";
     private DownloadQueueAdapter downloadQueueAdapter;
     private TextView tv_loading_tips;
@@ -50,7 +50,12 @@ public class UpdateQueueActivity extends BaseActivity implements DownloadControl
         public void handleMessage(Message msg) {
             downloadQueueAdapter = new DownloadQueueAdapter(UpdateQueueActivity.this, updateList, localAppList);
             listView.setAdapter(downloadQueueAdapter);
-            tv_loading_tips.setVisibility(View.GONE);
+            if(updateList.size()==0){
+                tv_loading_tips.setText("当前没有需要升级的应用");
+            }else {
+                tv_loading_tips.setVisibility(View.GONE);
+            }
+
             super.handleMessage(msg);
         }
     };

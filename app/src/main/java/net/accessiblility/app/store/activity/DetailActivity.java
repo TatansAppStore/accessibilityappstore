@@ -23,9 +23,11 @@ import com.google.gson.Gson;
 import net.accessiblility.app.store.R;
 import net.accessiblility.app.store.adapter.AppCommentAdapter;
 import net.accessiblility.app.store.controller.Controller;
+import net.accessiblility.app.store.controller.DownloadController;
 import net.accessiblility.app.store.model.AppItemInfo;
 import net.accessiblility.app.store.model.Comment;
 import net.accessiblility.app.store.model.Version;
+import net.accessiblility.app.store.utils.AppUtils;
 import net.accessiblility.app.store.view.RatingBarView;
 import net.tatans.coeus.network.callback.HttpRequestCallBack;
 import net.tatans.coeus.network.callback.HttpRequestParams;
@@ -36,6 +38,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -47,7 +50,7 @@ import static net.accessiblility.app.store.R.id.et_comment;
  * Created by Lenovo on 2016/12/18.
  */
 
-public class DetailActivity extends BaseActivity {
+public class DetailActivity extends BaseActivity  implements DownloadController.DownloadCallback{
     private ListView listView, mCommentListView;
     private AppItemInfo.AppInfo appInfo;
     List<Comment> commentList = new ArrayList<>();
@@ -66,6 +69,7 @@ public class DetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_interface);
+        DownloadController.setDownloadCallback(this);
         listView = (ListView) findViewById(R.id.lv_test);
         mCommentListView = (ListView) findViewById(R.id.lv_comment);
         TextView tv_loading_tips = (TextView) findViewById(R.id.tv_loading_tips);
@@ -78,6 +82,7 @@ public class DetailActivity extends BaseActivity {
         setTitle(appInfo.getAppName());
         final List<String> list = new ArrayList<>();
         list.add(appInfo.getDecription());
+        list.add("下载");
         list.add("历史版本");
         list.add("评论/评分");
         list.add("用户评论");
@@ -90,11 +95,19 @@ public class DetailActivity extends BaseActivity {
                     case 0:
                         break;
                     case 1:
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                AppUtils.httpHashmap.put(appInfo.getAppName(), DownloadController.startDownload(DetailActivity.this, DownloadController.getDownloadInfo(appInfo)));
+                            }
+                        }).start();
+
                         break;
                     case 2:
-                        showPasswordSetDailog();
+
                         break;
                     case 3:
+                        showPasswordSetDailog();
                         break;
 
                 }
@@ -266,5 +279,25 @@ public class DetailActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onLoading(long count, long current, String appName) {
+
+    }
+
+    @Override
+    public void onStartCallback() {
+
+    }
+
+    @Override
+    public void onFailure(Throwable t, String strMsg, String appName) {
+
+    }
+
+    @Override
+    public void onSuccess(File file) {
+
     }
 }

@@ -96,7 +96,7 @@ dependencies {
     //    compile project(':ShareSDK')
     compile name: 'SMSSDK-2.1.2', ext: 'aar'
     compile name: 'SMSSDKGUI-2.1.2', ext: 'aar'
-    compile name: 'coeus-network-5.4.0-20160718.071437-26', ext: 'aar'
+    compile name: 'coeus-network-debug', ext: 'aar'
     compile files('libs/gson-2.3.1.jar')
     compile files('libs/analytics-6.0.4.jar')
 }

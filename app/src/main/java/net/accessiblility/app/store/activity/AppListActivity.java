@@ -83,7 +83,10 @@ public class AppListActivity extends BaseActivity implements DownloadController.
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
-        appAdapter.updataView(listView, progress, appName);
+        if(appAdapter!=null){
+            appAdapter.updataView(listView, progress, appName);
+        }
+
     }
 
     @Override

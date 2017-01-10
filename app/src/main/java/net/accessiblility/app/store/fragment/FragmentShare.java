@@ -2,6 +2,8 @@ package net.accessiblility.app.store.fragment;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -9,35 +11,38 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.accessiblility.app.store.R;
 import net.accessiblility.app.store.model.ShareInfo;
-import net.tatans.coeus.network.callback.HttpRequestCallBack;
-import net.tatans.coeus.network.callback.HttpRequestParams;
-import net.tatans.coeus.network.tools.TatansHttp;
+import net.tatans.coeus.network.tools.HttpUtils;
+import net.tatans.coeus.network.tools.TatansToast;
+import net.tatans.rhea.network.http.RequestParams;
+import net.tatans.rhea.network.http.ResponseInfo;
+import net.tatans.rhea.network.http.callback.RequestCallBack;
 
 import java.io.File;
-import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentShare extends BaseFragment implements View.OnClickListener {
+public class FragmentShare extends BaseFragment {
     private String TAG = "FragmentShare";
-    private ListView listView;
+    private LinearLayout ll_main;
     private boolean isPrepared;
     private final List<String> list = new ArrayList<>();
-    private int[] cidArray = {4, 6, 7, 8, 10, 14, 15};
+    private int[] cidArray = {4, 6, 7, 8, 15};
+    private String[] sortArr = new String[]{"社交", "工具", "生活", "娱乐", "新闻"};
     private int cid;
-    private TextView tv_upload;
+    private TextView app_name, app_size, app_package, app_version, app_sort, app_upload;
+    private EditText app_introduce;
     private ShareInfo shareInfo;
+    private View view;
 
     @Override
     public void onCreate(Bundle paramBundle) {
@@ -47,13 +52,7 @@ public class FragmentShare extends BaseFragment implements View.OnClickListener 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.list_interface, null);
-        listView = (ListView) view.findViewById(R.id.lv_test);
-        TextView tv_loading_tips = (TextView) view.findViewById(R.id.tv_loading_tips);
-        tv_upload = (TextView) view.findViewById(R.id.tv_upload);
-        tv_loading_tips.setVisibility(View.GONE);
-        tv_upload.setVisibility(View.VISIBLE);
-        tv_upload.setOnClickListener(this);
+        view = inflater.inflate(R.layout.share_detail, null);
         isPrepared = true;
         lazyLoad();
 
@@ -65,107 +64,149 @@ public class FragmentShare extends BaseFragment implements View.OnClickListener 
     protected void lazyLoad() {
         if (isPrepared && isVisible) {
             isPrepared = false;
-            list.clear();
-            list.add("社交");
-            list.add("工具");
-            list.add("生活");
-            list.add("娱乐");
-            list.add("热门APP");
-            list.add("测试");
-            list.add("新闻");
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.list_app_classify_item, R.id.tv_classify, list);
-            listView.setAdapter(adapter);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            cid = 0;
+
+            ll_main = (LinearLayout) view.findViewById(R.id.ll_main);
+            TextView appChoose = (TextView) view.findViewById(R.id.app_choose);
+            app_name = (TextView) view.findViewById(R.id.app_name);
+            app_size = (TextView) view.findViewById(R.id.app_size);
+            app_package = (TextView) view.findViewById(R.id.app_package);
+            app_version = (TextView) view.findViewById(R.id.app_version);
+            app_sort = (TextView) view.findViewById(R.id.app_sort);
+            app_introduce = (EditText) view.findViewById(R.id.app_introduce);
+            app_upload = (TextView) view.findViewById(R.id.app_upload);
+
+            appChoose.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    cid = cidArray[i];
+                public void onClick(View view) {
                     Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.putExtra("cid", cid);
                     intent.setType("application/vnd.android.package-archive");//设置类型，我这里是任意类型，任意后缀的可以这样写。
                     intent.addCategory(Intent.CATEGORY_OPENABLE);
                     startActivityForResult(intent, 1);
-
                 }
             });
-            Log.d("EEEEEEEEEE", "FragmentShare");
         }
-
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {//是否选择，没选择就不会继续
+            ll_main.setVisibility(View.GONE);
             Uri uri = data.getData();//得到uri，后面就是将uri转化成file的过程。
             PackageManager pm = this.getActivity().getPackageManager();
             String path = uri.getPath();
             File file = new File(path);
             long size = file.length();
-            String appName = file.getName();
-
+            int mSize = Integer.valueOf((int) size);
+            BigDecimal apkSize = parseApkSize(mSize);
             PackageInfo info = pm.getPackageArchiveInfo(path, PackageManager.GET_ACTIVITIES | PackageManager.GET_SIGNATURES);
             ApplicationInfo appInfo = null;
             if (info != null) {
                 appInfo = info.applicationInfo;
                 String packageName = appInfo.packageName;
+                String appName = "";
+                try {
+                    appName = pm.getApplicationLabel(
+                            pm.getApplicationInfo(packageName,
+                                    PackageManager.GET_META_DATA)).toString();
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
                 String versionName = info.versionName;
                 int versionCode = info.versionCode;
                 Signature[] signatures = info.signatures;
-//                Toast.makeText(getActivity(), cid + "\n" + path + "\n" + packageName + "\n" + versionName + "\n" + versionCode + "\n" + signatures[0].toCharsString(), Toast.LENGTH_SHORT).show();
-                shareInfo = new ShareInfo("admin", size + "", appName, packageName, versionName, versionCode, signatures[0].toCharsString(), cid, file);
-                list.clear();
-                list.add("用户名：admin");
-                list.add("文件大小:" + size + "b");
-                list.add("APP名字：" + appName);
-                list.add("APP包名：" + packageName);
-                list.add("版本：" + versionName);
-                list.add("版本号：" + versionCode + "");
-                list.add("签名：" + signatures[0].toCharsString());
-                list.add("CID：" + cid + "");
-                list.add("路径：" + path);
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.list_app_classify_item, R.id.tv_classify, list);
-                listView.setAdapter(adapter);
-                listView.setOnItemClickListener(null);
+                shareInfo = new ShareInfo("admin", apkSize + "M", appName, packageName, versionName, versionCode, signatures[0].toCharsString(), cid, file);
+                app_name.setText("应用名：" + appName.toString());
+                app_size.setText("文件大小:" + apkSize + "M");
+                app_package.setText("应用包名：" + packageName);
+                app_version.setText("版本：" + versionName);
+                app_sort.setText("分类");
+                app_sort.setContentDescription("分类,点按可选择分类");
+                app_introduce.setText("");
+                app_sort.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        new AlertDialog.Builder(getActivity())
+                                .setTitle("请选择")
+                                .setIcon(android.R.drawable.ic_dialog_info)
+                                .setSingleChoiceItems(sortArr, 0,
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                                app_sort.setText("分类：" + sortArr[which]);
+                                                cid = cidArray[which];
+                                                shareInfo.setCid(cid);
+                                            }
+                                        }
+                                )
+                                .setNegativeButton("取消", null)
+                                .show();
+                    }
+                });
 
+                app_upload.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (cid == 0) {
+                            TatansToast.showAndCancel("请选择分类");
+                        } else {
+                            if (app_upload.getText().toString().equals("上传")) {
+                                upload(shareInfo);
+                                app_upload.setText("正在上传");
+                            }
+                        }
+                    }
+                });
             }
-
         }
     }
 
-    @Override
-    public void onClick(View view) {
-        TatansHttp tatansHttp = new TatansHttp();
-        HttpRequestParams httpRequestParams = new HttpRequestParams();
-        try {
-            httpRequestParams.put("userName", shareInfo.getUserName());
-            httpRequestParams.put("size", shareInfo.getSize());
-            httpRequestParams.put("appName", shareInfo.getAppName());
-            httpRequestParams.put("packageName", shareInfo.getPackageName());
-            httpRequestParams.put("versionName", shareInfo.getVersionName());
-            httpRequestParams.put("versionCode", shareInfo.getVersionCode() + "");
-            httpRequestParams.put("sign", shareInfo.getSign());
-            httpRequestParams.put("cid", shareInfo.getCid() + "");
-            httpRequestParams.put("file", shareInfo.getFile());
-        } catch (IOException e) {
-            Log.e(TAG, "onCreate: ", e);
-        }
-        tatansHttp.post("http://192.168.1.112:8080/android/rest/v1.0/findappsec/upload.do", httpRequestParams, new HttpRequestCallBack<String>() {
+    private void upload(ShareInfo shareInfo) {
+        HttpUtils httpUtils = new HttpUtils();
+        RequestParams requestParams = new RequestParams();
+        requestParams.addBodyParameter("userName", shareInfo.getUserName());
+        requestParams.addBodyParameter("sizes", shareInfo.getSize());
+        requestParams.addBodyParameter("appName", shareInfo.getAppName());
+        requestParams.addBodyParameter("packageName", shareInfo.getPackageName());
+        requestParams.addBodyParameter("versionName", shareInfo.getVersionName());
+        requestParams.addBodyParameter("versionCode", shareInfo.getVersionCode() + "");
+        requestParams.addBodyParameter("sign", shareInfo.getSign());
+        requestParams.addBodyParameter("cid", shareInfo.getCid() + "");
+        requestParams.addBodyParameter("file", shareInfo.getFile());
+        httpUtils.post("http://115.29.11.17:8094/android/rest/v1.0/findappsec/upload.do", requestParams, new RequestCallBack<String>() {
+
             @Override
-            public void onFailure(Throwable t, String strMsg) {
-                super.onFailure(t, strMsg);
-                Log.d(TAG, "onFailure: " + strMsg);
+            public void onSuccess(ResponseInfo<String> responseInfo) {
+                String result = responseInfo.result;
+                app_upload.setText("上传");
+                if (result.equals("2")) {
+                    TatansToast.showAndCancel("此版本已经存在");
+                    ll_main.setVisibility(View.VISIBLE);
+                } else if (result.equals("3")) {
+                    TatansToast.showAndCancel("非官方版本签名，请去官网下载");
+                    ll_main.setVisibility(View.VISIBLE);
+                } else if (result.equals("true")) {
+                    TatansToast.showAndCancel("上传成功");
+                    ll_main.setVisibility(View.VISIBLE);
+                } else {
+                    TatansToast.showAndCancel("上传失败");
+                    ll_main.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
-            public void onSuccess(String s) {
-                super.onSuccess(s);
-                Log.d(TAG, "onSuccess: " + s);
-            }
-
-            @Override
-            public void onLoading(long count, long current) {
-                super.onLoading(count, current);
+            public void onFailure(net.tatans.coeus.exception.HttpException e, String s) {
+                app_upload.setText("上传");
+                TatansToast.showAndCancel(e + s);
             }
         });
     }
+
+    private BigDecimal parseApkSize(int size) {
+        BigDecimal bd = new BigDecimal((double) size / (1024 * 1024));
+        BigDecimal setScale = bd.setScale(2, BigDecimal.ROUND_DOWN);
+        return setScale;
+    }
+
 }

@@ -23,6 +23,10 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
 
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
     <application
         android:name=".activity.DemoApplication"
         android:allowBackup="true"
@@ -49,12 +53,13 @@
 
         <activity
             android:name=".activity.SplashActivity"
-            android:theme="@android:style/Theme.Black.NoTitleBar"
             android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -113,6 +118,18 @@
 
         <activity
             android:name=".activity.DetailActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".activity.login.RegisterActivity"
             android:screenOrientation="portrait"
             >
         </activity>

@@ -44,7 +44,11 @@ public class DownloadQueueActivity extends BaseActivity implements DownloadContr
         public void handleMessage(Message msg) {
             downloadQueueAdapter = new DownloadQueueAdapter(DownloadQueueActivity.this, list, localAppList);
             listView.setAdapter(downloadQueueAdapter);
-            tv_loading_tips.setVisibility(View.GONE);
+            if(list.size()==0){
+                tv_loading_tips.setText("当前下载队列为空");
+            }else {
+                tv_loading_tips.setVisibility(View.GONE);
+            }
             super.handleMessage(msg);
         }
     };

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -130,12 +129,11 @@ public class AppAdapter extends BaseAdapter {
         }
 
         if (downloadDbInfo != null) {
-            String state = downloadDbInfo.getDownload_state();
             progress = downloadDbInfo.getDownload_progress();
-            Log.d(TAG, state);
-            if (state.contains("%")) {
-                holder.appDownload.setText(downloadDbInfo.getDownload_progress() + "%");
+            if (progress < 100 && progress >= 0) {
+                holder.appDownload.setText("继续");
             }
+
         }
 
         final ViewHolder finalHolder = holder;
@@ -157,7 +155,7 @@ public class AppAdapter extends BaseAdapter {
                         context.startActivity(install);
                     }
                 } else if (stateStr.equals("下载") || stateStr.equals("更新") || stateStr.equals("继续")) {
-
+                    finalHolder1.appDownload.setText("0%");
                     AppUtils.httpHashmap.put(appInfo.getAppName(), DownloadController.startDownload(context, DownloadController.getDownloadInfo(appInfo)));
                 } else if (stateStr.contains("%")) {
                     if (httpHandler != null) {
@@ -177,6 +175,7 @@ public class AppAdapter extends BaseAdapter {
                 Intent intent = new Intent(context, DetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("AppInfo", appInfo);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

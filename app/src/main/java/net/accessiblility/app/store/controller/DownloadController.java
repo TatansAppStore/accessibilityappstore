@@ -93,6 +93,8 @@ public class DownloadController {
                 db.update(mDownloadInfo);
             }
 
+
+
             @Override
             public void onStart() {
                 super.onStart();
