@@ -113,10 +113,14 @@ public class FragmentShare extends BaseFragment {
                 } catch (PackageManager.NameNotFoundException e) {
                     e.printStackTrace();
                 }
+                if (!appName.equals("")) {
+                    app_name.setFocusable(false);
+                }
+
                 String versionName = info.versionName;
                 int versionCode = info.versionCode;
                 Signature[] signatures = info.signatures;
-                shareInfo = new ShareInfo("admin", apkSize + "M", appName, packageName, versionName, versionCode, signatures[0].toCharsString(), cid, file);
+                shareInfo = new ShareInfo("admin", apkSize + "", appName, packageName, versionName, versionCode, signatures[0].toCharsString(), cid, file);
                 app_name.setText(appName.toString());
                 app_size.setText("文件大小:" + apkSize + "M");
                 app_package.setText("应用包名：" + packageName);

@@ -69,7 +69,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="59dp"
                 android:background="@color/background_black"
-                android:focusable="true"
                 android:gravity="center_vertical"
                 android:text="APP名字"
                 android:textColor="@color/text_color"
