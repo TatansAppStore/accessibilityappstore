@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_background_color"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@color/list_background_color"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/activity_bar_normal_margin"
+            android:background="@mipmap/line_dividing"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_app_details"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_bar_normal_margin"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/detail_tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/list_text_margin_top"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="天坦电话"
+                            android:textColor="@color/list_text_color_deep"
+                            android:textSize="15sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/detail_tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_toRightOf="@id/detail_tv_name"
+                            android:ellipsize="end"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:text="评分"
+                            android:textColor="@color/list_text_color_shallow"
+                            android:textSize="10sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/detail_tv_download_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_toRightOf="@id/detail_tv_score"
+                            android:ellipsize="end"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:text="15次下载"
+                            android:textColor="@color/list_text_color_shallow"
+                            android:textSize="10sp"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/detail_tv_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.1M"
+                            android:textColor="@color/list_text_color_deep"
+                            android:textSize="10sp"
+                            />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/activity_bar_normal_margin"
+        android:background="@mipmap/line_dividing"
+        />
+
+
+</LinearLayout>

@@ -10,8 +10,6 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -22,12 +20,12 @@ import com.google.gson.Gson;
 
 import net.accessiblility.app.store.R;
 import net.accessiblility.app.store.adapter.AppCommentAdapter;
+import net.accessiblility.app.store.adapter.DetailAdapter;
 import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.controller.DownloadController;
 import net.accessiblility.app.store.model.AppItemInfo;
 import net.accessiblility.app.store.model.Comment;
 import net.accessiblility.app.store.model.Version;
-import net.accessiblility.app.store.utils.AppUtils;
 import net.accessiblility.app.store.view.RatingBarView;
 import net.tatans.coeus.network.callback.HttpRequestCallBack;
 import net.tatans.coeus.network.callback.HttpRequestParams;
@@ -68,12 +66,9 @@ public class DetailActivity extends BaseActivity  implements DownloadController.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_interface);
+        setContentView(R.layout.detail_activity);
         DownloadController.setDownloadCallback(this);
-        listView = (ListView) findViewById(R.id.lv_test);
-        mCommentListView = (ListView) findViewById(R.id.lv_comment);
-        TextView tv_loading_tips = (TextView) findViewById(R.id.tv_loading_tips);
-        tv_loading_tips.setVisibility(View.GONE);
+        listView = (ListView) findViewById(R.id.lv_detail);
         Intent intent = this.getIntent();
         appInfo = (AppItemInfo.AppInfo) intent.getSerializableExtra("AppInfo");
         version.setVersionCode(appInfo.getVersionCode());
@@ -86,36 +81,45 @@ public class DetailActivity extends BaseActivity  implements DownloadController.
         list.add("历史版本");
         list.add("评论/评分");
         list.add("用户评论");
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_app_classify_item, R.id.tv_classify, list);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        break;
-                    case 1:
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                AppUtils.httpHashmap.put(appInfo.getAppName(), DownloadController.startDownload(DetailActivity.this, DownloadController.getDownloadInfo(appInfo)));
-                            }
-                        }).start();
+        list.add("用户评论");
+        list.add("用户评论");
+        list.add("用户评论");
+        list.add("用户评论");
+        list.add("用户评论");
+        list.add("用户评论");
+        list.add("用户评论");
+        DetailAdapter detailAdapter = new DetailAdapter(this,appInfo,list);
 
-                        break;
-                    case 2:
+        listView.setAdapter(detailAdapter);
 
-                        break;
-                    case 3:
-                        showPasswordSetDailog();
-                        break;
-
-                }
-
-
-            }
-        });
-        requestComments(appInfo);
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                switch (i) {
+//                    case 0:
+//                        break;
+//                    case 1:
+//                        new Thread(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                AppUtils.httpHashmap.put(appInfo.getAppName(), DownloadController.startDownload(DetailActivity.this, DownloadController.getDownloadInfo(appInfo)));
+//                            }
+//                        }).start();
+//
+//                        break;
+//                    case 2:
+//
+//                        break;
+//                    case 3:
+//                        showPasswordSetDailog();
+//                        break;
+//
+//                }
+//
+//
+//            }
+//        });
+//        requestComments(appInfo);
     }
 
     private int ratingScore = 5;
