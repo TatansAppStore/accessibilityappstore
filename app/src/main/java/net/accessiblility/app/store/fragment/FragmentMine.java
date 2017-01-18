@@ -11,10 +11,15 @@ import android.support.v4.preference.PreferenceFragment;
 
 import net.accessiblility.app.store.R;
 import net.accessiblility.app.store.activity.login.LoginActivity;
+import net.accessiblility.app.store.activity.login.PersonalDataActivity;
+import net.accessiblility.app.store.utils.ConstantValues;
+import net.tatans.coeus.network.tools.TatansPreferences;
 import net.tatans.coeus.network.tools.TatansToast;
 
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
+
+import static android.app.Activity.RESULT_OK;
 
 //import cn.sharesdk.framework.Platform;
 //import cn.sharesdk.framework.PlatformActionListener;
@@ -31,6 +36,7 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 
 
 public class FragmentMine extends PreferenceFragment {
+    private Preference loginPreference;
 
 
     Handler shareHandler = new Handler() {
@@ -77,8 +83,6 @@ public class FragmentMine extends PreferenceFragment {
         super.onCreate(paramBundle);
         ShareSDK.initSDK(getActivity());
         addPreferencesFromResource(R.xml.preference);
-
-
         findPreference("share_app").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 
             @Override
@@ -88,41 +92,46 @@ public class FragmentMine extends PreferenceFragment {
             }
         });
 
-        findPreference("login_logout").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        loginPreference = findPreference("login_logout");
+        loginPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 
             @Override
             public boolean onPreferenceClick(Preference preference) {
+                if (loginPreference.getTitle().equals("未登录")) {
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    startActivityForResult(intent, 1);
+                } else {
+                    Intent intent = new Intent(getActivity(), PersonalDataActivity.class);
+                    startActivityForResult(intent, 2);
+                }
 
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-
-//                //打开注册页面
-//                RegisterPage registerPage = new RegisterPage();
-//                registerPage.setRegisterCallback(new EventHandler() {
-//                    public void afterEvent(int event, int result, Object data) {
-//                        // 解析注册结果
-//                        if (result == SMSSDK.RESULT_COMPLETE) {
-//                            @SuppressWarnings("unchecked")
-//                            HashMap<String,Object> phoneMap = (HashMap<String, Object>) data;
-//                            String country = (String) phoneMap.get("country");
-//                            String phone = (String) phoneMap.get("phone");
-//                            TatansToast.showAndCancel(country+phone);
-//                            findPreference("login_logout").setTitle(phone);
-//                        // 提交用户信息（此方法可以不调用）
-////                            registerUser(country, phone);
-//                        }
-//                    }
-//                });
-//                registerPage.show(getActivity());
-//
-////                //打开通信录好友列表页面
-////                ContactsPage contactsPage = new ContactsPage();
-////                contactsPage.show(getActivity());
                 return true;
             }
+
         });
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        String user = (String) TatansPreferences.get(ConstantValues.KEY_USER, "");
+        if (user.equals("")) {
+            loginPreference.setTitle("未登录");
+        } else {
+            loginPreference.setTitle(user);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                String userName = data.getStringExtra("USER_NAME");
+                loginPreference.setTitle(userName);
+            }
+        }
+    }
 
     private void showShare(Context context) {
         OnekeyShare oks = new OnekeyShare();

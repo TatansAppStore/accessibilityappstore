@@ -175,6 +175,7 @@ public class AppAdapter extends BaseAdapter {
                 Intent intent = new Intent(context, DetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("AppInfo", appInfo);
+                intent.putExtra("STATE", holder.appDownload.getText().toString());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtras(bundle);
                 context.startActivity(intent);

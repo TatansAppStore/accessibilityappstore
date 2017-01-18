@@ -53,20 +53,38 @@
 
 
         <EditText
-            android:id="@+id/login_et_password"
-            android:layout_width="match_parent"
+
+            android:id="@+id/et_code"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_margin="1dp"
+            android:layout_weight="3"
             android:background="@color/background_black"
-            android:hint="请输入密码"
-            android:inputType="textPassword"
-            android:maxLength="16"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="4"
             android:padding="10dp"
             android:textColor="@color/text_color"
             android:textColorHint="@color/text_color"
             android:textSize="17sp"
             />
+
+
+        <Button
+            android:id="@+id/btn_code"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/background_black"
+            android:padding="10dp"
+            android:text="获取验证码"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            />
+
     </LinearLayout>
 
     <LinearLayout
@@ -80,12 +98,12 @@
         >
 
         <Button
-            android:id="@+id/login_btn_login"
+            android:id="@+id/login_btn_next"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:background="@color/background_black"
-            android:text="登录"
+            android:text="下一步"
             android:textColor="@color/text_color"
             android:textSize="17sp"
             />
@@ -98,29 +116,30 @@
         android:layout_marginTop="20dp"
         >
 
-        <TextView
-            android:id="@+id/login_tv_fast_register"
+        <Button
+            android:id="@+id/login_tv_pre"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:text="快速注册"
+            android:text="上一步"
+            android:background="@color/background_black"
             android:textColor="@color/text_color"
             android:textSize="15sp"
             />
 
-        <TextView
-            android:id="@+id/login_tv_forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="忘记密码"
-            android:textColor="@color/text_color"
-            android:textSize="15sp"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/login_tv_forgot_password"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="忘记密码"-->
+            <!--android:textColor="@color/text_color"-->
+            <!--android:textSize="15sp"-->
+            <!--/>-->
     </RelativeLayout>
 
 

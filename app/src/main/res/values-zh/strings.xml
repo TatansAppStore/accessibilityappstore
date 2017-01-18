@@ -65,22 +65,22 @@
     <string name="title_tatans">内容为空</string>
     <string name="title_tatans_clean_data">空</string>
 
-    <string name="title_intent_login_logout">登录/注销</string>
-    <string name="summary_intent_login_logout">登录/注销--描述</string>
+    <string name="title_intent_login_logout">未登录</string>
+    <string name="summary_intent_login_logout"></string>
     <string name="title_intent_apps_upgrade">应用升级</string>
-    <string name="summary_intent_apps_upgrade">应用升级--描述</string>
+    <string name="summary_intent_apps_upgrade">升级手机中安装的应用</string>
     <string name="title_intent_download">下载</string>
-    <string name="summary_intent_download">下载--描述</string>
+    <string name="summary_intent_download">应用下载队列</string>
     <string name="title_intent_apps_uninstall">应用卸载</string>
-    <string name="summary_intent_apps_uninstall">应用卸载--描述</string>
+    <string name="summary_intent_apps_uninstall">卸载手机中安装的应用</string>
     <string name="title_intent_setting">设置</string>
-    <string name="summary_intent_setting">设置--描述</string>
+    <string name="summary_intent_setting"></string>
     <string name="title_intent_personal_data">个人资料</string>
-    <string name="summary_intent_personal_data">个人资料--描述</string>
+    <string name="summary_intent_personal_data"></string>
     <string name="title_intent_scoreboard">积分榜</string>
     <string name="summary_intent_scoreboard">积分榜--描述</string>
     <string name="title_intent_share">分享应用</string>
-    <string name="summary_intent_share">分享应用--描述</string>
+    <string name="summary_intent_share">将嗨市场分享给身边的朋友</string>
 
     <string name="title_switch_preference_auto_upgrade">自动更新</string>
     <string name="summary_switch__preference_auto_upgrade_tips">WLAN网络下,锁屏自动更新</string>

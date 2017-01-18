@@ -59,14 +59,14 @@
             android:targetPackage="net.accessiblility.app.store" />
     </PreferenceScreen>
 
-    <PreferenceScreen
-        android:summary="@string/summary_intent_personal_data"
-        android:title="@string/title_intent_personal_data">
+    <!--<PreferenceScreen-->
+        <!--android:summary="@string/summary_intent_personal_data"-->
+        <!--android:title="@string/title_intent_personal_data">-->
 
-        <!--<intent android:action="android.intent.action.VIEW"-->
-        <!--android:data="http://www.baidu.com" />-->
+        <!--&lt;!&ndash;<intent android:action="android.intent.action.VIEW"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:data="http://www.baidu.com" />&ndash;&gt;-->
 
-    </PreferenceScreen>
+    <!--</PreferenceScreen>-->
 
     <!--<PreferenceScreen-->
     <!--android:title="@string/title_intent_scoreboard"

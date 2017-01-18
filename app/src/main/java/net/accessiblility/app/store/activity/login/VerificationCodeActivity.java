@@ -2,6 +2,7 @@ package net.accessiblility.app.store.activity.login;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
@@ -10,17 +11,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import net.accessiblility.app.store.R;
 import net.accessiblility.app.store.activity.BaseActivity;
-import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.utils.CountDownTimerUtils;
 import net.accessiblility.app.store.utils.PhoneFormatCheckUtils;
-import net.tatans.coeus.network.callback.HttpRequestCallBack;
-import net.tatans.coeus.network.callback.HttpRequestParams;
-import net.tatans.coeus.network.tools.TatansHttp;
 import net.tatans.coeus.network.tools.TatansToast;
 
 import java.util.regex.Matcher;
@@ -32,38 +29,45 @@ import cn.smssdk.SMSSDK;
 /**
  * Created by Administrator on 2016/10/26.
  */
-public class RegisterActivity extends BaseActivity implements View.OnClickListener {
+public class VerificationCodeActivity extends BaseActivity implements View.OnClickListener {
+    private EditText mPhoneNum, mCode;
+    private Button mBtnCode, mBtnNext;
+    private VerificationCodeActivity.SmsObserver smsObserver;
     private EventHandler eh;
-    private TextView btnCode, btnRegister;
-    private EditText etCode, etPhoneNum, etPassword, etPasswordAgain;
-    private SmsObserver smsObserver;
-    private String password;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setMyTitle("账号注册");
-        setTitle("账号注册");
-        setContentView(R.layout.activity_login_register);
-        etPhoneNum = (EditText) findViewById(R.id.et_phone_num);
-        etPassword = (EditText) findViewById(R.id.et_password);
-        etPasswordAgain = (EditText) findViewById(R.id.et_password_again);
-        etCode = (EditText) findViewById(R.id.et_code);
-        btnCode = (TextView) findViewById(R.id.btn_code);
-        btnRegister = (TextView) findViewById(R.id.btn_register);
-        btnCode.setOnClickListener(this);
-        btnRegister.setOnClickListener(this);
+        setContentView(R.layout.activity_login_verification_code);
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("TITLE");
+        String phoneNum = intent.getStringExtra("PHONE_NUM");
+        setMyTitle(title);
+        setTitle(title);
+        mPhoneNum = (EditText) findViewById(R.id.login_et_phone);
+        if(title.equals("修改密码")){
+            mPhoneNum.setFocusable(false);
+        }
+        mPhoneNum.setText(phoneNum);
+        mCode = (EditText) findViewById(R.id.et_code);
+        mBtnCode = (Button) findViewById(R.id.btn_code);
+        mBtnCode.setOnClickListener(this);
+        mBtnNext = (Button) findViewById(R.id.login_btn_next);
+        mBtnNext.setOnClickListener(this);
+        Button pre = (Button) findViewById(R.id.login_tv_pre);
+        pre.setOnClickListener(this);
         initEventHandler();
-        smsObserver = new SmsObserver(this, smsHandler);
+        smsObserver = new VerificationCodeActivity.SmsObserver(this, smsHandler);
         getContentResolver().registerContentObserver(SMS_INBOX, true, smsObserver);
     }
+
 
     public Handler smsHandler = new Handler() {
         // 这里可以进行回调的操作
         // TODO
         public void handleMessage(android.os.Message msg) {
-            etCode.setText((String) msg.obj);
+            mCode.setText((String) msg.obj);
         }
     };
 
@@ -119,7 +123,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     //回调完成
                     if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
                         //提交验证码成功
-                        register(phoneNum, password, "86");
+                        String phoneNum = mPhoneNum.getText().toString();
+                        Intent intent = new Intent(VerificationCodeActivity.this,ResetPasswordActivity.class);
+                        intent.putExtra("PHONE_NUM",phoneNum);
+                        startActivity(intent);
+                        finish();
+
                     } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                         //获取验证码成功
                     } else if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {
@@ -137,47 +146,18 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         SMSSDK.registerEventHandler(eh);
     }
 
-    /**
-     * 注册
-     */
-    private void register(String phoneNum, String password, String country) {
-        String uri = "";
-        HttpRequestParams params = new HttpRequestParams();
-        uri = Controller.RegisterUser;
-        params.put("phoneNumber", phoneNum);
-        params.put("password", password);
-        params.put("country", country);
-        TatansHttp fh = new TatansHttp();
-        fh.postAsync(uri, params, new HttpRequestCallBack() {
-            @Override
-            public void onFailure(Throwable t, String strMsg) {
-                super.onFailure(t, strMsg);
-                TatansToast.showAndCancel(t.getMessage() + strMsg + "_______________________________");
-            }
-
-            @Override
-            public void onSuccess(final Object o) {
-                super.onSuccess(o);
-                if (o.toString().equals("2")) {
-                    TatansToast.showAndCancel("该手机号已经注册");
-                } else {
-                    TatansToast.showAndCancel("注册成功");
-                    RegisterActivity.this.finish();
-                }
-
-            }
-        });
-    }
-
-    String phoneNum;
 
     @Override
     public void onClick(View view) {
-        phoneNum = etPhoneNum.getText().toString();
         switch (view.getId()) {
+            case R.id.login_tv_pre:
+                finish();
+                break;
+
             case R.id.btn_code:
+                String phoneNum = mPhoneNum.getText().toString();
                 if (!phoneNum.equals("") && PhoneFormatCheckUtils.isChinaPhoneLegal(phoneNum)) {
-                    CountDownTimerUtils countDownTimerUtils = new CountDownTimerUtils(btnCode, 60000, 1000);
+                    CountDownTimerUtils countDownTimerUtils = new CountDownTimerUtils(mBtnCode, 60000, 1000);
                     countDownTimerUtils.start();
                     SMSSDK.getVerificationCode("86", phoneNum);
                 } else {
@@ -185,29 +165,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 }
                 break;
 
-            case R.id.btn_register:
-                password = etPassword.getText().toString();
-                String passwordAgain = etPasswordAgain.getText().toString();
-                String code = etCode.getText().toString();
-                if (!phoneNum.equals("") && PhoneFormatCheckUtils.isChinaPhoneLegal(phoneNum)) {
-                    if (password.length() >= 6 && password.length() < 20) {
-                        if (passwordAgain.length() >= 6 && passwordAgain.length() < 20) {
-                            if (password.equals(passwordAgain)) {
-                                if (code.length() == 4) {
-                                    SMSSDK.submitVerificationCode("86", phoneNum, code);
-
-                                } else {
-                                    TatansToast.showAndCancel("请输入验证码");
-                                }
-                            } else {
-                                TatansToast.showAndCancel("两次输入密码不一致");
-                            }
-                        } else {
-                            TatansToast.showAndCancel("请再次输入6-20位密码");
-                        }
-
+            case R.id.login_btn_next:
+                String phoneNumStr = mPhoneNum.getText().toString();
+                String code = mCode.getText().toString();
+                if (!phoneNumStr.equals("") && PhoneFormatCheckUtils.isChinaPhoneLegal(phoneNumStr)) {
+                    if (code.length() == 4) {
+                        SMSSDK.submitVerificationCode("86", phoneNumStr, code);
                     } else {
-                        TatansToast.showAndCancel("请输入6-20位密码");
+                        TatansToast.showAndCancel("请输入验证码");
                     }
                 } else {
                     TatansToast.showAndCancel("请输入正确的手机号码");
@@ -217,9 +182,4 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        SMSSDK.unregisterEventHandler(eh);
-    }
 }

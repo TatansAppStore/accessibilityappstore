@@ -135,6 +135,29 @@
         </activity>
 
         <activity
+            android:name=".activity.login.VerificationCodeActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".activity.login.ResetPasswordActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".activity.login.PersonalDataActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".activity.login.ModifyActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
             android:name=".activity.SearchActivity"
             android:screenOrientation="portrait"
             >

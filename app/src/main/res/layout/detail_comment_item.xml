@@ -69,7 +69,7 @@
                         >
 
                         <TextView
-                            android:id="@+id/detail_tv_assess_number"
+                            android:id="@+id/detail_tv_comment_number"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="110人参与评价"
@@ -83,7 +83,7 @@
 
             </LinearLayout>
             <Button
-                android:id="@+id/detail_btn_assess"
+                android:id="@+id/detail_btn_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -92,7 +92,7 @@
                 android:onClick="download"
                 android:text="我要评价"
                 android:textColor="@color/text_color"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 />
         </LinearLayout>
     </LinearLayout>

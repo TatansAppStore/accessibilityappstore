@@ -4,16 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="5dp"
     >
     <TextView
         android:id="@+id/detail_tv_introduce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="修复了一些bug"
-        android:layout_marginLeft="23dp"
+        android:padding="5dp"
+        android:layout_marginLeft="17dp"
         android:textColor="@color/list_text_color_deep"
         android:textSize="15sp"
         />
+
+
+
 
 </LinearLayout>

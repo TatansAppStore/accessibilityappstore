@@ -34,8 +34,17 @@ public class Controller {
     public static String DownLoadApp = uri + "findappsec/downLoadApp.do";
     //搜索跳转到指定应用
     public static String FindSpecifyApp = uri + "findappsec/findspecifyapp.do";
-
+    //上传
     public static String UpLoad = uri + "findappsec/upload.do";
+    //注册
+    public static String RegisterUser = uri + "findappsec/registerUser.do";
+    //登录
+    public static String LoginUser = uri + "findappsec/loginUser.do";
+    //修改密码
+    public static String ModifyPassword = uri + "findappsec/modifyPassword.do";
+
+    //修改用户名
+    public static String ModifyUserName = uri + "findappsec/modifyUserName.do";
 
     //请求所有可更新标签
     public static String GetAppLabelUpdate = uri + "appMark/queryMarkForUpdate.do";

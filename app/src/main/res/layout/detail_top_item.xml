@@ -72,7 +72,6 @@
                             android:layout_toRightOf="@id/detail_tv_name"
                             android:ellipsize="end"
                             android:paddingTop="10dp"
-                            android:singleLine="true"
                             android:text="评分"
                             android:textColor="@color/list_text_color_shallow"
                             android:textSize="10sp"
@@ -85,6 +84,7 @@
                             android:layout_marginLeft="13dp"
                             android:layout_toRightOf="@id/detail_tv_score"
                             android:ellipsize="end"
+                            android:visibility="gone"
                             android:paddingTop="10dp"
                             android:singleLine="true"
                             android:text="15次下载"
@@ -111,7 +111,18 @@
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
-
+            <Button
+                android:id="@+id/detail_btn_history_version"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/background_black"
+                android:onClick="download"
+                android:text="历史版本"
+                android:textColor="@color/text_color"
+                android:textSize="15sp"
+                />
         </LinearLayout>
     </LinearLayout>
 

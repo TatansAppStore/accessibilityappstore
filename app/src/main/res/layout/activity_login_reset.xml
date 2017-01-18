@@ -12,28 +12,28 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="30dp"
         android:background="@color/background_white"
         android:orientation="horizontal"
         >
 
 
         <EditText
-            android:id="@+id/login_et_phone"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_margin="1dp"
             android:background="@color/background_black"
-            android:hint="请输入手机号"
-            android:inputType="phone"
-            android:maxLength="11"
+            android:hint="请输入6-20位密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
             android:padding="10dp"
             android:textColor="@color/text_color"
             android:textColorHint="@color/text_color"
             android:textSize="17sp"
             />
     </LinearLayout>
+
 
     <View
         android:layout_width="match_parent"
@@ -53,13 +53,13 @@
 
 
         <EditText
-            android:id="@+id/login_et_password"
+            android:id="@+id/et_password_again"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_margin="1dp"
             android:background="@color/background_black"
-            android:hint="请输入密码"
+            android:hint="再次输入6-20位密码"
             android:inputType="textPassword"
             android:maxLength="16"
             android:padding="10dp"
@@ -68,6 +68,7 @@
             android:textSize="17sp"
             />
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,48 +81,15 @@
         >
 
         <Button
-            android:id="@+id/login_btn_login"
+            android:id="@+id/btn_complete"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:background="@color/background_black"
-            android:text="登录"
+            android:text="完成"
             android:textColor="@color/text_color"
             android:textSize="17sp"
             />
     </LinearLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        >
-
-        <TextView
-            android:id="@+id/login_tv_fast_register"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"
-            android:gravity="center"
-            android:text="快速注册"
-            android:textColor="@color/text_color"
-            android:textSize="15sp"
-            />
-
-        <TextView
-            android:id="@+id/login_tv_forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="忘记密码"
-            android:textColor="@color/text_color"
-            android:textSize="15sp"
-            />
-    </RelativeLayout>
-
 
 </LinearLayout>

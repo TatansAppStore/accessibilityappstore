@@ -62,6 +62,42 @@
             android:layout_margin="1dp"
             android:background="@color/background_black"
             android:hint="请输入6-20位密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:padding="10dp"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
+            android:textSize="17sp"
+            />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/background_white"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:background="@color/background_white"
+        android:orientation="horizontal"
+        >
+
+
+        <EditText
+            android:id="@+id/et_password_again"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="1dp"
+            android:background="@color/background_black"
+            android:hint="再次输入6-20位密码"
+            android:inputType="textPassword"
             android:maxLength="16"
             android:padding="10dp"
             android:textColor="@color/text_color"
