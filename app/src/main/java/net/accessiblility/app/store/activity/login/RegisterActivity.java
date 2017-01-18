@@ -2,6 +2,7 @@ package net.accessiblility.app.store.activity.login;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
@@ -16,11 +17,14 @@ import android.widget.TextView;
 import net.accessiblility.app.store.R;
 import net.accessiblility.app.store.activity.BaseActivity;
 import net.accessiblility.app.store.controller.Controller;
+import net.accessiblility.app.store.fragment.FragmentMine;
+import net.accessiblility.app.store.utils.ConstantValues;
 import net.accessiblility.app.store.utils.CountDownTimerUtils;
 import net.accessiblility.app.store.utils.PhoneFormatCheckUtils;
 import net.tatans.coeus.network.callback.HttpRequestCallBack;
 import net.tatans.coeus.network.callback.HttpRequestParams;
 import net.tatans.coeus.network.tools.TatansHttp;
+import net.tatans.coeus.network.tools.TatansPreferences;
 import net.tatans.coeus.network.tools.TatansToast;
 
 import java.util.regex.Matcher;
@@ -140,7 +144,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     /**
      * 注册
      */
-    private void register(String phoneNum, String password, String country) {
+    private void register(final String phoneNum, String password, String country) {
         String uri = "";
         HttpRequestParams params = new HttpRequestParams();
         uri = Controller.RegisterUser;
@@ -161,7 +165,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 if (o.toString().equals("2")) {
                     TatansToast.showAndCancel("该手机号已经注册");
                 } else {
-                    TatansToast.showAndCancel("注册成功");
+                    TatansToast.showAndCancel(o.toString()+"注册成功");
+
+                    Intent intent = new Intent(RegisterActivity.this, FragmentMine.class);
+                    intent.putExtra("USER_NAME", o.toString());
+                    TatansPreferences.put(ConstantValues.KEY_USER, o.toString());
+                    TatansPreferences.put(ConstantValues.KEY_PHONE, phoneNum);
+                    setResult(RESULT_OK, intent);
                     RegisterActivity.this.finish();
                 }
 

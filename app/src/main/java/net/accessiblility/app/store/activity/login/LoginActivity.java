@@ -50,7 +50,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             case R.id.login_tv_fast_register:
                 Intent intent = new Intent(this, RegisterActivity.class);
                 startActivity(intent);
-
+                finish();
                 break;
 
             case R.id.login_tv_forgot_password:
@@ -58,6 +58,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 intentCode.putExtra("TITLE", "忘记密码");
                 intentCode.putExtra("PHONE_NUM", mPhoneNum.getText().toString());
                 startActivity(intentCode);
+                finish();
                 break;
 
             case R.id.login_btn_login:
