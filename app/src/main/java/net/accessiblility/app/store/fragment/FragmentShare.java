@@ -19,9 +19,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.activity.login.LoginActivity;
 import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.model.ShareInfo;
+import net.accessiblility.app.store.utils.ConstantValues;
 import net.tatans.coeus.network.tools.HttpUtils;
+import net.tatans.coeus.network.tools.TatansPreferences;
 import net.tatans.coeus.network.tools.TatansToast;
 import net.tatans.rhea.network.http.RequestParams;
 import net.tatans.rhea.network.http.ResponseInfo;
@@ -79,10 +82,18 @@ public class FragmentShare extends BaseFragment {
             appChoose.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.setType("application/vnd.android.package-archive");//设置类型，我这里是任意类型，任意后缀的可以这样写。
-                    intent.addCategory(Intent.CATEGORY_OPENABLE);
-                    startActivityForResult(intent, 1);
+                    String user = (String) TatansPreferences.get(ConstantValues.KEY_USER, "");
+                    if (user.equals("")) {
+                        Intent intent = new Intent(getActivity(), LoginActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                        intent.setType("application/vnd.android.package-archive");//设置类型，我这里是任意类型，任意后缀的可以这样写。
+                        intent.addCategory(Intent.CATEGORY_OPENABLE);
+                        startActivityForResult(intent, 1);
+                    }
+
+
                 }
             });
         }

@@ -13,7 +13,7 @@ public abstract class BaseVersion implements Serializable {
 	public BaseVersion() {
 		super();
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -22,11 +22,10 @@ public abstract class BaseVersion implements Serializable {
 	private Integer versionCode;
 	private String versionName ;
 	private Integer gradle;
-	
+	private Integer androidAppSecId;
+	private String size;
 	private Integer packageId;
-	
 	private Set<Comment> comment = new HashSet<Comment>();
-	
 	private User users;
 	
 	public Set<Comment> getComment() {
@@ -141,5 +140,21 @@ public abstract class BaseVersion implements Serializable {
 		this.versionCode = versionCode;
 		this.versionName = versionName;
 		this.gradle = gradle;
+	}
+
+	public Integer getAndroidAppSecId() {
+		return androidAppSecId;
+	}
+
+	public void setAndroidAppSecId(Integer androidAppSecId) {
+		this.androidAppSecId = androidAppSecId;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
 	}
 }

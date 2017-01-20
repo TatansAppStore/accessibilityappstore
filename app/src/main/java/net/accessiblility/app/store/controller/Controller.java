@@ -46,6 +46,12 @@ public class Controller {
     //修改用户名
     public static String ModifyUserName = uri + "findappsec/modifyUserName.do";
 
+    //获取下载量
+    public static String GetDownByPackageId = uri + "findappsec/getDownByPackageId.do";
+
+    //获取历史版本
+    public static String FindAllVersion = uri + "findappsec/findAllVersion.do";
+
     //请求所有可更新标签
     public static String GetAppLabelUpdate = uri + "appMark/queryMarkForUpdate.do";
     //下载更新标签

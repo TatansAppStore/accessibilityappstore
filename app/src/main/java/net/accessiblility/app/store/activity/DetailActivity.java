@@ -9,23 +9,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.google.gson.Gson;
-
 import net.accessiblility.app.store.R;
 import net.accessiblility.app.store.adapter.DetailAdapter;
 import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.controller.DownloadController;
 import net.accessiblility.app.store.model.AppItemInfo;
-import net.accessiblility.app.store.model.Comment;
+import net.accessiblility.app.store.model.CommentDto;
+import net.accessiblility.app.store.model.UserDto;
 import net.accessiblility.app.store.model.Version;
+import net.accessiblility.app.store.model.VersionDto;
 import net.accessiblility.app.store.utils.AppUtils;
 import net.tatans.coeus.network.callback.HttpHandler;
 import net.tatans.coeus.network.callback.HttpRequestCallBack;
 import net.tatans.coeus.network.callback.HttpRequestParams;
 import net.tatans.coeus.network.tools.TatansHttp;
+import net.tatans.coeus.network.tools.TatansToast;
 import net.tatans.coeus.network.utils.DirPath;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -40,15 +42,17 @@ public class DetailActivity extends BaseActivity implements DownloadController.D
     private ListView listView;
     private Button btnDownload;
     private AppItemInfo.AppInfo appInfo;
-    List<Comment> commentList = new ArrayList<>();
-    Version version = new Version();
+    private List<CommentDto> commentList = new ArrayList<>();
+    private Version version = new Version();
+    private String down;
+    public static String state;
 
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            DetailAdapter detailAdapter = new DetailAdapter(DetailActivity.this, appInfo, commentList);
+            DetailAdapter detailAdapter = new DetailAdapter(DetailActivity.this, appInfo, commentList, down);
             listView.setAdapter(detailAdapter);
         }
     };
@@ -63,15 +67,37 @@ public class DetailActivity extends BaseActivity implements DownloadController.D
         btnDownload.setOnClickListener(this);
         Intent intent = this.getIntent();
         appInfo = (AppItemInfo.AppInfo) intent.getSerializableExtra("AppInfo");
-        String state = intent.getStringExtra("STATE");
+        state = intent.getStringExtra("STATE");
         btnDownload.setText(state);
         version.setVersionCode(appInfo.getVersionCode());
         version.setVersionName(appInfo.getVersionName());
         setMyTitle(appInfo.getAppName());
         setTitle(appInfo.getAppName());
-        DetailAdapter detailAdapter = new DetailAdapter(DetailActivity.this, appInfo, commentList);
+        DetailAdapter detailAdapter = new DetailAdapter(DetailActivity.this, appInfo, commentList, "0");
         listView.setAdapter(detailAdapter);
-        requestComments(appInfo);
+        requestDown(appInfo);
+    }
+
+    private void requestDown(final AppItemInfo.AppInfo appInfo) {
+        String uri = "";
+        HttpRequestParams params = new HttpRequestParams();
+        uri = Controller.GetDownByPackageId;
+        params.put("packageId", appInfo.getId());
+        TatansHttp fh = new TatansHttp();
+        fh.postAsync(uri, params, new HttpRequestCallBack() {
+            @Override
+            public void onFailure(Throwable t, String strMsg) {
+                super.onFailure(t, strMsg);
+                TatansToast.showAndCancel("数据获取失败，请检查网络");
+            }
+
+            @Override
+            public void onSuccess(final Object o) {
+                super.onSuccess(o);
+                down = o.toString();
+                requestComments(appInfo);
+            }
+        });
     }
 
     /**
@@ -88,6 +114,7 @@ public class DetailActivity extends BaseActivity implements DownloadController.D
             @Override
             public void onFailure(Throwable t, String strMsg) {
                 super.onFailure(t, strMsg);
+                TatansToast.showAndCancel("数据获取失败，请检查网络");
             }
 
             @Override
@@ -101,14 +128,38 @@ public class DetailActivity extends BaseActivity implements DownloadController.D
                         try {
                             JSONArray array = new JSONArray(o.toString());
                             commentList.clear();
+                            CommentDto comment = null;
+                            UserDto user = null;
+                            VersionDto version = null;
                             for (int i = 0; i < array.length(); i++) {         //遍历数组中的json
                                 JSONObject obj = array.optJSONObject(i);//得到的obj
-                                Gson gson = new Gson();                     //使用gson去解析.
-                                Comment bean = gson.fromJson(obj.toString(), Comment.class);        //bean为json数据对应的一个bean类
-                                bean.setVersion(version);
-                                commentList.add(bean);
+//                                Gson gson = new Gson();                     //使用gson去解析.
+//                                Comment bean = gson.fromJson(obj.toString(), Comment.class);        //bean为json数据对应的一个bean类
+//                                bean.setVersion(version);
+//                                commentList.add(bean);
+                                int id = obj.getInt("id");
+                                String content = obj.getString("content");
+                                String contentTime = obj.getString("contentTime");
+                                int thumbsUp = obj.getInt("thumbsUp");
+                                int score = obj.getInt("score");
+                                JSONObject userObj = obj.getJSONObject("user");
+                                int userId = userObj.getInt("id");
+                                String userName = userObj.getString("userName");
+                                String country = userObj.getString("country");
+                                user = new UserDto(userId, userName, country);
+                                JSONObject userVersion = obj.getJSONObject("version");
+                                int versionId = userVersion.getInt("id");
+                                int versionCode = userVersion.getInt("versionCode");
+                                String androidAppSecId = userVersion.getString("androidAppSecId");
+                                String versionName = userVersion.getString("versionName");
+                                String sizes = userVersion.getString("sizes");
+                                String gradle = userVersion.getString("gradle");
+                                version = new VersionDto(versionId, versionCode, androidAppSecId, versionName, sizes, gradle);
+                                comment = new CommentDto(id, content, contentTime, thumbsUp, score, user, version);
+                                commentList.add(comment);
+
                             }
-                        } catch (Exception e) {
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
                         handler.sendEmptyMessage(0);
@@ -119,17 +170,22 @@ public class DetailActivity extends BaseActivity implements DownloadController.D
         });
     }
 
+
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
         if (progress == 100) {
             btnDownload.setText("安装");
+            state = "安装";
         } else if (progress == -1) {
-            btnDownload.setText("已安装");
+            btnDownload.setText("打开");
+            state = "打开";
         } else if (progress == -2) {
             btnDownload.setText("暂停");
+            state = "暂停";
         } else if (progress == -101) {
             btnDownload.setText("继续");
+            state = "继续";
         } else {
             btnDownload.setText(progress + "%");
         }
@@ -174,8 +230,6 @@ public class DetailActivity extends BaseActivity implements DownloadController.D
                     httpHandler.stop();
                 }
             }
-
         }
-
     }
 }

@@ -3,6 +3,7 @@ package net.accessiblility.app.store.adapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,13 +17,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.activity.DetailActivity;
+import net.accessiblility.app.store.activity.login.LoginActivity;
 import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.model.AppItemInfo;
-import net.accessiblility.app.store.model.Comment;
+import net.accessiblility.app.store.model.CommentDto;
+import net.accessiblility.app.store.utils.ConstantValues;
 import net.accessiblility.app.store.view.RatingBarView;
 import net.tatans.coeus.network.callback.HttpRequestCallBack;
 import net.tatans.coeus.network.callback.HttpRequestParams;
 import net.tatans.coeus.network.tools.TatansHttp;
+import net.tatans.coeus.network.tools.TatansPreferences;
 import net.tatans.coeus.network.tools.TatansToast;
 
 import java.util.List;
@@ -41,16 +46,19 @@ import static net.accessiblility.app.store.R.id.et_comment;
 public class DetailAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater li;
-    private List<Comment> list;
+    private List<CommentDto> list;
     private AppItemInfo.AppInfo appInfo;
     private final int TYPE_ONE = 0, TYPE_TWO = 1, TYPE_THREE = 2, TYPE_FOUR = 3, TYPE_COUNT = 4;
+    private String down;
+    private String user = (String) TatansPreferences.get(ConstantValues.KEY_USER, "");
 
-    public DetailAdapter(Context context, AppItemInfo.AppInfo appInfo, List<Comment> list) {
+    public DetailAdapter(Context context, AppItemInfo.AppInfo appInfo, List<CommentDto> list, String down) {
         // TODO Auto-generated constructor stub
         this.appInfo = appInfo;
         this.list = list;
         this.context = context;
         li = LayoutInflater.from(context);
+        this.down = down;
     }
 
     @Override
@@ -177,14 +185,15 @@ public class DetailAdapter extends BaseAdapter {
 
         switch (type) {
             case TYPE_ONE:
+
+                vh1.appScore.setText("暂无评分");
                 vh1.appName.setText(appInfo.getAppName());
-                vh1.appScore.setText("");
-                vh1.appDownloadCount.setText("110下载");
+                vh1.appDownloadCount.setText(down + "次下载");
                 vh1.appSize.setText(appInfo.getSize() + "M");
                 vh1.appHistoryVersion.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+//                        requestVersion(appInfo);
                     }
                 });
             case TYPE_TWO:
@@ -192,18 +201,33 @@ public class DetailAdapter extends BaseAdapter {
                 break;
 
             case TYPE_THREE:
-                vh3.appCommentNumber.setText("共有" + list.size() + "个人参与评价");
+                String gradle = "";
+                if (list.size() != 0) {
+                    CommentDto commentInfo = list.get(0);
+                    gradle = "，评分：" + commentInfo.getVersion().getGradle().substring(0, 3);
+                }
+                vh3.appCommentNumber.setText("共有" + list.size() + "个人参与评价" + gradle);
                 vh3.appCommentBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        showPasswordSetDailog((Activity) context);
+                        user = (String) TatansPreferences.get(ConstantValues.KEY_USER, "");
+                        if(DetailActivity.state.equals("打开")||DetailActivity.state.equals("更新")){
+                            if (user.equals("")) {
+                                Intent intent = new Intent((Activity)context, LoginActivity.class);
+                                context.startActivity(intent);
+                            } else {
+                                showPasswordSetDailog((Activity) context);
+                            }
+                        }else {
+                            TatansToast.showAndCancel("请在下载安装后评论");
+                        }
                     }
                 });
                 break;
 
             case TYPE_FOUR:
                 if (list.size() != 0) {
-                    Comment commentInfo = list.get(position - 3);
+                    CommentDto commentInfo = list.get(position - 3);
                     vh4.userName.setText("用户：" + commentInfo.getUser().getUserName());
                     String score = "评分：" + commentInfo.getScore() + "分     ";
                     vh4.appScore.setText(score);
@@ -240,6 +264,28 @@ public class DetailAdapter extends BaseAdapter {
         TextView appVersion;
         TextView appComment;
         TextView appDate;
+    }
+
+    private void requestVersion(final AppItemInfo.AppInfo appInfo) {
+        String uri = "";
+        HttpRequestParams params = new HttpRequestParams();
+        uri = Controller.FindAllVersion;
+        params.put("packageName", appInfo.getPackageName());
+        TatansHttp fh = new TatansHttp();
+        fh.postAsync(uri, params, new HttpRequestCallBack() {
+            @Override
+            public void onFailure(Throwable t, String strMsg) {
+                super.onFailure(t, strMsg);
+                TatansToast.showAndCancel("数据获取失败，请检查网络");
+            }
+
+            @Override
+            public void onSuccess(final Object o) {
+                super.onSuccess(o);
+                String result = o.toString();
+                TatansToast.showAndCancel(result);
+            }
+        });
     }
 
     private int ratingScore = 5;
@@ -307,7 +353,7 @@ public class DetailAdapter extends BaseAdapter {
         ok.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String comment = etComment.getText().toString();
-                if (comment.equals("")||comment==null) {
+                if (comment.equals("") || comment == null) {
                     Toast.makeText(context, "你还没有评论", Toast.LENGTH_SHORT).show();
                 } else {
                     submitComments(appInfo, comment, ratingScore);
@@ -333,7 +379,7 @@ public class DetailAdapter extends BaseAdapter {
         String uri = "";
         HttpRequestParams params = new HttpRequestParams();
         uri = Controller.setUserCommentApp;
-        params.put("userName", "admin");
+        params.put("userName", user);
         params.put("packageId", appInfo.getId());
         params.put("versionName", appInfo.getVersionName());
         params.put("comment", comment);

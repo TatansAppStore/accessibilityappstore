@@ -4,19 +4,23 @@ import net.accessiblility.app.store.model.base.BaseUser;
 
 public class User extends BaseUser {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	public User(int usrId, String userName, String phoneNumber, String enabled) {
-		// TODO Auto-generated constructor stub
-		super();
-	}
+    public User(int usrId, String userName, String phoneNumber, String enabled) {
+        // TODO Auto-generated constructor stub
+        super();
+    }
 
-	public User(Integer id, String userName, String password, String phoneNumber, String enabled) {
-		super(id, userName, password, phoneNumber, enabled);
-		// TODO Auto-generated constructor stub
-	}
-	
+    public User(Integer id, String userName, String password, String phoneNumber, String enabled) {
+        super(id, userName, password, phoneNumber, enabled);
+        // TODO Auto-generated constructor stub
+    }
+
+    public User(Integer id, String userName, String country) {
+        super(id, userName, country);
+    }
+
 }

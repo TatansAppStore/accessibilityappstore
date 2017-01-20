@@ -35,9 +35,18 @@ public abstract class BaseUser implements Serializable {
         this.enabled = enabled;
     }
 
+    public BaseUser(Integer id, String userName, String country
+    ) {
+        super();
+        this.id = id;
+        this.userName = userName;
+        this.country = country;
+    }
+
 
     private Integer id;
     private String userName;
+    private String country;
     private String password;
     private String phoneNumber;
     private String enabled;
@@ -176,4 +185,11 @@ public abstract class BaseUser implements Serializable {
     }
 
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }

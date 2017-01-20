@@ -73,6 +73,7 @@
                             android:ellipsize="end"
                             android:paddingTop="10dp"
                             android:text="评分"
+                            android:visibility="gone"
                             android:textColor="@color/list_text_color_shallow"
                             android:textSize="10sp"
                             />
@@ -84,7 +85,6 @@
                             android:layout_marginLeft="13dp"
                             android:layout_toRightOf="@id/detail_tv_score"
                             android:ellipsize="end"
-                            android:visibility="gone"
                             android:paddingTop="10dp"
                             android:singleLine="true"
                             android:text="15次下载"
