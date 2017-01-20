@@ -17,7 +17,6 @@ public class UmengActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TatansIoc.inject(this);
-        SMSSDK.initSDK(this, "1a00cc4c683f8", "64e27b5bd4f9e7c3e087b842eca5354a");
         super.onCreate(savedInstanceState);
     }
 

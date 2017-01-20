@@ -135,6 +135,12 @@
         </activity>
 
         <activity
+            android:name=".activity.login.RegisterActivity2"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
             android:name=".activity.login.VerificationCodeActivity"
             android:screenOrientation="portrait"
             >

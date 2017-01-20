@@ -27,7 +27,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private Button mBtnlogin;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setMyTitle("账号登录");
