@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.activity.AppHistoryListActivity;
 import net.accessiblility.app.store.activity.DetailActivity;
 import net.accessiblility.app.store.activity.login.LoginActivity;
 import net.accessiblility.app.store.controller.Controller;
@@ -193,7 +195,7 @@ public class DetailAdapter extends BaseAdapter {
                 vh1.appHistoryVersion.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        requestVersion(appInfo);
+                        requestVersion(appInfo);
                     }
                 });
             case TYPE_TWO:
@@ -211,14 +213,14 @@ public class DetailAdapter extends BaseAdapter {
                     @Override
                     public void onClick(View view) {
                         user = (String) TatansPreferences.get(ConstantValues.KEY_USER, "");
-                        if(DetailActivity.state.equals("打开")||DetailActivity.state.equals("更新")){
+                        if (DetailActivity.state.equals("打开") || DetailActivity.state.equals("更新")) {
                             if (user.equals("")) {
-                                Intent intent = new Intent((Activity)context, LoginActivity.class);
+                                Intent intent = new Intent((Activity) context, LoginActivity.class);
                                 context.startActivity(intent);
                             } else {
                                 showPasswordSetDailog((Activity) context);
                             }
-                        }else {
+                        } else {
                             TatansToast.showAndCancel("请在下载安装后评论");
                         }
                     }
@@ -283,7 +285,13 @@ public class DetailAdapter extends BaseAdapter {
             public void onSuccess(final Object o) {
                 super.onSuccess(o);
                 String result = o.toString();
-                TatansToast.showAndCancel(result);
+                Intent intent = new Intent(context, AppHistoryListActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("AppInfo", appInfo);
+                intent.putExtras(bundle);
+                intent.putExtra("VERSION_JSON", result);
+                intent.putExtra("classifyType", "历史版本");
+                context.startActivity(intent);
             }
         });
     }

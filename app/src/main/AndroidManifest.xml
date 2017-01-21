@@ -169,6 +169,13 @@
             >
         </activity>
 
+        <activity
+            android:name=".activity.AppHistoryListActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
         <receiver android:name=".broadcast.AppInstallReceive">
             <intent-filter>
                 <!-- 一个新应用包已经安装在设备上，数据包括包名（监听所在的app，新安装时，不能接收到这个广播） -->
