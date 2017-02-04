@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/accessibilityappstore.iml" filepath="$PROJECT_DIR$/accessibilityappstore.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ratingbarguide/ratingbarguide.iml" filepath="$PROJECT_DIR$/ratingbarguide/ratingbarguide.iml" />
     </modules>
   </component>
 </project>
