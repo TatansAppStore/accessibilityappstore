@@ -57,6 +57,9 @@
     <string name="title_intent_share">Share</string>
     <string name="summary_intent_share">describe</string>
 
+    <string name="title_intent_update">检查更新</string>
+    <string name="summary_intent_update">当前为最新版本</string>
+
     <string name="title_switch_preference_auto_upgrade">Auto upgrade</string>
     <string name="summary_switch__preference_auto_upgrade_tips">in the WLAN, the lock screen auto upgrade</string>
 

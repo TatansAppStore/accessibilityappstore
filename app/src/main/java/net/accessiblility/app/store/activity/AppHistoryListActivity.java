@@ -76,13 +76,13 @@ public class AppHistoryListActivity extends BaseActivity implements DownloadCont
                 String sizes = obj.getString("sizes");
                 String gradle = obj.getString("gradle");
                 info = new AppItemInfo.AppInfo();
-                info.setAppName(appInfo.getAppName()+versionCode);
+                info.setAppName(appInfo.getAppName());
                 info.setPackageName(appInfo.getPackageName());
                 info.setId(appInfo.getId());
                 info.setVersionName(versionName);
-                info.setVersionCode(versionCode);
+                info.setGradle(gradle);
                 info.setSize(sizes);
-                info.setDecription(gradle);
+                info.setDecription(appInfo.getDecription());
                 list_app_item.add(info);
 
             }

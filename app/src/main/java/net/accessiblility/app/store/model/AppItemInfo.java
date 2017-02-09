@@ -56,6 +56,16 @@ public class AppItemInfo  implements Serializable {
         private String size; //安装包大小
         private String down; //安装包大小
 
+        public String getGradle() {
+            return gradle;
+        }
+
+        public void setGradle(String gradle) {
+            this.gradle = gradle;
+        }
+
+        private String gradle; //安装包大小
+
         public String getSize() {
             return size;
         }

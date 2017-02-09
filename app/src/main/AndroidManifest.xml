@@ -72,7 +72,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize"
             >
             <intent-filter>
-                <data android:scheme="tencent1105429215"/>
+                <data android:scheme="tencent1105799171"/>
 
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -87,13 +87,13 @@
             </intent-filter>
         </activity>
         <!--微信分享回调 -->
+        <!--微信分享回调 -->
         <activity
             android:name=".wxapi.WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.SettingActivity"

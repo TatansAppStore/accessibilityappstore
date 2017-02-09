@@ -96,7 +96,7 @@ public class HistoryAdapter extends BaseAdapter {
             holder.appDownloadCount.setText(downloadStr);
         }
         holder.appName.setText("版本：" + itemList.get(position).getVersionName());
-        holder.appVersion.setText("版本号："+itemList.get(position).getVersionCode());
+        holder.appVersion.setText("平均分："+itemList.get(position).getGradle());
         holder.appSize.setText(itemList.get(position).getSize() + "M");
         holder.appInfo.setText((itemList.get(position).getDecription()));
 

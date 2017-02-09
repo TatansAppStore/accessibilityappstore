@@ -189,7 +189,7 @@ public class DetailAdapter extends BaseAdapter {
             case TYPE_ONE:
 
                 vh1.appScore.setText("暂无评分");
-                vh1.appName.setText(appInfo.getAppName());
+                vh1.appName.setText("版本："+appInfo.getVersionName());
                 vh1.appDownloadCount.setText(down + "次下载");
                 vh1.appSize.setText(appInfo.getSize() + "M");
                 vh1.appHistoryVersion.setOnClickListener(new View.OnClickListener() {
@@ -206,7 +206,9 @@ public class DetailAdapter extends BaseAdapter {
                 String gradle = "";
                 if (list.size() != 0) {
                     CommentDto commentInfo = list.get(0);
-                    gradle = "，评分：" + commentInfo.getVersion().getGradle().substring(0, 3);
+                    gradle = "，评均分：" + commentInfo.getVersion().getGradle().substring(0, 3);
+                }else{
+                    gradle = "，评均分：5";
                 }
                 vh3.appCommentNumber.setText("共有" + list.size() + "个人参与评价" + gradle);
                 vh3.appCommentBtn.setOnClickListener(new View.OnClickListener() {

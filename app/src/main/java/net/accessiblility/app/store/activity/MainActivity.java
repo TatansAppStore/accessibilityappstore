@@ -2,29 +2,48 @@ package net.accessiblility.app.store.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.adapter.DownloadQueueAdapter;
 import net.accessiblility.app.store.adapter.MainViewPagerAdapter;
+import net.accessiblility.app.store.broadcast.AppInstallReceive;
+import net.accessiblility.app.store.controller.Controller;
+import net.accessiblility.app.store.controller.DownloadController;
 import net.accessiblility.app.store.fragment.FragmentClassify;
 import net.accessiblility.app.store.fragment.FragmentCommend;
 import net.accessiblility.app.store.fragment.FragmentMine;
 import net.accessiblility.app.store.fragment.FragmentRank;
 import net.accessiblility.app.store.fragment.FragmentShare;
+import net.accessiblility.app.store.model.AppInfo;
+import net.accessiblility.app.store.model.DownloadInfo;
+import net.accessiblility.app.store.model.LocalAppInfo;
+import net.accessiblility.app.store.utils.AppUtils;
+import net.accessiblility.app.store.utils.PackageUtils;
 import net.accessiblility.app.store.viewpage.ParentViewPager;
+import net.tatans.coeus.network.callback.HttpRequestCallBack;
+import net.tatans.coeus.network.callback.HttpRequestParams;
 import net.tatans.coeus.network.tools.TatansApplication;
+import net.tatans.coeus.network.tools.TatansDb;
+import net.tatans.coeus.network.tools.TatansHttp;
 import net.tatans.coeus.network.tools.TatansToast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -55,6 +74,22 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             R.id.tv_share, R.id.tv_mine};
 
     private int currentPager;// 记录当前页面
+    private List<DownloadInfo> updateList;
+    private ArrayList<LocalAppInfo> localAppList;
+
+    /**
+     * 通过调用handler实现列表的刷新
+     */
+    Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            for (int i = 0; i < updateList.size(); i++) {
+                final DownloadInfo downloadInfo = updateList.get(i);
+                AppUtils.httpHashmap.put(downloadInfo.getApp_name(), DownloadController.startDownload(MainActivity.this, downloadInfo));
+                Log.d("TTTTTTTTTT", downloadInfo.getDownload_progress() + "" + downloadInfo);
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +103,56 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         header_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity.this,SearchActivity.class);
-                    startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
             }
         });
 //        createShortCut();
         boolean isAutoUpdate = PreferenceManager.getDefaultSharedPreferences(TatansApplication.getContext()).getBoolean("checkbox_preference_wifi", true);
+        if (isAutoUpdate) {
+            askForUpdate();
+        }
 
+
+    }
+
+    /**
+     * 请求应用更新数据
+     */
+    private void askForUpdate() {
+        Log.e("AjaxCallBack", "");
+        HttpRequestParams params = new HttpRequestParams();
+        params.put("mobileModel", "");
+        params.put("packagename", PackageUtils.plintPkgAndCls(PackageUtils.getResolveInfos(this)));
+        TatansHttp fh = new TatansHttp();
+
+        fh.postAsync(Controller.GetAllNewApp, params, new HttpRequestCallBack() {
+            @Override
+            public void onLoading(long count, long current) {
+                super.onLoading(count, current);
+                Log.e("AjaxCallBack", "onLoading");
+            }
+
+            @Override
+            public void onSuccess(Object o) {
+                super.onSuccess(o);
+                Log.e("AjaxCallBack", "onSuccess");
+                String StrJson = "{\"results\":" + o + "}";
+                Gson gson = new Gson();
+                AppInfo appinfo = gson.fromJson(StrJson, AppInfo.class);
+                List<AppInfo.AI> serverList = appinfo.getResults();
+                localAppList = AppUtils.getLocalAppInfo(MainActivity.this);
+                updateList = AppUtils.CompareAppUpdate(serverList, localAppList);
+                Message message = Message.obtain();
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onFailure(Throwable t, String strMsg) {
+                super.onFailure(t, strMsg);
+
+            }
+        });
     }
 
 

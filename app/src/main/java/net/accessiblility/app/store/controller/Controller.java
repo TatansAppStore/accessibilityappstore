@@ -5,8 +5,8 @@ package net.accessiblility.app.store.controller;
  * 获取后台数据的地址
  */
 public class Controller {
-        public static String uri = "http://192.168.1.116:8094/android/rest/v1.0/"; //本地
-//    public static String uri = "http://115.29.11.17:8094/android/rest/v1.0/";  //服务器
+    //    public static String uri = "http://192.168.1.9:8080/android/rest/v1.0/"; //本地
+    public static String uri = "http://139.224.235.120/android/rest/v1.0/";  //服务器
 
 //    public static String uri = "http://192.168.31.17:8094/android/rest/v1.0/";  //服务器
 //    public static String uri01 = "http://192.168.1.9:8080/android/rest/v1.0/"; //本地
@@ -28,6 +28,7 @@ public class Controller {
     public static String FindTagApp = uri + "findappsec/appclassifytag.do";
     public static String SearchApp = uri + "findappsec/searchapp.do";
     public static String GetAllNewApp = uri + "findappsec/validaVersion.do";
+    public static String GetShareApp = uri + "findappsec/getAppStore.do";
     //排行榜
     public static String TopChartsApp = uri + "findappsec/topChartsApp.do";
     //下载

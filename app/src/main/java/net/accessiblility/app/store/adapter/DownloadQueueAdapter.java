@@ -96,6 +96,8 @@ public class DownloadQueueAdapter extends BaseAdapter {
         if (downloadInfo.getType() == -1) {
             holder.appDelete.setVisibility(View.GONE);
         }
+        boolean isdownload = false;
+
         if (appStateStr.equals("下载成功")) {
             holder.appInstall.setText("安装");
             for (int i = 0; i < localAppList.size(); i++) {
@@ -110,6 +112,7 @@ public class DownloadQueueAdapter extends BaseAdapter {
         } else if (appStateStr.equals("未更新")) {
             final File mFile = new File(DirPath.getMyCacheDir("stores/download/", appName + ".apk"));
             if (mFile.exists()) {
+                isdownload = true;
                 holder.appInstall.setText("安装");
                 holder.appState.setText("下载成功");
             } else {
@@ -126,7 +129,7 @@ public class DownloadQueueAdapter extends BaseAdapter {
             holder.appInstall.setText("等待中");
         }
 
-        if (downloadInfo != null) {
+        if (downloadInfo != null&&!isdownload) {
             progress = downloadInfo.getDownload_progress();
             if(progress<100&&progress>=0){
                 holder.appInstall.setText( "继续");

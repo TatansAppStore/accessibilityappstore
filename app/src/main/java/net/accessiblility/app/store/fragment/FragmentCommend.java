@@ -163,7 +163,10 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
 
     @Override
     public void onFailure(Throwable t, String strMsg, String appName) {
-        appAdapter.updataView(listView, -101, appName);
+        if(appAdapter!=null) {
+            appAdapter.updataView(listView, -101, appName);
+        }
+
 
     }
 

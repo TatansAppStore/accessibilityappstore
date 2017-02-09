@@ -87,6 +87,16 @@
 
     </PreferenceScreen>
 
+    <PreferenceScreen
+        android:key="update_app"
+        android:summary="@string/summary_intent_update"
+        android:title="@string/title_intent_update">
+
+        <!--<intent android:action="android.intent.action.VIEW"-->
+        <!--android:data="http://www.baidu.com" />-->
+
+    </PreferenceScreen>
+
 
     <!--<PreferenceCategory android:title="@string/title_ele">-->
     <!--<SwitchPreference-->

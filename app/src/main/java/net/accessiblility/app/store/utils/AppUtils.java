@@ -60,6 +60,30 @@ public class AppUtils {
     }
 
     /**
+     * 获取手机已安装应用的信息
+     */
+    public static ArrayList<LocalAppInfo> getAppStoreInfo(Context context) {
+        ArrayList<LocalAppInfo> allAppList = new ArrayList<LocalAppInfo>();
+        PackageManager pm = context.getPackageManager();
+        List<PackageInfo> packages = pm.getInstalledPackages(0);
+        Log.e("PACKAGES'SIZE", String.valueOf(packages.size()));
+        for (int i = 0; i < packages.size(); i++) {
+            PackageInfo packageInfo = packages.get(i);
+            if (packageInfo.packageName.equals("net.accessiblility.app.store")) {
+                LocalAppInfo tmpInfo = new LocalAppInfo();
+                tmpInfo.appName = packageInfo.applicationInfo.loadLabel(context.getPackageManager()).toString();
+                tmpInfo.packageName = packageInfo.packageName;
+                tmpInfo.versionName = packageInfo.versionName;
+                tmpInfo.versionCode = packageInfo.versionCode;
+                tmpInfo.appIcon = packageInfo.applicationInfo.loadIcon(context.getPackageManager());
+                allAppList.add(tmpInfo);
+                return allAppList;
+            }
+        }
+        return null;
+    }
+
+    /**
      * 启动安装完成的应用
      *
      * @param context     Context
@@ -113,6 +137,7 @@ public class AppUtils {
             name = pm.getApplicationLabel(
                     pm.getApplicationInfo(packageName,
                             PackageManager.GET_META_DATA)).toString();
+
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -203,9 +228,7 @@ public class AppUtils {
                     infos.setUri(appinfo.url);
                     infos.setDownload_state("未更新");
                     updateList.add(infos);
-
                 }
-
             }
         }
         return updateList;
@@ -245,7 +268,7 @@ public class AppUtils {
                     contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
                 }
                 String selection = MediaStore.Images.Media._ID + "=?";
-                String[] selectionArgs = new String[] { split[1] };
+                String[] selectionArgs = new String[]{split[1]};
                 return getDataColumn(context, contentUri, selection, selectionArgs);
             }
         } // MediaStore (and general)
@@ -264,7 +287,7 @@ public class AppUtils {
 
     public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
         Cursor cursor = null;
-        String[] projection = { MediaStore.Images.Media.DATA };
+        String[] projection = {MediaStore.Images.Media.DATA};
         try {
             cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null);
             if (cursor != null && cursor.moveToFirst()) {
@@ -279,8 +302,7 @@ public class AppUtils {
     }
 
     /**
-     * @param uri
-     *            The Uri to check.
+     * @param uri The Uri to check.
      * @return Whether the Uri authority is ExternalStorageProvider.
      */
     public static boolean isExternalStorageDocument(Uri uri) {
@@ -288,8 +310,7 @@ public class AppUtils {
     }
 
     /**
-     * @param uri
-     *            The Uri to check.
+     * @param uri The Uri to check.
      * @return Whether the Uri authority is DownloadsProvider.
      */
     public static boolean isDownloadsDocument(Uri uri) {
@@ -297,8 +318,7 @@ public class AppUtils {
     }
 
     /**
-     * @param uri
-     *            The Uri to check.
+     * @param uri The Uri to check.
      * @return Whether the Uri authority is MediaProvider.
      */
     public static boolean isMediaDocument(Uri uri) {
@@ -306,8 +326,7 @@ public class AppUtils {
     }
 
     /**
-     * @param uri
-     *            The Uri to check.
+     * @param uri The Uri to check.
      * @return Whether the Uri authority is Google Photos.
      */
     public static boolean isGooglePhotosUri(Uri uri) {

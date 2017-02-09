@@ -8,13 +8,33 @@ import android.os.Handler;
 import android.os.Message;
 import android.preference.Preference;
 import android.support.v4.preference.PreferenceFragment;
+import android.util.Log;
+import android.view.View;
+
+import com.google.gson.Gson;
 
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.activity.MainActivity;
+import net.accessiblility.app.store.activity.UpdateQueueActivity;
 import net.accessiblility.app.store.activity.login.LoginActivity;
 import net.accessiblility.app.store.activity.login.PersonalDataActivity;
+import net.accessiblility.app.store.adapter.DownloadQueueAdapter;
+import net.accessiblility.app.store.controller.Controller;
+import net.accessiblility.app.store.controller.DownloadController;
+import net.accessiblility.app.store.model.AppInfo;
+import net.accessiblility.app.store.model.DownloadInfo;
+import net.accessiblility.app.store.model.LocalAppInfo;
+import net.accessiblility.app.store.utils.AppUtils;
 import net.accessiblility.app.store.utils.ConstantValues;
+import net.accessiblility.app.store.utils.PackageUtils;
+import net.tatans.coeus.network.callback.HttpRequestCallBack;
+import net.tatans.coeus.network.callback.HttpRequestParams;
+import net.tatans.coeus.network.tools.TatansHttp;
 import net.tatans.coeus.network.tools.TatansPreferences;
 import net.tatans.coeus.network.tools.TatansToast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
@@ -37,7 +57,9 @@ import static android.app.Activity.RESULT_OK;
 
 public class FragmentMine extends PreferenceFragment {
     private Preference loginPreference;
-
+    private Preference updatePreference;
+    private ArrayList<LocalAppInfo> localAppList;
+    private List<DownloadInfo> updateList;
 
     Handler shareHandler = new Handler() {
 
@@ -78,6 +100,18 @@ public class FragmentMine extends PreferenceFragment {
         }
     };
 
+    /**
+     * 通过调用handler实现列表的刷新
+     */
+    Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            if (updateList.size() != 0) {
+                updatePreference.setSummary("有新版本更新");
+            }
+            super.handleMessage(msg);
+        }
+    };
+
     @Override
     public void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
@@ -107,7 +141,62 @@ public class FragmentMine extends PreferenceFragment {
 
                 return true;
             }
+        });
 
+        askForUpdate();
+
+        updatePreference = findPreference("update_app");
+        updatePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                if (preference.getSummary().equals("有新版本更新")) {
+                    AppUtils.httpHashmap.put(updateList.get(0).getApp_name(), DownloadController.startDownload(getActivity(), updateList.get(0)));
+                } else {
+                    TatansToast.showAndCancel("当前已经是最新版本");
+                }
+
+                return true;
+            }
+
+        });
+    }
+
+    /**
+     * 请求应用更新数据
+     */
+    private void askForUpdate() {
+        Log.e("AjaxCallBack", "");
+        HttpRequestParams params = new HttpRequestParams();
+        params.put("mobileModel", "");
+        params.put("packagename", PackageUtils.plintPkgAndCls(PackageUtils.getResolveInfos(getActivity())));
+        TatansHttp fh = new TatansHttp();
+
+        fh.postAsync(Controller.GetAllNewApp, params, new HttpRequestCallBack() {
+            @Override
+            public void onLoading(long count, long current) {
+                super.onLoading(count, current);
+                Log.e("AjaxCallBack", "onLoading");
+            }
+
+            @Override
+            public void onSuccess(Object o) {
+                super.onSuccess(o);
+                Log.e("AjaxCallBack", "onSuccess");
+                String StrJson = "{\"results\":" + o + "}";
+                Gson gson = new Gson();
+                AppInfo appinfo = gson.fromJson(StrJson, AppInfo.class);
+                List<AppInfo.AI> serverList = appinfo.getResults();
+                localAppList = AppUtils.getAppStoreInfo(getActivity());
+                updateList = AppUtils.CompareAppUpdate(serverList, localAppList);
+                Message message = Message.obtain();
+                handler.sendMessage(message);
+            }
+
+            @Override
+            public void onFailure(Throwable t, String strMsg) {
+                super.onFailure(t, strMsg);
+
+            }
         });
     }
 
@@ -141,23 +230,23 @@ public class FragmentMine extends PreferenceFragment {
         // 分享时Notification的图标和文字  2.5.9以后的版本不调用此方法
         //oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
         // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
-        oks.setTitle("标题");
+        oks.setTitle("嗨市场");
         // titleUrl是标题的网络链接，仅在Linked-in,QQ和QQ空间使用
-        oks.setTitleUrl("http://sharesdk.cn");
+        oks.setTitleUrl(Controller.GetShareApp);
         // text是分享文本，所有平台都需要这个字段
-        oks.setText("我是分享文本");
+        oks.setText("全球第一款无障碍应用市场");
         //分享网络图片，新浪微博分享网络图片需要通过审核后申请高级写入接口，否则请注释掉测试新浪微博
         oks.setImageUrl("http://f1.sharesdk.cn/imgs/2014/02/26/owWpLZo_638x960.jpg");
         // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
         //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
         // url仅在微信（包括好友和朋友圈）中使用
-        oks.setUrl("http://sharesdk.cn");
+        oks.setUrl(Controller.GetShareApp);
         // comment是我对这条分享的评论，仅在人人网和QQ空间使用
-        oks.setComment("我是测试评论文本");
+//        oks.setComment("我是测试评论文本");
         // site是分享此内容的网站名称，仅在QQ空间使用
-        oks.setSite("ShareSDK");
+//        oks.setSite("ShareSDK");
         // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-        oks.setSiteUrl("http://sharesdk.cn");
+        oks.setSiteUrl(Controller.GetShareApp);
 
         // 启动分享GUI
         oks.show(context);
