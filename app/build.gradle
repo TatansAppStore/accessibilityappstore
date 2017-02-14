@@ -5,12 +5,12 @@ apply plugin: 'com.android.application'
 android {
     def AppName = "嗨市场"
     compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    buildToolsVersion '25.0.0'
     SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmm")
     def version_code = df.format(new Date())
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 15
         targetSdkVersion 19
         applicationId "net.accessiblility.app.store"
         versionCode version_code.toInteger()
