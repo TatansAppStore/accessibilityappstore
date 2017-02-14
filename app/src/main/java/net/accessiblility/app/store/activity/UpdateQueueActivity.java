@@ -108,7 +108,7 @@ public class UpdateQueueActivity extends BaseActivity implements DownloadControl
             @Override
             public void onFailure(Throwable t, String strMsg) {
                 super.onFailure(t, strMsg);
-
+                tv_loading_tips.setText("请求数据失败，请检查网络");
             }
         });
     }

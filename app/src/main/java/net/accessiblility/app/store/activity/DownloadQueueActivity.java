@@ -142,6 +142,7 @@ public class DownloadQueueActivity extends BaseActivity implements DownloadContr
         if(downloadQueueAdapter!=null){
                 downloadQueueAdapter.updataView(listView, -101, appName);
         }
+        tv_loading_tips.setText("请求数据失败，请检查网络");
     }
 
     @Override

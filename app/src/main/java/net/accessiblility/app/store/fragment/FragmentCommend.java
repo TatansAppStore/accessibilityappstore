@@ -109,6 +109,7 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
             @Override
             public void onFailure(Throwable t, String strMsg) {
                 super.onFailure(t, strMsg);
+                tv_loading_tips.setText("请求数据失败，请检查网络");
             }
 
             @Override
@@ -166,7 +167,7 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
         if(appAdapter!=null) {
             appAdapter.updataView(listView, -101, appName);
         }
-
+        tv_loading_tips.setText("请求数据失败，请检查网络");
 
     }
 
