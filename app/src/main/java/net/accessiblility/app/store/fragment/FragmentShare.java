@@ -196,6 +196,8 @@ public class FragmentShare extends BaseFragment {
         requestParams.addBodyParameter("sign", shareInfo.getSign());
         requestParams.addBodyParameter("cid", shareInfo.getCid() + "");
         requestParams.addBodyParameter("file", shareInfo.getFile());
+        requestParams.addBodyParameter("decription",app_introduce.getText().toString());
+
         httpUtils.post(Controller.UpLoad, requestParams, new RequestCallBack<String>() {
 
             @Override
