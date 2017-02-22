@@ -37,6 +37,8 @@ import java.util.List;
 public class AppUtils {
 
     public static HashMap<String, HttpHandler<File>> httpHashmap = new HashMap<String, HttpHandler<File>>();
+    public static ArrayList<HashMap<String, String>> packageMapList = new ArrayList<>();
+    private static HashMap<String, String> mMap = new HashMap<String, String>();
 
     /**
      * 获取手机已安装应用的信息
@@ -55,6 +57,26 @@ public class AppUtils {
             tmpInfo.versionCode = packageInfo.versionCode;
             tmpInfo.appIcon = packageInfo.applicationInfo.loadIcon(context.getPackageManager());
             allAppList.add(tmpInfo);
+        }
+        return allAppList;
+    }
+
+    /**
+     * 获取手机已安装应用的信息
+     */
+    public static ArrayList<String> getLocalAppName(Context context) {
+        ArrayList<String> allAppList = new ArrayList<>();
+        PackageManager pm = context.getPackageManager();
+        List<PackageInfo> packages = pm.getInstalledPackages(0);
+        Log.e("PACKAGES'SIZE", String.valueOf(packages.size()));
+        for (int i = 0; i < packages.size(); i++) {
+            PackageInfo packageInfo = packages.get(i);
+            LocalAppInfo tmpInfo = new LocalAppInfo();
+            tmpInfo.appName = packageInfo.applicationInfo.loadLabel(context.getPackageManager()).toString();
+            tmpInfo.packageName = packageInfo.packageName;
+            mMap.put(tmpInfo.appName, tmpInfo.packageName);
+            packageMapList.add(mMap);
+            allAppList.add(tmpInfo.appName);
         }
         return allAppList;
     }

@@ -43,7 +43,7 @@
         <!--android:data="http://www.baidu.com" />-->
         <intent
             android:action="android.intent.action.MAIN"
-            android:targetClass="net.accessiblility.app.store.activity.UninstallAppActivity"
+            android:targetClass="net.accessiblility.app.store.activity.ListViewIndexActivity"
             android:targetPackage="net.accessiblility.app.store" />
     </PreferenceScreen>
 

@@ -27,6 +27,7 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
 
+
     <application
         android:name=".activity.DemoApplication"
         android:allowBackup="true"
@@ -113,6 +114,11 @@
             />
         <activity
             android:name=".activity.UninstallAppActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".activity.ListViewIndexActivity"
             android:screenOrientation="portrait"
             />
 
