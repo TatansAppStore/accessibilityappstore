@@ -74,8 +74,12 @@ public class ListViewAdapter extends BaseAdapter implements OnScrollListener, Se
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+        String appName = infos.get(position);
+        String packageName = (AppUtils.packageMapList.get(position).get(appName));
+        String versionName = AppUtils.getAppVersionName(packageName,context);
 
-        holder.body.setText(infos.get(position));
+
+        holder.body.setText(appName+ "，版本："+versionName);
         int section = getSectionForPosition(position);
         String navigation = ListContantsUtil.AbcList.get(section);
         if(position==0){

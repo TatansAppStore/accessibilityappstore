@@ -224,6 +224,17 @@ public class AppUtils {
         return true;
     }
 
+    public static  String getAppVersionName(String packageName, Context context) {
+        try {
+            String versionName = context.getPackageManager().getPackageInfo(
+                    packageName, 0).versionName;
+            return versionName;
+        } catch (Exception e) {
+
+        }
+        return null;
+    }
+
     /**
      * 本地应用信息与应用商店应用信息比较判断是否需要下载更新
      */
