@@ -113,7 +113,7 @@ public class DownloadController {
                 if (mDownloadCallback != null) {
                     mDownloadCallback.onFailure(t, strMsg, name);
                 }
-                if (strMsg.equals("user stop download thread")) {
+                if (strMsg!=null||strMsg.equals("user stop download thread")) {
                     Log.e(TAG, "onFailure" + "暂停下载");
                     mDownloadInfo.setDownload_state("暂停下载");
                     db.update(mDownloadInfo);

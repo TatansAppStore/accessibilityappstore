@@ -3,489 +3,498 @@
 
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Wechat-Favorite-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Linkedin-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="f30192f55e1113b13b6ac5204bbcc19e203b4160">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Favorite-2.7.10_d3245a458f98ee19936566475c265efb9d95d0a7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-ShortMessage-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="3763b7bcafdd71a9d48b92be6f2bec532be8a88f">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-ShortMessage-2.7.10_330303727515060d965040562f90b7673065ff07.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Yixin-Moments-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="93a947698ebb1c2da63007d6d3418abb3de7329a">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-Moments-2.7.10_a4d4b82b531a0bc67109842201cdda6590537519.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Yixin-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="689e51fd8e12f60c9d912ba183b85769481e7c19">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-2.7.10_4d9617c51a28ebeac8016c80556e69ea61d30f9c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-QZone-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="158eb0f8525584008bfc92c2c6a4841174133a0a">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-QZone-2.7.10_47224e48d75a8d28eb674a06b5b8e14f66ff9e50.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-KakaoTalk-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="5c70e8cfa2a44ba8ff1d021b50025bbacb31875a">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KakaoTalk-2.7.10_aed523218ddfdb54f28add131c7db4e662baca69.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Linkedin-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
+        revision="25.0.0"
         sha1="994f7cbf6ea4ef3c0fbbded655b412c15933fb88">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Linkedin-2.7.10_7e84203224dc037013d1c23d659ecb3b0fa84375.jar" />
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Linkedin-2.7.10_40d4caa769d2f24c61c32de688f1fbc887076df7.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\MobCommons-2016.1107.1809.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Wechat-Core-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="978446ee83b82106e7d859832e4e3440101bda5a">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\MobCommons-2016.1107.1809_2356b7d9a1fb5162b22ae4ba6aef3b87517c4d49.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-FacebookMessenger-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="2bc5cfa7a4d44dccc4bfab1b58e51e0dee567806">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-FacebookMessenger-2.7.10_fa8c503bab837da2b0285d6ec99ba231ff595fb6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Flickr-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="a77e4669d7fe78fcde115136ad0e3b7da79e93c3">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Flickr-2.7.10_120177066c21ba3898211f6c61f492ad9de1c6e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Alipay-Moments-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="21f42a3bf9d6f5fc089bc2df13dfdc9a17cc33f3">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-Moments-2.7.10_75dd2ebd7e7d26894558da7a28cb281b82c60d69.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Instapaper-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="64ee87e868c952a0867db83cb8aed2fd8e968249">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Instapaper-2.7.10_11624363bf2160bc81181a1f5945e5c39ff5aeef.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Dropbox-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="9f220150a075004b370ad015f954b2e36327777b">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Dropbox-2.7.10_42cb757def5872fab66eeb29eb8da69dd2d15ec3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Lenovo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\support-annotations-22.2.1_cacb3f509a2221dd063eb7531ca45ee1722c0cf4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Wechat-Core-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
+        revision="25.0.0"
         sha1="a720ef31ac89904b603fb2a27c01bb21a951fcad">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Core-2.7.10_3dee1cf6dd66292392670fc934d58fb7533fbd99.jar" />
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Core-2.7.10_c933e1720bed0e567c6fed1027e1917a51a806a7.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Renren-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-KaiXin-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="ff7d4322fa34f4a125935ab0f9291c5a5b862f60">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Renren-2.7.10_0148012d12a548d62944d4023b9778558c8db9c4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\analytics-6.0.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="27238b0acdc4e764623a653d5776488783e9ae3f">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\analytics-6.0.4_03b7c686c441cc8ef33614dcd75bb2ef8a89b6d1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\com.android.support-support-v4-22.2.1_dfcee4d258da18a34f9a09efff07c867156de669.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Core-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="a7e5f9da3635eb8d89b8a9a22cd68cd64cca9104">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Core-2.7.10_1df1e6d3f95012a43c9c11d736cbd92f449287bb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-GooglePlus-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="98172e38756598b7abad150f134c0528bd7537b6">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-GooglePlus-2.7.10_a952d9ce129b51f940b0770b80e497f0a92abcf4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Alipay-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="564ed74723bf716338b2b43c1dabe2a99702c271">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-2.7.10_a7df8d1dc0e0a363a772bda19485ea4d7d510cd2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\exploded-aar\SMSSDK-2.1.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="e771b37b443378199ab670e072a4469f363533ac">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-SMSSDK-2.1.2_e7eda9eff0b95229f2db7a13f337ab05ce6bc938.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\libs\Msc.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="85a46b29703ef8930a92d2fdea8ff336275c7ab2">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\Msc_34c092476e577e727dbab03a6aba2b9c06f2458e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-TencentWeibo-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="f391083f803101456937234584e5523d2ccfb909">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-TencentWeibo-2.7.10_67fe43f35df759d4ddd8a13ae475e18d9b88a44b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-YouDao-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="9b77839ec80ebc1a92a3c8fd76bb6e465c9ebc15">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-YouDao-2.7.10_e77c0bcba1e8f2269263f32cc14a84108fb9d119.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-5.4.0-20160718.071437-26\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="51e46c58e79e0a45e6373e29207253e2c95ff63b">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-coeus-network-5.4.0-20160718.071437-26_56fb467bb24f14fca48011e657695b2a012eb356.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-KakaoStory-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="a48b6fb53b9aae4dda22e867815e9cb556df6163">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KakaoStory-2.7.10_b150532f04e1122f67a5b18b4d77905bedcb709c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-QQ-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="5d3ffc9c4c2743fcc83b3333f77fc252fb146889">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-QQ-2.7.10_d43ac7040d284cb3eb2ba4533c2a9ace40975e69.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-SinaWeibo-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="52574245a489f42699687ba9038c8c803a8e8bcf">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-SinaWeibo-2.7.10_61c13e470f0f53f9adc9ef6385b3b68ad3a37d5c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Mingdao-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="6a0f6e47eff80c88dd4f33d485e30fae969a129c">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Mingdao-2.7.10_fef5da1dd1842570fc7983bfb34d6be9bd82d9a5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\com.android.support-appcompat-v7-22.2.1_7514ee6bf62c3672f14028717528b0a2efec59d6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Pocket-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="1b9e60870b34c799c530c96a6b6007d810bae8d0">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Pocket-2.7.10_616c8068c895909340f928d144f26c2fe79b49db.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Line-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="d33547644fd680ec96607e29d7f45ba25464ba38">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Line-2.7.10_db0850f789bfc032d07a932c9bd8e37eda7e394d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-VKontakte-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="3b7344f083ed06f3fb6bbf4709c20a62aba9cf15">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-VKontakte-2.7.10_c783e49787a83445d94e57999719fef467185d35.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\internal_impl-22.2.1_0bd255bbb2339b76eab500e2b87a79e3a3def78d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Kakao-Core-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="3550660fca2600047b942d502b82c44a9a9def89">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Kakao-Core-2.7.10_b19127e606f14bb23297b211a541f6040ab8410e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\exploded-aar\SMSSDKGUI-2.1.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="3a63d84564449cb36b6d4ff28bff3acf581d2e13">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-SMSSDKGUI-2.1.2_1136ccb3390217a445288270a3d30fc7deacc38c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\MobTools-2016.1107.1809.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="51ab3d9199c3df198ba8fedb2916027f283676d6">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\MobTools-2016.1107.1809_f340a47f26289073b0146209b6fcaee3db7ffaf0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Tumblr-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="85f3f9711abd516c8d21ea4c6bf2cd59147c4020">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Tumblr-2.7.10_b183ecd344c453c4099760a1389ff530077e954b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Douban-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="e73a9cf9102bf439fa345b06e5fbdde3e1246132">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Douban-2.7.10_e580e3ea104c47cc70c9c23d9a893af13d5961e3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Email-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="150a66e246682e5b95e468d56ffdc0eb6c8d9c01">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Email-2.7.10_4b8c0c77494509a696efba04103a2aeb1a61019e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Wechat-Moments-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="a8357a3810c2e5bbb6274042a1508bac87759c5f">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Moments-2.7.10_d8fb225e48fdf7d44d5d78bd964db5054f01765f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Foursquare-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="9a8230303fae9007c0ae5ccbaad336c0112652b8">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Foursquare-2.7.10_14b01dc397751c8923da18643de237308b6f1356.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Alipay-Core-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="5d77ccf68f8d171aca386ba7b47f75f03b20a279">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-Core-2.7.10_c798ffec1e378682fddb2255f9e552665c484bde.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Facebook-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="59d0088bf089e5b659e25d328ab6f4dbf01576d4">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Facebook-2.7.10_2af2e11e4b205779d23b02ddd6163096842e37a8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\gson-2.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\gson-2.3.1_a43b8ebc759363bfc16ecf493e82ec8762f2e4e7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-KaiXin-2.7.10.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="22.0.1"
+        revision="25.0.0"
         sha1="cd2d2f1b9fad9416a7989375db9aa9901120bdf1">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KaiXin-2.7.10_85eb19faa54151e97097b4ddb13fc80a5557fa01.jar" />
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KaiXin-2.7.10_78a3d20163f12c67d7aa7f4d185e08e2e2a3de35.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Instagram-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\MobCommons-2016.1107.1809.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="503b081180daace77f1d89f46b54aea8f050fc8f">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Instagram-2.7.10_4f17dc3a348967140da3d2f9c5be8de97caedc2d.jar" />
+        revision="25.0.0"
+        sha1="978446ee83b82106e7d859832e4e3440101bda5a">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\MobCommons-2016.1107.1809_a0012029c3a8aac7a808fa5ac2b2001a448722ff.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Wechat-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-KakaoTalk-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="b9e12f2d8a6f01dce27c65ce3b93bccd46e7ffd4">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-2.7.10_d702d16beb7ec375d08c74f1136f08fe2d52d971.jar" />
+        revision="25.0.0"
+        sha1="5c70e8cfa2a44ba8ff1d021b50025bbacb31875a">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KakaoTalk-2.7.10_6a96dbc68f50a0a32e64b6ccd634494f4fb1c66a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Pinterest-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Foursquare-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="814f3a2fd1669f837f5c6aed833cae78578728aa">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Pinterest-2.7.10_ad7dd9458d4ccfbe1d4fc0448019be18b3c44e93.jar" />
+        revision="25.0.0"
+        sha1="9a8230303fae9007c0ae5ccbaad336c0112652b8">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Foursquare-2.7.10_d6d54f772f8fe6faabe9605be00205911803a3d7.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Yixin-Core-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-QZone-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="48913f532b7be264e9d48b11f22dfaeb391a7040">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-Core-2.7.10_60c8c407bc10bb518b2e732c4944c2b071fecbdb.jar" />
+        revision="25.0.0"
+        sha1="158eb0f8525584008bfc92c2c6a4841174133a0a">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-QZone-2.7.10_de51bc601da4a18a3b7beeceab4cb8eccfe1bb06.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Twitter-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-GooglePlus-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="6984fa7bcd1a42ea927cb88845340cf629cee7ca">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Twitter-2.7.10_303898e8dfec6966473127cb8c38c905f890e386.jar" />
+        revision="25.0.0"
+        sha1="98172e38756598b7abad150f134c0528bd7537b6">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-GooglePlus-2.7.10_3121efc3c2d544be309ea8d9500d0be1c491af0c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-WhatsApp-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-FacebookMessenger-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
-        sha1="c4cd2f25fd980e932908480e8a7f1032dbc00000">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-WhatsApp-2.7.10_0ef1a896e5e06eebce93d97619953ed50ca79e93.jar" />
+        revision="25.0.0"
+        sha1="2bc5cfa7a4d44dccc4bfab1b58e51e0dee567806">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-FacebookMessenger-2.7.10_c15a932daa0236706b6710550bf072646d29102b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\myworkspace003\accessibilityappstore\app\libs\ShareSDK-Evernote-2.7.10.jar"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Evernote-2.7.10.jar"
         jumboMode="false"
         optimize="true"
-        revision="22.0.1"
+        revision="25.0.0"
         sha1="0621ad493330a36fdc39bead7311c1edac34a257">
-        <dex dex="D:\workspace\myworkspace003\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Evernote-2.7.10_dfcc62d6ae0b3a243301b8181d1079d5c947556a.jar" />
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Evernote-2.7.10_e234b0a8c274f39fbdf050b2e8e6e5bce2e3508e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Instagram-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="503b081180daace77f1d89f46b54aea8f050fc8f">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Instagram-2.7.10_eddbafd552a691804a7cac59581a22befbbb51e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a7e5f9da3635eb8d89b8a9a22cd68cd64cca9104">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Core-2.7.10_0692c171e4a8d6224672fd5b9b375b612508dcea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Renren-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ff7d4322fa34f4a125935ab0f9291c5a5b862f60">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Renren-2.7.10_4606186db2755617917a5f65f28a01909443b632.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Alipay-Moments-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="21f42a3bf9d6f5fc089bc2df13dfdc9a17cc33f3">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-Moments-2.7.10_a7c0ddf4f443e764d8802325725e78450a6b2282.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Alipay-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5d77ccf68f8d171aca386ba7b47f75f03b20a279">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-Core-2.7.10_52514f9c9b4ac5a8325f0dd7c38dc3f7e1b3bafd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Instapaper-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="64ee87e868c952a0867db83cb8aed2fd8e968249">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Instapaper-2.7.10_794911ebaff1cf99a6d7ca5a93f6ec4161dd843b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Yixin-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="689e51fd8e12f60c9d912ba183b85769481e7c19">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-2.7.10_67cd72f437e4fcaa914c2cda2575b4e0a2b1839f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bb409727471f47168bc0009ab1a6d7660dc4dfc5">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-coeus-network-debug_8b57191e2601e69c68b40c1162dfa70c4ed446f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Wechat-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9e12f2d8a6f01dce27c65ce3b93bccd46e7ffd4">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-2.7.10_b38f7a730443d5039988a28884ece63c0d6986a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\analytics-6.0.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="27238b0acdc4e764623a653d5776488783e9ae3f">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\analytics-6.0.4_f03fdd5969443939e827da0084902016a71acf9a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\build\intermediates\exploded-aar\coeus-network-debug\jars\libs\Msc.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="85a46b29703ef8930a92d2fdea8ff336275c7ab2">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\Msc_9c97bb3e68ac98972a1d6b9d6e78a801c03c1044.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Flickr-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a77e4669d7fe78fcde115136ad0e3b7da79e93c3">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Flickr-2.7.10_e0cf3e047cca4a8c551aa1a5a3a0f0bd1bd214bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\com.android.support-appcompat-v7-22.2.1_7862726b5fb0bb39b0b6a80a01f14f934ab2807d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Pocket-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1b9e60870b34c799c530c96a6b6007d810bae8d0">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Pocket-2.7.10_6c01b860b5d0818f8a1de66143102f78ffa417e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Dropbox-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9f220150a075004b370ad015f954b2e36327777b">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Dropbox-2.7.10_28d0e4f6c2b0697b7610655eabec80f8ae3ca25b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-VKontakte-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b7344f083ed06f3fb6bbf4709c20a62aba9cf15">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-VKontakte-2.7.10_4313f4bc2df388a298b03713fcd670fa6cd7c2f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-KakaoStory-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a48b6fb53b9aae4dda22e867815e9cb556df6163">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-KakaoStory-2.7.10_f3ab123695e7063d1721afae83e39445e9325d27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\internal_impl-22.2.1_dc657e41dc3206a5af75cabc179da6d343271da7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\MobTools-2016.1107.1809.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51ab3d9199c3df198ba8fedb2916027f283676d6">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\MobTools-2016.1107.1809_fa395c063a683c97b333218374f38424941c4765.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Twitter-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6984fa7bcd1a42ea927cb88845340cf629cee7ca">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Twitter-2.7.10_a94d0d285704d03f21faa10abfe3971d21bf13d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Pinterest-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="814f3a2fd1669f837f5c6aed833cae78578728aa">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Pinterest-2.7.10_3af544395146d35155fb1f644329dab793e9ec13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Yixin-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="48913f532b7be264e9d48b11f22dfaeb391a7040">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-Core-2.7.10_449ecb01605a31485162a732a20b32faeaf2b271.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Mingdao-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a0f6e47eff80c88dd4f33d485e30fae969a129c">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Mingdao-2.7.10_d0c6ff4fc38303279c773979ee84c433f1e24809.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\TBISAndroidEnvironment20160621\TBISAndroidEnvironment\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\support-annotations-22.2.1_7f35c11a1382ac733bf7a9962e4d5f959f674885.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Tumblr-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="85f3f9711abd516c8d21ea4c6bf2cd59147c4020">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Tumblr-2.7.10_11603fb90e3e6e37d0cdb5b99906a2be38515c4a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Kakao-Core-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3550660fca2600047b942d502b82c44a9a9def89">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Kakao-Core-2.7.10_6c4fead407aefb5449202fe95f762a204027eb4d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Alipay-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="564ed74723bf716338b2b43c1dabe2a99702c271">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Alipay-2.7.10_872f35b8da25294b28226a128e353bcb9a59a17b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Facebook-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="59d0088bf089e5b659e25d328ab6f4dbf01576d4">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Facebook-2.7.10_85332c710de613b89968cb5395e8d19a0ab942ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-YouDao-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9b77839ec80ebc1a92a3c8fd76bb6e465c9ebc15">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-YouDao-2.7.10_526dcd1fa80745c70b57a305d77373ffb4198283.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Wechat-Moments-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a8357a3810c2e5bbb6274042a1508bac87759c5f">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Moments-2.7.10_d0163d405313b68ccc2210f7c0cc83d57dae8dac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-ShortMessage-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3763b7bcafdd71a9d48b92be6f2bec532be8a88f">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-ShortMessage-2.7.10_822fca832ea08899624f05ab89e05eca9adebc61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Line-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d33547644fd680ec96607e29d7f45ba25464ba38">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Line-2.7.10_872b1c0e78fcfa49afd9edf1f227ff745e157ce6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Yixin-Moments-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="93a947698ebb1c2da63007d6d3418abb3de7329a">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Yixin-Moments-2.7.10_2a63fb7b95a91cb7f531170124cafaaf2b9acfc5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\gson-2.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\gson-2.3.1_39f8c01a109c23824a45c5679f741fdf8b182857.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Douban-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e73a9cf9102bf439fa345b06e5fbdde3e1246132">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Douban-2.7.10_55456dfd6edf30299affa70a9c65ad9025fe94e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Email-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="150a66e246682e5b95e468d56ffdc0eb6c8d9c01">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Email-2.7.10_9b638c90d88bf4ec02d4dc641f24a2e362838556.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-SinaWeibo-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="52574245a489f42699687ba9038c8c803a8e8bcf">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-SinaWeibo-2.7.10_f86c201c8c7228dc317ae5fd5ceeda49c62cac33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-WhatsApp-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c4cd2f25fd980e932908480e8a7f1032dbc00000">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-WhatsApp-2.7.10_3604579a76ee6a537182c0b7af87b888c6435e3c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\com.android.support-support-v4-22.2.1_72ba9b6dec7bc7810814b92f2ff21a71d74fd4f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-Wechat-Favorite-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f30192f55e1113b13b6ac5204bbcc19e203b4160">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-Wechat-Favorite-2.7.10_7e887c6185ca3554838036b2d5ec018a1f0a3a25.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\build\intermediates\exploded-aar\SMSSDKGUI-2.1.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3a63d84564449cb36b6d4ff28bff3acf581d2e13">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-SMSSDKGUI-2.1.2_9eb4baca052861aa97168c5d0030caeb7a088701.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-QQ-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5d3ffc9c4c2743fcc83b3333f77fc252fb146889">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-QQ-2.7.10_44d38af064bf926293eb3606577c11a94b91451a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\build\intermediates\exploded-aar\SMSSDK-2.1.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e771b37b443378199ab670e072a4469f363533ac">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\intermediates-exploded-aar-SMSSDK-2.1.2_b2a4a6bb1949e57552f57d4554d9c692ba13d8c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\pinyin4j-2.5.0_8b74d949310aefd8b613410c5692963642406b5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\accessibilityappstore\app\libs\ShareSDK-TencentWeibo-2.7.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f391083f803101456937234584e5523d2ccfb909">
+        <dex dex="E:\accessibilityappstore\app\build\intermediates\pre-dexed\app360\debug\ShareSDK-TencentWeibo-2.7.10_22d297c3eaae68a0f7efd2c5960d5ff20c0b50cb.jar" />
     </item>
 
 </items>
