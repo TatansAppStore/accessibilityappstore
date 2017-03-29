@@ -136,7 +136,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             @Override
             public void onSuccess(Object o) {
                 super.onSuccess(o);
-                Log.e("AjaxCallBack", "onSuccess");
+                if (o.toString().startsWith("<html>")){
+                    FragmentCommend.tv_loading_tips.setText("当前网络异常，请检查网络情况！");
+                    return;
+                }
                 String StrJson = "{\"results\":" + o + "}";
                 Gson gson = new Gson();
                 AppInfo appinfo = gson.fromJson(StrJson, AppInfo.class);
@@ -207,7 +210,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void initView() {
         pvp = (ParentViewPager) findViewById(R.id.vp_main);
         header_text = (TextView) findViewById(R.id.header_text);
-        header_text.setText("推荐");
+        header_text.setText("推荐   搜索");
 
         for (int i = 0; i < lls.length; i++) {
             lls[i] = (LinearLayout) findViewById(llIds[i]);

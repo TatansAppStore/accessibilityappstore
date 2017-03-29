@@ -183,6 +183,10 @@ public class FragmentMine extends PreferenceFragment {
                 super.onSuccess(o);
                 Log.e("AjaxCallBack", "onSuccess");
                 String StrJson = "{\"results\":" + o + "}";
+                if (o.toString().startsWith("<html>")){
+                 //   FragmentCommend.tv_loading_tips.setText("当前网络异常，请检查网络情况！");
+                    return;
+                }
                 Gson gson = new Gson();
                 AppInfo appinfo = gson.fromJson(StrJson, AppInfo.class);
                 List<AppInfo.AI> serverList = appinfo.getResults();

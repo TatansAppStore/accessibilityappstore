@@ -39,7 +39,7 @@ import java.util.ArrayList;
 public class FragmentCommend extends BaseFragment implements DownloadController.DownloadCallback, AppInstallReceive.AppInstallCallback {
 
     private ListView listView;
-    private TextView tv_loading_tips;
+    public static TextView tv_loading_tips;
     private ArrayList<AppItemInfo.AppInfo> list_app_item = new ArrayList<AppItemInfo.AppInfo>();//存放后台请求获取的数据
     private AppAdapter appAdapter;
     private ArrayList<LocalAppInfo> localAppList;
@@ -150,11 +150,9 @@ public class FragmentCommend extends BaseFragment implements DownloadController.
     @Override
     public void onLoading(long count, long current, String appName) {
         int progress = (int) (current * 100 / count);
-        Log.d("aaaaaa",progress+"");
         if(appAdapter!=null) {
             appAdapter.updataView(listView, progress, appName);
         }
-
     }
 
     @Override

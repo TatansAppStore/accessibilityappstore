@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -149,6 +150,10 @@ public class AppListActivity extends BaseActivity implements DownloadController.
             @Override
             public void onSuccess(Object o) {
                 super.onSuccess(o);
+                if (o.toString().startsWith("<html>")){
+                    tv_loading_tips.setText("当前网络异常，请检查网络情况！");
+                    return;
+                }
                 try {
                     JSONObject jsonObject = new JSONObject(o + "");
                     String code = jsonObject.get("code") + "";

@@ -113,7 +113,10 @@ public class FragmentRank extends BaseFragment implements DownloadController.Dow
             @Override
             public void onSuccess(Object o) {
                 super.onSuccess(o);
-
+                if (o.toString().startsWith("<html>")){
+                       tv_loading_tips.setText("当前网络异常，请检查网络情况！");
+                    return;
+                }
                 try {
                     JSONObject jsonObject = new JSONObject(o + "");
                     String code = jsonObject.get("code") + "";

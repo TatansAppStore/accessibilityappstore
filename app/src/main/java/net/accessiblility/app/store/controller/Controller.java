@@ -5,7 +5,7 @@ package net.accessiblility.app.store.controller;
  * 获取后台数据的地址
  */
 public class Controller {
-    //    public static String uri = "http://192.168.1.9:8080/android/rest/v1.0/"; //本地
+//        public static String uri = "http://172.21.8.244:8080/android/rest/v1.0/"; //本地
     public static String uri = "http://139.224.235.120/android/rest/v1.0/";  //服务器
 
 //    public static String uri = "http://192.168.31.17:8094/android/rest/v1.0/";  //服务器

@@ -164,6 +164,4 @@ public class DownloadController {
         downloadInfo.setApp_size(appInfo.getSize());
         return downloadInfo;
     }
-
-
 }
