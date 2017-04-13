@@ -47,7 +47,7 @@ public class FragmentClassify extends BaseFragment {
             list.add("生活");
             list.add("娱乐");
             list.add("新闻");
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_app_classify_item, R.id.tv_classify, list);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.list_app_classify_item, R.id.tv_classify, list);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override

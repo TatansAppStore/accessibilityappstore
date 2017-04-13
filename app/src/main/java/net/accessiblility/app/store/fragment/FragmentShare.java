@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import net.accessiblility.app.store.R;
+import net.accessiblility.app.store.activity.ScanActivity;
 import net.accessiblility.app.store.activity.login.LoginActivity;
 import net.accessiblility.app.store.controller.Controller;
 import net.accessiblility.app.store.model.ShareInfo;
@@ -71,6 +72,7 @@ public class FragmentShare extends BaseFragment {
             cid = 0;
             ll_main = (LinearLayout) view.findViewById(R.id.ll_main);
             TextView appChoose = (TextView) view.findViewById(R.id.app_choose);
+            TextView appScan = (TextView) view.findViewById(R.id.app_scan);
             app_name = (EditText) view.findViewById(R.id.app_name);
             app_size = (TextView) view.findViewById(R.id.app_size);
             app_package = (TextView) view.findViewById(R.id.app_package);
@@ -96,6 +98,16 @@ public class FragmentShare extends BaseFragment {
 
                 }
             });
+
+
+            appScan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), ScanActivity.class);
+                        startActivityForResult(intent, 1);
+
+                }
+            });
         }
     }
 
@@ -104,9 +116,12 @@ public class FragmentShare extends BaseFragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {//是否选择，没选择就不会继续
             ll_main.setVisibility(View.GONE);
-            Uri uri = data.getData();//得到uri，后面就是将uri转化成file的过程。
+            String path = data.getStringExtra("APK_PATH");
+            if(path==null){
+                Uri uri = data.getData();//得到uri，后面就是将uri转化成file的过程。
+                path = uri.getPath();
+            }
             PackageManager pm = this.getActivity().getPackageManager();
-            String path = uri.getPath();
             File file = new File(path);
             long size = file.length();
             int mSize = Integer.valueOf((int) size);

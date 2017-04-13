@@ -31,12 +31,28 @@
             android:textSize="25sp"
             />
 
+
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/text_color"
             />
 
+        <TextView
+            android:id="@+id/app_scan"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center_vertical"
+            android:text="智能扫描"
+            android:textColor="@color/text_color"
+            android:textSize="25sp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/text_color"
+            />
     </LinearLayout>
 
     <LinearLayout
